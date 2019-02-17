@@ -1,0 +1,18 @@
+{
+  "name": "docker-nextjs",
+  "version": "1.0.0",
+  "description": "dockerizing a nextjs app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Jack Fletcher",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^8.0.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2"
+  }
+}
