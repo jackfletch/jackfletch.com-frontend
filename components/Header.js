@@ -13,6 +13,7 @@ const Button = styled.button`
 
 const Nav = styled.nav`
   background-color: #d0d0dd;
+  font-family: "Decima Mono Pro", "Roboto";
 `;
 
 const Li = styled.li`

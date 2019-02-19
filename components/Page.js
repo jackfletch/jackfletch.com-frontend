@@ -4,15 +4,7 @@ import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
 
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
-};
-
 const PageLayout = styled.div`
-  margin: 20;
-  padding: 20;
   font-size: 20px;
 `;
 
