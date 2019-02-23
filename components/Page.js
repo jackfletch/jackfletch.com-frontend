@@ -9,30 +9,25 @@ const PageLayout = styled.div`
   scroll-behavior: smooth;
 `;
 
-export default class Page extends React.Component {
-  static propTypes = {
-    baseURL: PropTypes.string.isRequired,
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node,
-    ]).isRequired,
-  };
+const Page = ({baseURL, children}) => (
+  <PageLayout className="page">
+    <Header baseURL={baseURL} />
+    {children}
+    <Footer />
+    <script
+      src={`${baseURL}/static/js/jquery-3.3.1.js`}
+      type="text/javascript"
+    />
+    <script src={`${baseURL}/static/js/bootstrap.js`} type="text/javascript" />
+  </PageLayout>
+);
 
-  render() {
-    return (
-      <PageLayout className="page">
-        <Header baseURL={this.props.baseURL} />
-        {this.props.children}
-        <Footer />
-        <script
-          src={`${this.props.baseURL}/static/js/jquery-3.3.1.js`}
-          type="text/javascript"
-        />
-        <script
-          src={`${this.props.baseURL}/static/js/bootstrap.js`}
-          type="text/javascript"
-        />
-      </PageLayout>
-    );
-  }
-}
+Page.propTypes = {
+  baseURL: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+};
+
+export default Page;
