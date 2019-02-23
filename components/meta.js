@@ -29,19 +29,17 @@ const Meta = ({staticPage, baseURL}) => (
       </>
     )} */}
     <meta property="og:description" content={description} />
-    <meta
-      property="og:image"
-      content={`${baseURL}/static/img/jf.png`}
-    />
+    <meta property="og:image" content={`${baseURL}/static/img/jf.png`} />
     <link rel="shortcut icon" href={`${baseURL}/static/favicon.ico`} />
     {/* <link rel="stylesheet" href={`${baseURL}/static/css/bootstrap-reboot.css`} />
     <link rel="stylesheet" href={`${baseURL}/static/css/bootstrap-grid.css`} /> */}
     <link rel="stylesheet" href={`${baseURL}/static/css/bootstrap.css`} />
     <link rel="stylesheet" href={`${baseURL}/static/css/main.css`} />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-    <title>
-      {staticPage && staticPage.title && `${staticPage.title}`}
-    </title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <title>{staticPage && staticPage.title && `${staticPage.title}`}</title>
     {/* <style
       dangerouslySetInnerHTML={{__html: stylesheet.replace(/\n/g, '')}}
     /> */}

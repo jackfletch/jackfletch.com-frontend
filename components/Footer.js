@@ -33,27 +33,45 @@ const SFooter = styled.footer`
 const Footer = () => (
   <SFooter className="bottom">
     <Div className="container">
-      <p>
-        STAY CONNECTED
-      </p>
-      <ul className='centerLinks'>
+      <p>STAY CONNECTED</p>
+      <ul className="centerLinks">
         <li className="d-inline-block">
-          <a href="https://twitter.com/no_fletch_zone" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://twitter.com/no_fletch_zone"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Img src="/static/img/icons/twitter.png" alt="twitter" />
           </a>
         </li>
         <li className="d-inline-block">
-          <a href="https://www.instagram.com/fletch_jack/" target="_blank" rel="noopener noreferrer">
-            <Img src="/static/img/icons/instagram.png" fill='blue' alt="instagram" />
+          <a
+            href="https://www.instagram.com/fletch_jack/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Img
+              src="/static/img/icons/instagram.png"
+              fill="blue"
+              alt="instagram"
+            />
           </a>
         </li>
         <li className="d-inline-block">
-          <a href="https://github.com/jackfletch" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/jackfletch"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Img src="/static/img/icons/github.png" alt="github" />
           </a>
         </li>
         <li className="d-inline-block">
-          <a href="https://linkedin.com/in/jdfletch" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://linkedin.com/in/jdfletch"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Img src="/static/img/icons/linkedin_square.svg" alt="linkedin" />
           </a>
         </li>
@@ -68,7 +86,8 @@ const Footer = () => (
     <DivBottomLinks>
       <p>&copy; Jack Fletcher {new Date().getFullYear()}</p>
       <p>
-        Website made with React, Next.js, and styled-components. Hosted on TBD. The source is private rn.
+        Website made with React, Next.js, and styled-components. Hosted on TBD.
+        The source is private rn.
         {/* on{' '}
         <a
           href="https://github.com/jackfletch/website"

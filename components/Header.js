@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import LinkSmoothScroll from './LinkSmoothScroll';
 
 const linkStyle = {
-  color: '#222'
+  color: '#222',
 };
 
 const Button = styled.button`
@@ -14,19 +13,19 @@ const Button = styled.button`
 
 const Nav = styled.nav`
   background-color: #d0d0dd;
-  font-family: "Montserrat", "Roboto";
-  transition: height .5s, line-height .5s;
+  font-family: 'Montserrat', 'Roboto';
+  transition: height 0.5s, line-height 0.5s;
   a.navbar-brand {
     font-size: 1.25rem;
   }
 `;
 
 const Li = styled.li`
-  transition: all .7s ease-out;
+  transition: all 0.7s ease-out;
 
   &:hover {
-    background-color: rgba(220,220,220,0.15);
-    background-color: rgba(0,0,0,0.15);
+    background-color: rgba(220, 220, 220, 0.15);
+    background-color: rgba(0, 0, 0, 0.15);
   }
 
   & > a:hover {
@@ -38,11 +37,22 @@ const Header = ({baseURL}) => (
   <Nav className="navbar navbar-expand-lg fixed-top">
     <div className="container">
       <Link href="/">
-        <a className="navbar-brand" style={linkStyle}>Jack Fletcher</a>
+        <a className="navbar-brand" style={linkStyle}>
+          Jack Fletcher
+        </a>
       </Link>
-      <Button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span style={{
-            backgroundImage: `url(${baseURL}/static/img/toggle.svg)`
+      <Button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span
+          style={{
+            backgroundImage: `url(${baseURL}/static/img/toggle.svg)`,
           }}
           className="navbar-toggler-icon"
         />

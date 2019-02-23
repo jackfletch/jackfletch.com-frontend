@@ -14,7 +14,7 @@ class AboutPage extends React.Component {
     const baseURL = getBaseURL(req);
     return {baseURL};
   }
-  
+
   render() {
     const title = 'FletcherLabs';
     const {baseURL} = this.props;
@@ -22,12 +22,12 @@ class AboutPage extends React.Component {
     return (
       <>
         <Meta baseURL={baseURL} staticPage={{title}} />
-        <Page baseURL={baseURL} >
+        <Page baseURL={baseURL}>
           <p>This is the about page</p>
         </Page>
       </>
     );
   }
-};
+}
 
 export default AboutPage;

@@ -24,8 +24,14 @@ export default class Page extends React.Component {
         <Header baseURL={this.props.baseURL} />
         {this.props.children}
         <Footer />
-        <script src={`${this.props.baseURL}/static/js/jquery-3.3.1.js`} type="text/javascript" />
-        <script src={`${this.props.baseURL}/static/js/bootstrap.js`} type="text/javascript" />
+        <script
+          src={`${this.props.baseURL}/static/js/jquery-3.3.1.js`}
+          type="text/javascript"
+        />
+        <script
+          src={`${this.props.baseURL}/static/js/bootstrap.js`}
+          type="text/javascript"
+        />
       </PageLayout>
     );
   }

@@ -1,13 +1,13 @@
 import React, {Children} from 'react';
 // import Router from 'next/router';
-import smoothScroll from '../lib/smoothScroll';
+import {smoothScroll} from '../lib';
 
 // originally from https://gist.github.com/vinaypuppal/b7271ad84a0d69c9cfafaaa83afed199
 // Next.js smooth scroll
 
 // this HOC is taken from https://github.com/zeit/next.js/blob/master/lib/link.js and modified
 export default class LinkSmoothScroll extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.linkClicked = this.linkClicked.bind(this);
   }
@@ -38,7 +38,7 @@ export default class LinkSmoothScroll extends React.Component {
     return smoothScroll(this.props.href);
   }
 
-  render () {
+  render() {
     let {children} = this.props;
     if (typeof children === 'string') {
       children = <a>{children}</a>;
