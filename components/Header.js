@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import LinkSmoothScroll from './LinkSmoothScroll';
 
 const linkStyle = {
   color: '#222'
@@ -13,7 +14,11 @@ const Button = styled.button`
 
 const Nav = styled.nav`
   background-color: #d0d0dd;
-  font-family: "Decima Mono Pro", "Roboto";
+  font-family: "Montserrat", "Roboto";
+  transition: height .5s, line-height .5s;
+  a.navbar-brand {
+    font-size: 1.25rem;
+  }
 `;
 
 const Li = styled.li`

@@ -5,7 +5,8 @@ import Header from './Header';
 import Footer from './Footer';
 
 const PageLayout = styled.div`
-  font-size: 20px;
+  font-size: 1.25rem;
+  scroll-behavior: smooth;
 `;
 
 export default class Page extends React.Component {
