@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Decima Mono Pro";
-  src: url(../fonts/decimamonopro-webfont.woff2) format('woff2');
+  src: url(../fonts/decimamonopro-webfont.woff2) format("woff2");
 }
 
 /* .navbar {
@@ -44,7 +44,12 @@ body {
 
 @media (max-width: 991px) {
   .extraSpace {
-      padding-top: 60px;
-      padding-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
+}
+
+.extPad {
+  padding-bottom: 60px;
+  padding-top: 20px;
 }

@@ -23,16 +23,25 @@ const SubText = styled.p`
   margin: 0px;
 `;
 
+const RowDiv = styled.div`
+  font-family: 'Roboto';
+  & > div {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    > ul {
+      padding: 0 0 0 20px;
+      > li {
+        font-size: 0.8em;
+      }
+    }
+  }
+`;
+
 class IndexPage extends React.Component {
   static propTypes = {
     router: PropTypes.object.isRequired,
-    // shows: PropTypes.array.isRequired,
     baseURL: PropTypes.string.isRequired,
   };
-
-  // constructor(props) {
-  //   super(props);
-  // }
 
   static async getInitialProps({req}) {
     const baseURL = getBaseURL(req);
@@ -77,7 +86,7 @@ class IndexPage extends React.Component {
           >
             <div className="container">
               <SubTitle>MY WORK</SubTitle>
-              <SubText>
+              <SubText className="extPad">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                 nec mi sem. Proin laoreet gravida nibh et sodales. Curabitur nec
                 justo et eros varius elementum. Nulla enim nunc, facilisis sit
@@ -87,6 +96,37 @@ class IndexPage extends React.Component {
                 Integer in imperdiet nulla. Sed eleifend eget libero nec
                 interdum. Duis vitae dictum elit, eu condimentum tellus.
               </SubText>
+              <RowDiv className="row">
+                <div className="col-lg-3">
+                  <h5>software development</h5>
+                  <ul>
+                    <li>javascript (mainly frontend)</li>
+                    <li>c++</li>
+                  </ul>
+                </div>
+                <div className="col-lg-3">
+                  <h5>data & visualization</h5>
+                  <ul>
+                    <li>R, d3.js, python</li>
+                    <li>webGL</li>
+                  </ul>
+                </div>
+                <div className="col-lg-3">
+                  <h5>orchestration & optimization</h5>
+                  <ul>
+                    <li>docker</li>
+                    <li>kubernetes</li>
+                  </ul>
+                </div>
+                <div className="col-lg-3">
+                  <h5>community</h5>
+                  <ul>
+                    <li>i</li>
+                    <li>d</li>
+                    <li>k</li>
+                  </ul>
+                </div>
+              </RowDiv>
             </div>
           </div>
         </Page>
