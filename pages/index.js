@@ -61,7 +61,7 @@ class IndexPage extends React.Component {
   };
 
   render() {
-    const title = 'FletcherLabs';
+    const title = 'Fletcher Labs';
     const {baseURL} = this.props;
 
     return (
@@ -71,8 +71,9 @@ class IndexPage extends React.Component {
           <Hero
             className="hero"
             style={{
-              backgroundImage: `url(${baseURL}/static/img/hero_blur.jpg)`,
+              // backgroundImage: `url(${baseURL}/static/img/hero_blur.jpg)`,
               // backgroundImage: `url(${baseURL}/static/img/hero.jpg)`,
+              backgroundImage: `url(${baseURL}/static/img/hero_corner.png)`,
               backgroundPosition: '70% center',
               backgroundRepeat: 'no-repeat',
             }}

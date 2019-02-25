@@ -21,6 +21,8 @@ const Nav = styled.nav`
 `;
 
 const Li = styled.li`
+  padding-right: 10px;
+  padding-left: 10px;
   transition: all 0.7s ease-out;
 
   &:hover {
@@ -59,14 +61,25 @@ const Header = ({baseURL}) => (
       </Button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          <Li className="nav-link">
+          <Li>
             <Link href="/about">
-              <a style={linkStyle}>About</a>
+              <a className="nav-link" style={linkStyle}>
+                About
+              </a>
             </Link>
           </Li>
-          <Li className="nav-link">
+          <Li>
+            <Link href="/cv">
+              <a className="nav-link" style={linkStyle}>
+                CV
+              </a>
+            </Link>
+          </Li>
+          <Li>
             <Link href="/software">
-              <a style={linkStyle}>Software</a>
+              <a className="nav-link" style={linkStyle}>
+                Software
+              </a>
             </Link>
           </Li>
         </ul>

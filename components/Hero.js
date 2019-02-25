@@ -34,7 +34,6 @@ const Button = styled.button`
   position: relative;
   border: none;
   background: none;
-  /* font-size: 3em; */
 `;
 
 const Hero = ({style}) => (

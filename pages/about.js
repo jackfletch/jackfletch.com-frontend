@@ -1,9 +1,17 @@
-import Layout from '../components/Layout';
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Link from 'next/link';
 import Meta from '../components/meta';
 import Page from '../components/Page';
 import {getBaseURL} from '../lib';
+
+const H2 = styled.h2`
+  margin-top: 60px;
+  @media screen and (max-width: 991px) {
+    margin-top: 52.625px;
+  }
+`;
 
 class AboutPage extends React.Component {
   static propTypes = {
@@ -16,14 +24,21 @@ class AboutPage extends React.Component {
   }
 
   render() {
-    const title = 'FletcherLabs';
+    const title = 'Fletcher Labs';
     const {baseURL} = this.props;
 
     return (
       <>
         <Meta baseURL={baseURL} staticPage={{title}} />
         <Page baseURL={baseURL}>
-          <p>This is the about page</p>
+          <H2>
+            This is where I talk about me. If you'd prefer a CV or CV-like
+            webpage, try&nbsp;
+            <Link href="/cv">
+              <a>here</a>
+            </Link>
+            .
+          </H2>
         </Page>
       </>
     );
