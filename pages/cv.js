@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {ContentContainer, DownloadButton, Meta, Page} from '../components';
-import {getBaseURL} from '../lib';
+import {getBaseUrl} from '../lib';
 
 const H1 = styled.h1`
   text-align: center;
@@ -54,26 +54,26 @@ const Section = styled.section`
 
 class CvPage extends React.Component {
   static propTypes = {
-    baseURL: PropTypes.string.isRequired,
+    baseUrl: PropTypes.string.isRequired,
   };
 
   static async getInitialProps({req}) {
-    const baseURL = getBaseURL(req);
-    return {baseURL};
+    const baseUrl = getBaseUrl(req);
+    return {baseUrl};
   }
 
   render() {
     const title = 'Fletcher Labs';
-    const {baseURL} = this.props;
+    const {baseUrl} = this.props;
 
     return (
       <>
-        <Meta baseURL={baseURL} staticPage={{title}} />
-        <Page baseURL={baseURL}>
+        <Meta baseUrl={baseUrl} staticPage={{title}} />
+        <Page baseUrl={baseUrl}>
           <ContentContainer>
             <DivTop>
               <h2>This is the CV page</h2>
-              <DownloadButton baseURL={baseURL} />
+              <DownloadButton baseUrl={baseUrl} />
             </DivTop>
           </ContentContainer>
           <div
@@ -88,7 +88,7 @@ class CvPage extends React.Component {
               <ul>
                 <li className="school-sba">
                   <img
-                    src={`${baseURL}/static/img/cv/school-sba-eagle.jpg`}
+                    src={`${baseUrl}/static/img/cv/school-sba-eagle.jpg`}
                     alt="sba eagle logo"
                   />
                   <h2>High School</h2>
@@ -104,7 +104,7 @@ class CvPage extends React.Component {
                 </li>
                 <li className="school-msu">
                   <img
-                    src={`${baseURL}/static/img/cv/school-msu.jpg`}
+                    src={`${baseUrl}/static/img/cv/school-msu.jpg`}
                     alt="mississippi state univerity logo"
                   />
                   <h2>University, undergraduate</h2>
@@ -136,7 +136,7 @@ class CvPage extends React.Component {
               <ul>
                 <li className="job-cavs">
                   <img
-                    src={`${baseURL}/static/img/cv/job-cavs.jpg`}
+                    src={`${baseUrl}/static/img/cv/job-cavs.jpg`}
                     alt="logo of MSU's Center for Advanced Vehicular Systems"
                   />
                   <h2>Student Researcher</h2>
@@ -157,7 +157,7 @@ class CvPage extends React.Component {
                 </li>
                 <li className="job-clemson">
                   <img
-                    src={`${baseURL}/static/img/cv/logo-clemson.svg`}
+                    src={`${baseUrl}/static/img/cv/logo-clemson.svg`}
                     alt="logo of Clemson University"
                   />
                   <h2>REU Researcher</h2>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // import slug from 'speakingurl';
 import {description} from '../package.json';
 
-const Meta = ({staticPage, baseURL}) => (
+const Meta = ({staticPage, baseUrl}) => (
   <Head>
     <meta charSet="utf-8" />
     <html lang="en" />
@@ -22,19 +22,19 @@ const Meta = ({staticPage, baseURL}) => (
         />
         <meta
           property="og:url"
-          content={`${baseURL}/show/${show.displayNumber}/${slug(
+          content={`${baseUrl}/show/${show.displayNumber}/${slug(
             show.title
           )}`}
         />
       </>
     )} */}
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${baseURL}/static/img/jf.png`} />
-    <link rel="shortcut icon" href={`${baseURL}/static/favicon.ico`} />
-    {/* <link rel="stylesheet" href={`${baseURL}/static/css/bootstrap-reboot.css`} />
-    <link rel="stylesheet" href={`${baseURL}/static/css/bootstrap-grid.css`} /> */}
-    <link rel="stylesheet" href={`${baseURL}/static/css/bootstrap.css`} />
-    <link rel="stylesheet" href={`${baseURL}/static/css/main.css`} />
+    <meta property="og:image" content={`${baseUrl}/static/img/jf.png`} />
+    <link rel="shortcut icon" href={`${baseUrl}/static/favicon.ico`} />
+    {/* <link rel="stylesheet" href={`${baseUrl}/static/css/bootstrap-reboot.css`} />
+    <link rel="stylesheet" href={`${baseUrl}/static/css/bootstrap-grid.css`} /> */}
+    <link rel="stylesheet" href={`${baseUrl}/static/css/bootstrap.css`} />
+    <link rel="stylesheet" href={`${baseUrl}/static/css/main.css`} />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat"
       rel="stylesheet"
@@ -54,7 +54,7 @@ Meta.propTypes = {
   staticPage: PropTypes.shape({
     title: PropTypes.string.isRequired,
   }),
-  baseURL: PropTypes.string.isRequired,
+  baseUrl: PropTypes.string.isRequired,
 };
 
 export default Meta;

@@ -9,21 +9,21 @@ const PageLayout = styled.div`
   scroll-behavior: smooth;
 `;
 
-const Page = ({baseURL, children}) => (
+const Page = ({baseUrl, children}) => (
   <PageLayout className="page">
-    <Header baseURL={baseURL} />
+    <Header baseUrl={baseUrl} />
     {children}
     <Footer />
     <script
-      src={`${baseURL}/static/js/jquery-3.3.1.js`}
+      src={`${baseUrl}/static/js/jquery-3.3.1.js`}
       type="text/javascript"
     />
-    <script src={`${baseURL}/static/js/bootstrap.js`} type="text/javascript" />
+    <script src={`${baseUrl}/static/js/bootstrap.js`} type="text/javascript" />
   </PageLayout>
 );
 
 Page.propTypes = {
-  baseURL: PropTypes.string.isRequired,
+  baseUrl: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

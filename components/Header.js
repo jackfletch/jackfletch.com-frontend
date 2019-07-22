@@ -42,7 +42,7 @@ const Li = styled.li`
   }
 `;
 
-const Header = ({baseURL}) => (
+const Header = ({baseUrl}) => (
   <Nav className="navbar navbar-expand-lg fixed-top">
     <div className="container">
       <Link href="/">
@@ -64,7 +64,7 @@ const Header = ({baseURL}) => (
       >
         <span
           style={{
-            backgroundImage: `url(${baseURL}/static/img/toggle.svg)`,
+            backgroundImage: `url(${baseUrl}/static/img/toggle.svg)`,
           }}
           className="navbar-toggler-icon"
         />

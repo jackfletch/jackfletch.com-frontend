@@ -37,11 +37,11 @@ const Button = styled.button`
   }
 `;
 
-const DownloadButton = ({baseURL}) => (
+const DownloadButton = ({baseUrl}) => (
   <DivDownload>
     <Form
       method="get"
-      action={`${baseURL}/static/file/resume-JacksonFletcher.pdf`}
+      action={`${baseUrl}/static/file/resume-JacksonFletcher.pdf`}
     >
       <Button type="submit">
         <svg

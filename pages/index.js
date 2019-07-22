@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {ContentContainer, Hero, Meta, Page} from '../components';
-import {getBaseURL} from '../lib';
+import {getBaseUrl} from '../lib';
 
 const SubTitle = styled.h3`
   letter-spacing: 10px;
@@ -38,12 +38,12 @@ const RowDiv = styled.div`
 class IndexPage extends React.Component {
   static propTypes = {
     router: PropTypes.object.isRequired,
-    baseURL: PropTypes.string.isRequired,
+    baseUrl: PropTypes.string.isRequired,
   };
 
   static async getInitialProps({req}) {
-    const baseURL = getBaseURL(req);
-    return {baseURL};
+    const baseUrl = getBaseUrl(req);
+    return {baseUrl};
   }
 
   componentWillReceiveProps(nextProps) {
@@ -60,18 +60,18 @@ class IndexPage extends React.Component {
 
   render() {
     const title = 'Fletcher Labs';
-    const {baseURL} = this.props;
+    const {baseUrl} = this.props;
 
     return (
       <>
-        <Meta baseURL={baseURL} staticPage={{title}} />
-        <Page baseURL={baseURL}>
+        <Meta baseUrl={baseUrl} staticPage={{title}} />
+        <Page baseUrl={baseUrl}>
           <Hero
             className="hero"
             style={{
-              // backgroundImage: `url(${baseURL}/static/img/hero_blur.jpg)`,
-              // backgroundImage: `url(${baseURL}/static/img/hero.jpg)`,
-              backgroundImage: `url(${baseURL}/static/img/hero_corner.png)`,
+              // backgroundImage: `url(${baseUrl}/static/img/hero_blur.jpg)`,
+              // backgroundImage: `url(${baseUrl}/static/img/hero.jpg)`,
+              backgroundImage: `url(/static/img/hero_corner.png)`,
               backgroundPosition: '70% center',
               backgroundRepeat: 'no-repeat',
             }}
