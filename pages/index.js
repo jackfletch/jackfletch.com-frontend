@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Meta from '../components/meta';
 import Page from '../components/Page';
 import Hero from '../components/Hero';
+import ContentContainer from '../components/ContentContainer';
 import {getBaseURL} from '../lib';
 
 const SubTitle = styled.h3`
@@ -78,58 +79,44 @@ class IndexPage extends React.Component {
               backgroundRepeat: 'no-repeat',
             }}
           />
-          <div
-            className="container-fluid sec padY40"
-            style={{
-              backgroundColor: 'rgb(172, 172, 192)',
-              color: '#333',
-            }}
-          >
-            <div className="container">
-              <SubTitle>MY WORK</SubTitle>
-              <SubText className="extPad">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                nec mi sem. Proin laoreet gravida nibh et sodales. Curabitur nec
-                justo et eros varius elementum. Nulla enim nunc, facilisis sit
-                amet aliquam lobortis, placerat sed enim. Nullam fringilla enim
-                quis fringilla dapibus. Pellentesque ut urna facilisis, eleifend
-                metus vel, viverra risus. Aenean cursus et velit in euismod.
-                Integer in imperdiet nulla. Sed eleifend eget libero nec
-                interdum. Duis vitae dictum elit, eu condimentum tellus.
-              </SubText>
-              <RowDiv className="row">
-                <div className="col-lg-3">
-                  <h5>software development</h5>
-                  <ul>
-                    <li>javascript (mainly frontend)</li>
-                    <li>c++</li>
-                  </ul>
-                </div>
-                <div className="col-lg-3">
-                  <h5>data & visualization</h5>
-                  <ul>
-                    <li>R, d3.js, python</li>
-                    <li>webGL</li>
-                  </ul>
-                </div>
-                <div className="col-lg-3">
-                  <h5>orchestration & optimization</h5>
-                  <ul>
-                    <li>docker</li>
-                    <li>kubernetes</li>
-                  </ul>
-                </div>
-                <div className="col-lg-3">
-                  <h5>community</h5>
-                  <ul>
-                    <li>i</li>
-                    <li>d</li>
-                    <li>k</li>
-                  </ul>
-                </div>
-              </RowDiv>
-            </div>
-          </div>
+          <ContentContainer>
+            <SubTitle>MY WORK</SubTitle>
+            <SubText className="extPad">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
+              mi sem. Proin laoreet gravida nibh et sodales. Curabitur nec justo
+              et eros varius elementum. Nulla enim nunc, facilisis sit amet
+              aliquam lobortis, placerat sed enim. Nullam fringilla enim quis
+              fringilla dapibus. Pellentesque ut urna facilisis, eleifend metus
+              vel, viverra risus. Aenean cursus et velit in euismod. Integer in
+              imperdiet nulla. Sed eleifend eget libero nec interdum. Duis vitae
+              dictum elit, eu condimentum tellus.
+            </SubText>
+            <RowDiv className="row">
+              <div className="col-lg-4">
+                <h5>software development</h5>
+                <ul>
+                  <li>javascript</li>
+                  <li>c++</li>
+                </ul>
+              </div>
+              <div className="col-lg-4">
+                <h5>data & visualization</h5>
+                <ul>
+                  <li>R, d3.js, python</li>
+                  <li>webGL</li>
+                </ul>
+              </div>
+              <div className="col-lg-4">
+                <h5 style={{textAlign: 'center'}}>
+                  orchestration & optimization
+                </h5>
+                <ul>
+                  <li>docker</li>
+                  <li>kubernetes</li>
+                </ul>
+              </div>
+            </RowDiv>
+          </ContentContainer>
         </Page>
       </>
     );

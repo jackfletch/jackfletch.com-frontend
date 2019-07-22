@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Meta from '../components/meta';
 import Page from '../components/Page';
+import ContentContainer from '../components/ContentContainer';
 import DownloadButton from '../components/DownloadButton';
 import {getBaseURL} from '../lib';
 
@@ -72,11 +73,12 @@ class CvPage extends React.Component {
       <>
         <Meta baseURL={baseURL} staticPage={{title}} />
         <Page baseURL={baseURL}>
-          <DivTop>
-            <h2>This is the CV page</h2>
-            <DownloadButton baseURL={baseURL} />
-          </DivTop>
-          <br />
+          <ContentContainer>
+            <DivTop>
+              <h2>This is the CV page</h2>
+              <DownloadButton baseURL={baseURL} />
+            </DivTop>
+          </ContentContainer>
           <div
             className="sec padY20"
             style={{
