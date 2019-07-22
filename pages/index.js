@@ -3,10 +3,7 @@ import React from 'react';
 // import axios from 'axios';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Meta from '../components/meta';
-import Page from '../components/Page';
-import Hero from '../components/Hero';
-import ContentContainer from '../components/ContentContainer';
+import {ContentContainer, Hero, Meta, Page} from '../components';
 import {getBaseURL} from '../lib';
 
 const SubTitle = styled.h3`

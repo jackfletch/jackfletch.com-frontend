@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Link from 'next/link';
-import Meta from '../components/meta';
-import Page from '../components/Page';
-import ContentContainer from '../components/ContentContainer';
+import {ContentContainer, Meta, Page} from '../components';
 import {getBaseURL} from '../lib';
 
 const H2 = styled.h2`

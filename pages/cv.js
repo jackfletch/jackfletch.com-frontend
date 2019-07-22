@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Meta from '../components/meta';
-import Page from '../components/Page';
-import ContentContainer from '../components/ContentContainer';
-import DownloadButton from '../components/DownloadButton';
+import {ContentContainer, DownloadButton, Meta, Page} from '../components';
 import {getBaseURL} from '../lib';
 
 const H1 = styled.h1`
