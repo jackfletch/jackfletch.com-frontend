@@ -5,6 +5,13 @@ const linkStyle = {
   color: '#222',
 };
 
+const linkImageStyle = {
+  ...linkStyle,
+  paddingTop: 0,
+  paddingBottom: 0,
+  maxHeight: '3rem',
+};
+
 const Button = styled.button`
   && {
     border-color: #888888;
@@ -39,9 +46,12 @@ const Header = ({baseURL}) => (
   <Nav className="navbar navbar-expand-lg fixed-top">
     <div className="container">
       <Link href="/">
-        <a className="navbar-brand" style={linkStyle}>
-          Jack Fletcher
-        </a>
+        <img
+          src="/static/img/jf.svg"
+          className="navbar-brand"
+          style={linkImageStyle}
+          alt="Jack Fletcher"
+        />
       </Link>
       <Button
         className="navbar-toggler"
