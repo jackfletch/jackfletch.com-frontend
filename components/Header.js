@@ -30,7 +30,7 @@ const Nav = styled.nav`
 const Li = styled.li`
   padding-right: 10px;
   padding-left: 10px;
-  transition: all 0.7s ease-out;
+  transition: all 0.2s ease-out;
 
   &:hover {
     background-color: rgba(220, 220, 220, 0.15);
