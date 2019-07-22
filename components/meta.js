@@ -39,6 +39,10 @@ const Meta = ({staticPage, baseURL}) => (
       href="https://fonts.googleapis.com/css?family=Montserrat"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
     <title>{staticPage && staticPage.title && `${staticPage.title}`}</title>
     {/* <style
       dangerouslySetInnerHTML={{__html: stylesheet.replace(/\n/g, '')}}
