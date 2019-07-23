@@ -2,6 +2,16 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 // import slug from 'speakingurl';
 import {description} from '../package.json';
+import {GA_TRACKING_ID} from '../constants/env';
+
+function setGoogleTags() {
+  return {
+    __html: `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${GA_TRACKING_ID}');`,
+  };
+}
 
 const Meta = ({staticPage, baseUrl}) => (
   <Head>
@@ -47,6 +57,12 @@ const Meta = ({staticPage, baseUrl}) => (
     {/* <style
       dangerouslySetInnerHTML={{__html: stylesheet.replace(/\n/g, '')}}
     /> */}
+    {/* Global Site Tag (gtag.js) - Google Analytics */}
+    <script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+    />
+    <script dangerouslySetInnerHTML={setGoogleTags()} />
   </Head>
 );
 
