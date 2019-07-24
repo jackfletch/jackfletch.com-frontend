@@ -72,7 +72,7 @@ class IndexPage extends React.Component {
               // backgroundImage: `url(${baseUrl}/static/img/hero_blur.jpg)`,
               // backgroundImage: `url(${baseUrl}/static/img/hero.jpg)`,
               backgroundImage: `url(/static/img/hero_corner.png)`,
-              backgroundPosition: '70% center',
+              backgroundPosition: '80% center',
               backgroundRepeat: 'no-repeat',
             }}
           />

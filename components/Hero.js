@@ -4,20 +4,37 @@ import styled from 'styled-components';
 import LinkSmoothScroll from './LinkSmoothScroll';
 
 const HeroDiv = styled.div`
-  background-size: 45vmin 60vmin;
+  background-size: calc(60vmin - 45px) calc(80vmin - 60px);
   height: calc(100vh - 60px);
   margin-top: 60px;
 
-  @media screen and (min-width: 800px), screen and (min-height: 650) {
+  @media screen and (min-width: 576px) {
+    background-size: 240px 320px;
+  }
+  @media screen and (min-width: 768px) {
+    background-size: 300px 400px;
+  }
+  @media screen and (min-width: 992px) {
     background-size: 360px 480px;
   }
-  @media screen and (max-height: 720px) {
-    min-height: 600px;
+`;
+
+const MessageDiv = styled.div`
+  width: 100%;
+  padding: 2.5em 15px;
+  @media screen and (min-width: 768px) {
+    padding: 7em 15px;
   }
-  @media screen and (max-width: 991px) {
-    height: calc(100vh - 52.625px);
-    margin-top: 52.625px;
+  @media screen and (min-width: 992px) {
+    padding: 7em 5em;
   }
+  @media screen and (min-width: 1200px) {
+    padding: 7em calc(5em + 85px);
+  }
+`;
+
+const H3 = styled.h3`
+  max-width: 12em;
 `;
 
 const ScrollDiv = styled.div`
@@ -39,6 +56,11 @@ const Button = styled.button`
 const Hero = ({style}) => (
   <>
     <HeroDiv className="hero" style={style}>
+      <div className="container">
+        <MessageDiv>
+          <H3>Welcome to my corner of the internet.</H3>
+        </MessageDiv>
+      </div>
       <ScrollDiv>
         <LinkSmoothScroll href="/#thesis">
           <Button href="#thesis">
