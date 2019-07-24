@@ -5,9 +5,11 @@ const OuterDiv = styled.div`
   color: #333;
 `;
 
-const ContentContainer = ({children}) => (
-  <OuterDiv className="container-fluid sec padY40">
-    <div className="container">{children}</div>
+const ContentContainer = ({innerStyle, outerStyle, children}) => (
+  <OuterDiv className="container-fluid sec padY40" style={outerStyle}>
+    <div className="container" style={innerStyle}>
+      {children}
+    </div>
   </OuterDiv>
 );
 
