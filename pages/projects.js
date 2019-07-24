@@ -11,7 +11,7 @@ const H2 = styled.h2`
   }
 `;
 
-class SoftwarePage extends React.Component {
+class ProjectsPage extends React.Component {
   static propTypes = {
     baseUrl: PropTypes.string.isRequired,
   };
@@ -38,4 +38,4 @@ class SoftwarePage extends React.Component {
   }
 }
 
-export default SoftwarePage;
+export default ProjectsPage;

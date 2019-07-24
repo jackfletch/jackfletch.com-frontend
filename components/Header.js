@@ -86,9 +86,9 @@ const Header = ({baseUrl}) => (
             </Link>
           </Li>
           <Li>
-            <Link href="/software">
+            <Link href="/projects">
               <a className="nav-link" style={linkStyle}>
-                Software
+                Projects
               </a>
             </Link>
           </Li>
