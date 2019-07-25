@@ -8,11 +8,7 @@ import {getBaseUrl} from '../lib';
 
 const SubTitle = styled.h3`
   letter-spacing: 10px;
-  padding-left: 60px;
   padding-bottom: 60px;
-  @media screen and (max-width: 991px) {
-    padding-left: 20px;
-  }
 `;
 
 const SubText = styled.p`
