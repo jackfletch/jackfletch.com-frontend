@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const OuterDiv = styled.div`
   background-color: rgb(172, 172, 192);
-  color: #333;
+  color: rgb(33, 33, 33);
 `;
 
 const ContentContainer = ({innerStyle, outerStyle, children}) => (
