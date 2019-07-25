@@ -30,6 +30,10 @@ const SFooter = styled.footer`
   text-align: center;
 `;
 
+const P = styled.p`
+  margin: 0 auto;
+`;
+
 const Footer = () => (
   <SFooter className="bottom">
     <Div className="container">
@@ -84,20 +88,7 @@ const Footer = () => (
     </Div>
 
     <DivBottomLinks>
-      <p>&copy; Jack Fletcher {new Date().getFullYear()}</p>
-      <p>
-        Website made with React, Next.js, and styled-components. Hosted on TBD.
-        The source is private rn.
-        {/* on{' '}
-        <a
-          href="https://github.com/jackfletch/website"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-        . */}
-      </p>
+      <P>&copy; Jack Fletcher {new Date().getFullYear()}</P>
     </DivBottomLinks>
   </SFooter>
 );
