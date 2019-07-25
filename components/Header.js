@@ -29,6 +29,12 @@ const Nav = styled.nav`
   }
 `;
 
+const NavLinksDiv = styled.div`
+  && {
+    transition: all 0.2s ease 0s;
+  }
+`;
+
 const Li = styled.li`
   padding-right: 10px;
   padding-left: 10px;
@@ -71,7 +77,10 @@ const Header = ({baseUrl}) => (
           className="navbar-toggler-icon"
         />
       </Button>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <NavLinksDiv
+        className="collapse navbar-collapse"
+        id="navbarSupportedContent"
+      >
         <ul className="navbar-nav mr-auto">
           <Li>
             <Link href="/about">
@@ -95,7 +104,7 @@ const Header = ({baseUrl}) => (
             </Link>
           </Li>
         </ul>
-      </div>
+      </NavLinksDiv>
     </div>
   </Nav>
 );
