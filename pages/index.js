@@ -79,14 +79,10 @@ class IndexPage extends React.Component {
           <ContentContainer>
             <SubTitle>MY WORK</SubTitle>
             <SubText className="extPad">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
-              mi sem. Proin laoreet gravida nibh et sodales. Curabitur nec justo
-              et eros varius elementum. Nulla enim nunc, facilisis sit amet
-              aliquam lobortis, placerat sed enim. Nullam fringilla enim quis
-              fringilla dapibus. Pellentesque ut urna facilisis, eleifend metus
-              vel, viverra risus. Aenean cursus et velit in euismod. Integer in
-              imperdiet nulla. Sed eleifend eget libero nec interdum. Duis vitae
-              dictum elit, eu condimentum tellus.
+              I excelled in school but craved opportunities to apply that
+              learning. I want to solve real-world problems. While serving as a
+              portfolio and blog, this website also triples as an educational
+              playground for new technologies that aid problem solving.
             </SubText>
             <RowDiv className="row">
               <div className="col-lg-4">
