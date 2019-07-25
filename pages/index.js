@@ -12,8 +12,7 @@ const SubTitle = styled.h3`
 `;
 
 const SubText = styled.p`
-  font-size: 1em;
-  letter-spacing: 1px;
+  font-size: 1.125em;
   margin: 0px;
 `;
 
