@@ -37,11 +37,13 @@ const Button = styled.button`
   }
 `;
 
-const DownloadButton = ({baseUrl}) => (
+const DownloadButton = () => (
   <DivDownload>
     <Form
       method="get"
-      action={`${baseUrl}/static/file/resume-JacksonFletcher.pdf`}
+      action={
+        'https://storage.cloud.google.com/jackfletch/static/documents/JacksonFletcherResume.pdf'
+      }
     >
       <Button type="submit">
         <svg
