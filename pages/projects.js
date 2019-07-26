@@ -19,7 +19,8 @@ const projects = {
     title: 'Undergraduate Thesis',
     thumbnail: '',
     category: 'Research',
-    link: 'https://jackfletch.com/static/thesis.pdf',
+    link:
+      'https://storage.cloud.google.com/jackfletch/static/documents/thesis.pdf',
     excerpt: 'Analysis of an Embedded Device using Machine Learning',
     date: new Date(2019, 5, 26),
   },
