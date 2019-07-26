@@ -69,25 +69,37 @@ const DateH5 = styled.h5`
   line-height: 1rem;
 `;
 
+function ConditionalLink(props) {
+  const anchor = (
+    <a href={props.href} style={{textDecoration: 'none'}}>
+      {props.children}
+    </a>
+  );
+  const externalUrl = props.href.indexOf('http') === 0;
+  if (externalUrl) {
+    return anchor;
+  } else {
+    return <Link href={props.href}>{anchor}</Link>;
+  }
+}
+
 const Card = ({value}) => {
   const {category, title, excerpt, date, link, color} = value;
   return (
     <ColumnDiv>
-      <Link href={link}>
-        <a style={{textDecoration: 'none'}}>
-          <CardArticle>
-            <CategoryH3
-              className="article__category"
-              style={{backgroundColor: color}}
-            >
-              {category}
-            </CategoryH3>
-            <TitleH2 className="article__title">{title}</TitleH2>
-            <ExcerptP className="article__excerpt">{excerpt}</ExcerptP>
-            <DateH5>{date.toDateString().slice(4)}</DateH5>
-          </CardArticle>
-        </a>
-      </Link>
+      <ConditionalLink href={link}>
+        <CardArticle>
+          <CategoryH3
+            className="article__category"
+            style={{backgroundColor: color}}
+          >
+            {category}
+          </CategoryH3>
+          <TitleH2 className="article__title">{title}</TitleH2>
+          <ExcerptP className="article__excerpt">{excerpt}</ExcerptP>
+          <DateH5>{date.toDateString().slice(4)}</DateH5>
+        </CardArticle>
+      </ConditionalLink>
     </ColumnDiv>
   );
 };
