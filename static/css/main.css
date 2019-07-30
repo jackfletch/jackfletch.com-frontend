@@ -58,3 +58,7 @@ body {
   padding-bottom: 60px;
   padding-top: 20px;
 }
+
+.page > div:first-of-type {
+  margin-top: 65px;
+}

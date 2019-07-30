@@ -58,21 +58,8 @@ const innerContentContainerStyle = {
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
-  width: '90%',
   maxWidth: '960px',
-  margin: '0 auto',
 };
-
-const outerContentContainerStyle = {
-  marginTop: '60px',
-};
-
-const H2 = styled.h2`
-  margin-top: 60px;
-  @media screen and (max-width: 991px) {
-    margin-top: 52.625px;
-  }
-`;
 
 class ProjectsPage extends React.Component {
   static propTypes = {
@@ -92,10 +79,7 @@ class ProjectsPage extends React.Component {
       <>
         <Meta baseUrl={baseUrl} staticPage={{title}} />
         <Page baseUrl={baseUrl}>
-          <ContentContainer
-            innerStyle={innerContentContainerStyle}
-            outerStyle={outerContentContainerStyle}
-          >
+          <ContentContainer innerStyle={innerContentContainerStyle}>
             {Object.keys(projects).map(project => (
               <Card key={project} value={projects[project]} />
             ))}

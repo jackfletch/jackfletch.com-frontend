@@ -10,12 +10,6 @@ const H1 = styled.h1`
   letter-spacing: 0.1em;
   word-spacing: 0.25em;
 `;
-const DivTop = styled.div`
-  margin-top: 60px;
-  @media screen and (max-width: 991px) {
-    margin-top: 52.625px;
-  }
-`;
 
 const Section = styled.section`
   flex: 1;
@@ -71,10 +65,8 @@ class CvPage extends React.Component {
         <Meta baseUrl={baseUrl} staticPage={{title}} />
         <Page baseUrl={baseUrl}>
           <ContentContainer>
-            <DivTop>
-              <h2>This is the CV page</h2>
-              <DownloadButton baseUrl={baseUrl} />
-            </DivTop>
+            <h2>This is the CV page</h2>
+            <DownloadButton baseUrl={baseUrl} />
           </ContentContainer>
           <div
             className="sec padY20"

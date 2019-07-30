@@ -1,12 +1,10 @@
 import React from 'react';
-import Link from 'next/link';
 import styled from 'styled-components';
 import LinkSmoothScroll from './LinkSmoothScroll';
 
 const HeroDiv = styled.div`
   background-size: calc(60vmin - 45px) calc(80vmin - 60px);
-  height: calc(100vh - 60px);
-  margin-top: 60px;
+  height: calc(100vh - 65px);
 
   @media screen and (min-width: 576px) {
     background-size: 240px 320px;

@@ -30,6 +30,14 @@ const RowDiv = styled.div`
   }
 `;
 
+const innerContentContainerStyle = {
+  maxWidth: '960px',
+};
+
+const outerContentContainerStyle = {
+  backgroundColor: 'rgb(192, 192, 192)',
+};
+
 class IndexPage extends React.Component {
   static propTypes = {
     router: PropTypes.object.isRequired,
@@ -71,7 +79,10 @@ class IndexPage extends React.Component {
               backgroundRepeat: 'no-repeat',
             }}
           />
-          <ContentContainer>
+          <ContentContainer
+            outerStyle={outerContentContainerStyle}
+            innerStyle={innerContentContainerStyle}
+          >
             <SubTitle>MY WORK</SubTitle>
             <SubText className="extPad">
               I excelled in school but craved opportunities to apply that
