@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
 import styled from 'styled-components';
+import {ConditionalLink} from '../components';
 
 const ColumnDiv = styled.div`
   flex-basis: calc(100% / 3);
@@ -68,20 +68,6 @@ const DateH5 = styled.h5`
   font-size: 0.875rem;
   line-height: 1rem;
 `;
-
-function ConditionalLink(props) {
-  const anchor = (
-    <a href={props.href} style={{textDecoration: 'none'}}>
-      {props.children}
-    </a>
-  );
-  const externalUrl = props.href.indexOf('http') === 0;
-  if (externalUrl) {
-    return anchor;
-  } else {
-    return <Link href={props.href}>{anchor}</Link>;
-  }
-}
 
 const Card = ({value}) => {
   const {category, title, excerpt, date, link, color} = value;
