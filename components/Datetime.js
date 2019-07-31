@@ -15,7 +15,7 @@ function formatDate(date) {
 
 const Datetime = ({date}) => {
   const t = new Date(date);
-  return <Time dateTime={t}>{formatDate(t)}</Time>;
+  return <Time>{formatDate(t)}</Time>;
 };
 
 export default Datetime;
