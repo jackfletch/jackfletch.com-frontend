@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ConditionalLink} from '../components';
+import {ConditionalLink, Datetime} from '../components';
 
 const ColumnDiv = styled.div`
   flex-basis: calc(100% / 3);
@@ -63,12 +63,6 @@ const ExcerptP = styled.p`
   line-height: 1.5rem;
 `;
 
-const DateH5 = styled.h5`
-  color: #444;
-  font-size: 0.875rem;
-  line-height: 1rem;
-`;
-
 const Card = ({value}) => {
   const {category, title, excerpt, date, link, color} = value;
   return (
@@ -83,7 +77,7 @@ const Card = ({value}) => {
           </CategoryH3>
           <TitleH2 className="article__title">{title}</TitleH2>
           <ExcerptP className="article__excerpt">{excerpt}</ExcerptP>
-          <DateH5>{date.toDateString().slice(4)}</DateH5>
+          <Datetime date={date} />
         </CardArticle>
       </ConditionalLink>
     </ColumnDiv>
