@@ -1,10 +1,15 @@
+import {forwardRef} from 'react';
 import Link from 'next/link';
 
-const Anchor = ({children, href, style}) => (
-  <a href={href} style={{...style, color: 'inherit', textDecoration: 'none'}}>
+const Anchor = forwardRef(({children, href, style}, ref) => (
+  <a
+    ref={ref}
+    href={href}
+    style={{...style, color: 'inherit', textDecoration: 'none'}}
+  >
     {children}
   </a>
-);
+));
 
 const ConditionalLink = ({children, href, style}) => {
   const anchor = (
