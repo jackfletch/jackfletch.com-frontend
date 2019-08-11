@@ -2,26 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
 import styled from 'styled-components';
-import {ContentContainer, Datetime, Meta, Page} from '../components';
+import {BlogCard, ContentContainer, Meta, Page} from '../components';
 import {getBaseUrl} from '../lib';
-
-const H3 = styled.h3`
-  margin: 0;
-  font-size: 1.125rem;
-  font-weight: 600;
-`;
-
-const Article = styled.article`
-  background: #fff;
-  margin: 0.5rem 0;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: 0.2s ease;
-
-  &:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.5);
-  }
-`;
 
 const P = styled.p`
   margin-top: 0.5rem;
@@ -64,12 +46,7 @@ class BlogPage extends React.Component {
         <Page baseUrl={baseUrl}>
           <ContentContainer innerStyle={innerContentContainerStyle}>
             {posts.map(post => (
-              <Article key={post.slug}>
-                <H3>{post.title}</H3>
-                <P>
-                  {post.summary} <Datetime date={post.date} />
-                </P>
-              </Article>
+              <BlogCard key={post.slug} post={post} />
             ))}
           </ContentContainer>
         </Page>
