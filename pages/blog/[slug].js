@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
-import {ContentContainer, Meta, Page} from '../../components';
+import ReactMarkdown from 'react-markdown';
+import {ContentContainer, Meta, Page, Datetime} from '../../components';
 import {getBaseUrl} from '../../lib';
 
 const innerContentContainerStyle = {
@@ -13,6 +14,7 @@ class PostPage extends React.Component {
     baseUrl: PropTypes.string.isRequired,
     post: PropTypes.shape({
       author: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
       slug: PropTypes.string.isRequired,
       summary: PropTypes.string.isRequired,
@@ -34,15 +36,21 @@ class PostPage extends React.Component {
   render() {
     const title = 'Fletcher Labs';
     const {baseUrl, post} = this.props;
+    i = 0;
 
     return (
       <>
         <Meta baseUrl={baseUrl} staticPage={{title}} />
         <Page baseUrl={baseUrl}>
-          <ContentContainer innerStyle={innerContentContainerStyle}>
-            <pre>
-              <code>{JSON.stringify(post, undefined, 4)}</code>
-            </pre>
+          <ContentContainer
+            className="post"
+            innerStyle={innerContentContainerStyle}
+          >
+            <h1>{post.title}</h1>
+            <Datetime date={post.date} />
+            <div className="body">
+              <ReactMarkdown>{post.content}</ReactMarkdown>
+            </div>
           </ContentContainer>
         </Page>
       </>
