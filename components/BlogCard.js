@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Datetime} from '../components';
+import {ConditionalLink, Datetime} from '../components';
 
 const Article = styled.article`
   margin: 0.5rem 0;
@@ -26,12 +26,14 @@ const P = styled.p`
 const BlogCard = ({post}) => {
   const {date, summary, title} = post;
   return (
-    <Article>
-      <H3>{title}</H3>
-      <P>
-        {summary} <Datetime date={date} />
-      </P>
-    </Article>
+    <ConditionalLink key={post.slug} href={`/blog/${post.slug}`}>
+      <Article>
+        <H3>{title}</H3>
+        <P>
+          {summary} <Datetime date={date} />
+        </P>
+      </Article>
+    </ConditionalLink>
   );
 };
 
