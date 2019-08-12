@@ -92,6 +92,13 @@ const Header = ({baseUrl}) => (
             </Link>
           </Li>
           <Li>
+            <Link href="/blog">
+              <a className="nav-link" style={linkStyle}>
+                Blog
+              </a>
+            </Link>
+          </Li>
+          <Li>
             <Link href="/cv">
               <a className="nav-link" style={linkStyle}>
                 CV
