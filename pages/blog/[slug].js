@@ -9,6 +9,52 @@ const innerContentContainerStyle = {
   maxWidth: '720px',
 };
 
+var i = 0;
+function getSnippetIndex() {
+  return i++;
+}
+
+function CodeBlock(props) {
+  const className = props.language && `language-${props.language} hljs`;
+  const code = React.createElement(
+    'code',
+    className ? {className: className} : null,
+    props.value
+  );
+  const preClassName =
+    props.language &&
+    (props.language.indexOf('none') !== -1 ||
+      props.language.indexOf('txt') !== -1)
+      ? 'nohighlight'
+      : 'highlight';
+  return React.createElement(
+    'pre',
+    {
+      ...getCoreProps(props),
+      className: preClassName,
+      id: `snippet-${getSnippetIndex()}`,
+    },
+    code
+  );
+}
+
+function Heading(props) {
+  if (props.level === 1) {
+    return null;
+  }
+  return React.createElement(
+    `h${props.level}`,
+    getCoreProps(props),
+    props.children
+  );
+}
+
+function getCoreProps(props) {
+  return props['data-sourcepos']
+    ? {'data-sourcepos': props['data-sourcepos']}
+    : {};
+}
+
 class PostPage extends React.Component {
   static propTypes = {
     baseUrl: PropTypes.string.isRequired,
@@ -49,7 +95,9 @@ class PostPage extends React.Component {
             <h1>{post.title}</h1>
             <Datetime date={post.date} />
             <div className="body">
-              <ReactMarkdown>{post.content}</ReactMarkdown>
+              <ReactMarkdown renderers={{code: CodeBlock, heading: Heading}}>
+                {post.content}
+              </ReactMarkdown>
             </div>
           </ContentContainer>
         </Page>
