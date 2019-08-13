@@ -1,18 +1,66 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
-import {ContentContainer, Meta, Page} from '../../components';
+import ReactMarkdown from 'react-markdown';
+import {ContentContainer, Meta, Page, Datetime} from '../../components';
 import {getBaseUrl} from '../../lib';
 
 const innerContentContainerStyle = {
   maxWidth: '720px',
 };
 
+var i = 0;
+function getSnippetIndex() {
+  return i++;
+}
+
+function CodeBlock(props) {
+  const className = props.language && `language-${props.language} hljs`;
+  const code = React.createElement(
+    'code',
+    className ? {className: className} : null,
+    props.value
+  );
+  const preClassName =
+    props.language &&
+    (props.language.indexOf('none') !== -1 ||
+      props.language.indexOf('txt') !== -1)
+      ? 'nohighlight'
+      : 'highlight';
+  return React.createElement(
+    'pre',
+    {
+      ...getCoreProps(props),
+      className: preClassName,
+      id: `snippet-${getSnippetIndex()}`,
+    },
+    code
+  );
+}
+
+function Heading(props) {
+  if (props.level === 1) {
+    return null;
+  }
+  return React.createElement(
+    `h${props.level}`,
+    getCoreProps(props),
+    props.children
+  );
+}
+
+function getCoreProps(props) {
+  return props['data-sourcepos']
+    ? {'data-sourcepos': props['data-sourcepos']}
+    : {};
+}
+
 class PostPage extends React.Component {
   static propTypes = {
     baseUrl: PropTypes.string.isRequired,
     post: PropTypes.shape({
       author: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
       slug: PropTypes.string.isRequired,
       summary: PropTypes.string.isRequired,
@@ -34,15 +82,23 @@ class PostPage extends React.Component {
   render() {
     const title = 'Fletcher Labs';
     const {baseUrl, post} = this.props;
+    i = 0;
 
     return (
       <>
         <Meta baseUrl={baseUrl} staticPage={{title}} />
         <Page baseUrl={baseUrl}>
-          <ContentContainer innerStyle={innerContentContainerStyle}>
-            <pre>
-              <code>{JSON.stringify(post, undefined, 4)}</code>
-            </pre>
+          <ContentContainer
+            className="post"
+            innerStyle={innerContentContainerStyle}
+          >
+            <h1>{post.title}</h1>
+            <Datetime date={post.date} />
+            <div className="body">
+              <ReactMarkdown renderers={{code: CodeBlock, heading: Heading}}>
+                {post.content}
+              </ReactMarkdown>
+            </div>
           </ContentContainer>
         </Page>
       </>
