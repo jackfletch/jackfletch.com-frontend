@@ -19,6 +19,7 @@ const Page = ({baseUrl, children}) => (
       type="text/javascript"
     />
     <script src={`${baseUrl}/static/js/bootstrap.js`} type="text/javascript" />
+    <script async src={`${baseUrl}/static/js/highlight.js`} />
   </PageLayout>
 );
 

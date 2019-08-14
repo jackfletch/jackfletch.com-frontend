@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Test Post 1",
+    "slug": "test1",
+    "author": "Jack Fletcher",
+    "date": "2019-08-04T03:34:56.731Z",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae congue nibh. Nunc nisi velit, gravida non dui sed, accumsan porttitor augue. Nunc fermentum purus eu sodales pellentesque. Nam ut elementum ipsum, quis venenatis odio. Cras porta accumsan ullamcorper. Curabitur sit amet velit augue.",
+    "content": "# React & Markdown App\n* Benefits of using React... but...\n* Write layout in Markdown!\n```sh\nls -al\n```"
+  },
+  {
+    "title": "Test Post 2",
+    "slug": "test2",
+    "author": "Jack Fletcher",
+    "date": "2019-08-07T03:33:41.571Z",
+    "summary": " Maecenas convallis mi at condimentum placerat. Phasellus pulvinar elit congue mauris malesuada, et faucibus lorem dapibus. Donec ante lectus, suscipit sed finibus at, ullamcorper vel erat. Donec tempor dui vel sodales pharetra. Nulla malesuada felis lacus, sed rhoncus mauris ullamcorper at. Maecenas fringilla, erat quis venenatis pharetra, leo velit porta mi, non ultrices arcu felis et nibh.",
+    "content": "```go\nfunc server() {\n    gotalk.Handle(\"greet\", func(in GreetIn) (GreetOut, error) {\n        return GreetOut{\"Hello \" + in.Name}, nil\n    })\n    if err := gotalk.Serve(\"tcp\", \"localhost:1234\"); err != nil {\n        log.Fatalln(err)\n    }\n}\n```"
+  },
+  {
+    "title": "Test Post 3",
+    "slug": "test3",
+    "author": "Jack Fletcher",
+    "date": "2019-08-10T03:32:22.887Z",
+    "summary": "Donec finibus viverra pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam libero est, placerat ut nulla et, aliquam suscipit odio. Nulla finibus diam id odio dapibus, a gravida tellus venenatis. Morbi non nisi non nunc facilisis dictum. Suspendisse potenti. Nulla tempus pretium mauris id mattis.",
+    "content": "# React & Markdown App\n* Benefits of using React... but...\n* Write layout in Markdown!\n```sh\nls -al\n```"
+  }
+]
