@@ -8,9 +8,9 @@ const PageLayout = styled.div`
   scroll-behavior: smooth;
 `;
 
-const Page = ({baseUrl, children}) => (
+const Page = ({baseUrl, children, noHeader}) => (
   <PageLayout className="page">
-    <Header baseUrl={baseUrl} />
+    {noHeader ? null : <Header baseUrl={baseUrl} />}
     {children}
     <Footer />
     <script
