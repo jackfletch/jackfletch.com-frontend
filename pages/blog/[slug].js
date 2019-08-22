@@ -14,7 +14,7 @@ function getSnippetIndex() {
   return i++;
 }
 
-function CodeBlock(props) {
+function CodeBlockRenderer(props) {
   const className = props.language && `language-${props.language} hljs`;
   const code = React.createElement(
     'code',
@@ -38,13 +38,19 @@ function CodeBlock(props) {
   );
 }
 
-function Heading(props) {
+function HeadingRenderer(props) {
   if (props.level === 1) {
     return null;
   }
+  var children = React.Children.toArray(props.children);
+  var text = children.reduce(flatten, '');
+  var slug = text.toLowerCase().replace(/\W/g, '-');
   return React.createElement(
     `h${props.level}`,
-    getCoreProps(props),
+    {
+      ...getCoreProps(props),
+      id: slug,
+    },
     props.children
   );
 }
@@ -53,6 +59,12 @@ function getCoreProps(props) {
   return props['data-sourcepos']
     ? {'data-sourcepos': props['data-sourcepos']}
     : {};
+}
+
+function flatten(text, child) {
+  return typeof child === 'string'
+    ? text + child
+    : React.Children.toArray(child.props.children).reduce(flatten, text);
 }
 
 class PostPage extends React.Component {
@@ -95,7 +107,9 @@ class PostPage extends React.Component {
             <h1>{post.title}</h1>
             <Datetime date={post.date} />
             <div className="body">
-              <ReactMarkdown renderers={{code: CodeBlock, heading: Heading}}>
+              <ReactMarkdown
+                renderers={{code: CodeBlockRenderer, heading: HeadingRenderer}}
+              >
                 {post.content}
               </ReactMarkdown>
             </div>
