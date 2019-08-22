@@ -1,12 +1,3 @@
-@font-face {
-  font-family: "Decima Mono Pro";
-  src: url(../fonts/decimamonopro-webfont.woff2) format("woff2");
-}
-
-/* .navbar {
-  font-family: "Decima Mono Pro", "Roboto";
-} */
-
 body {
   font-family: "Montserrat", sans-serif;
 }
