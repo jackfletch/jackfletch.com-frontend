@@ -30,6 +30,12 @@ const SFooter = styled.footer`
   text-align: center;
 `;
 
+const Ul = styled.ul`
+  padding: 0;
+  margin: 0;
+  text-align: center;
+`;
+
 const P = styled.p`
   margin: 0 auto;
 `;
@@ -38,7 +44,7 @@ const Footer = () => (
   <SFooter className="bottom">
     <Div className="container">
       <p>STAY CONNECTED</p>
-      <ul className="centerLinks">
+      <Ul>
         <li className="d-inline-block">
           <a
             href="https://twitter.com/no_fletch_zone"
@@ -84,7 +90,7 @@ const Footer = () => (
             <Img src="/static/img/icons/email.png" alt="email" />
           </a>
         </li>
-      </ul>
+      </Ul>
     </Div>
 
     <DivBottomLinks>
