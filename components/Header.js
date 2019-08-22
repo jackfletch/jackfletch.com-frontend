@@ -51,7 +51,7 @@ const Li = styled.li`
 `;
 
 const Header = ({baseUrl}) => (
-  <Nav className="navbar navbar-expand-lg fixed-top">
+  <Nav className="navbar navbar-expand-lg">
     <div className="container">
       <Link href="/">
         <a>
