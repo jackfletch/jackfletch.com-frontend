@@ -10,12 +10,19 @@ const InnerDiv = styled.div`
   padding-top: 40px;
 `;
 
-const ContentContainer = ({innerStyle, outerStyle, children}) => (
-  <OuterDiv className="container-fluid" style={outerStyle}>
-    <InnerDiv className="container" style={innerStyle}>
-      {children}
-    </InnerDiv>
-  </OuterDiv>
-);
+const ContentContainer = ({className, innerStyle, outerStyle, children}) => {
+  const defaultClassName = ['container', 'content'];
+  if (className !== undefined) {
+    defaultClassName.push(className.split(' '));
+  }
+
+  return (
+    <OuterDiv className="container-fluid" style={outerStyle}>
+      <InnerDiv className={defaultClassName.join(' ')} style={innerStyle}>
+        {children}
+      </InnerDiv>
+    </OuterDiv>
+  );
+};
 
 export default ContentContainer;
