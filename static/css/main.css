@@ -1,64 +1,9 @@
-@font-face {
-  font-family: "Decima Mono Pro";
-  src: url(../fonts/decimamonopro-webfont.woff2) format("woff2");
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
 }
 
-/* .navbar {
-  font-family: "Decima Mono Pro", "Roboto";
-} */
-
-body {
-  font-family: "Montserrat", sans-serif;
-}
-
-.sec > .container {
-  padding-bottom: 40px;
-  padding-top: 40px;
-}
-
-.centerLinks {
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-.extraSpace {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-
-.padY20 {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.padY40 {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.padY60 {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.padX0 {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-@media (max-width: 991px) {
-  .extraSpace {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-}
-
-.extPad {
-  padding-bottom: 60px;
-  padding-top: 20px;
-}
-
-.page > div:first-of-type {
-  margin-top: 65px;
+h1.welcome > a,
+h1.welcome > a:hover {
+  color: rgba(3, 102, 214, 1) !important;
 }

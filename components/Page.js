@@ -5,13 +5,12 @@ import Header from './Header';
 import Footer from './Footer';
 
 const PageLayout = styled.div`
-  font-size: 1.25rem;
   scroll-behavior: smooth;
 `;
 
-const Page = ({baseUrl, children}) => (
+const Page = ({baseUrl, children, noHeader}) => (
   <PageLayout className="page">
-    <Header baseUrl={baseUrl} />
+    {noHeader ? null : <Header baseUrl={baseUrl} />}
     {children}
     <Footer />
     <script

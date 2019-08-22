@@ -22,16 +22,9 @@ class AboutPage extends React.Component {
     return (
       <>
         <Meta baseUrl={baseUrl} staticPage={{title}} />
-        <Page baseUrl={baseUrl}>
+        <Page baseUrl={baseUrl} noHeader>
           <ContentContainer>
-            <h2>
-              This is where I talk about me. If you'd prefer a CV or CV-like
-              webpage, try&nbsp;
-              <Link href="/cv">
-                <a>here</a>
-              </Link>
-              .
-            </h2>
+            <h1>This is TODO.</h1>
           </ContentContainer>
         </Page>
       </>

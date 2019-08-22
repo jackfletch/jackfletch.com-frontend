@@ -22,7 +22,7 @@ const Nav = styled.nav`
   background-color: #ffffff;
   border-bottom: solid 1px #dadce0;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.12);
-  font-family: 'Montserrat', 'Roboto';
+  font-family: 'Inter', 'Roboto';
   transition: height 0.5s, line-height 0.5s;
   a.navbar-brand {
     font-size: 1.25rem;
@@ -51,7 +51,7 @@ const Li = styled.li`
 `;
 
 const Header = ({baseUrl}) => (
-  <Nav className="navbar navbar-expand-lg fixed-top">
+  <Nav className="navbar navbar-expand-lg">
     <div className="container">
       <Link href="/">
         <a>
@@ -85,13 +85,6 @@ const Header = ({baseUrl}) => (
       >
         <ul className="navbar-nav mr-auto">
           <Li>
-            <Link href="/about">
-              <a className="nav-link" style={linkStyle}>
-                About
-              </a>
-            </Link>
-          </Li>
-          <Li>
             <Link href="/blog">
               <a className="nav-link" style={linkStyle}>
                 Blog
@@ -99,7 +92,7 @@ const Header = ({baseUrl}) => (
             </Link>
           </Li>
           <Li>
-            <Link href="/cv">
+            <Link href="https://storage.cloud.google.com/jackfletch/static/documents/JacksonFletcherResume.pdf">
               <a className="nav-link" style={linkStyle}>
                 CV
               </a>
