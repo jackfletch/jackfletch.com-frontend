@@ -16,6 +16,8 @@ const Section = styled.section`
   /* position: relative; */
   /* width: inherit; */
   background-color: #ddd;
+  padding-bottom: 40px;
+  padding-top: 40px;
   ul {
     list-style: none;
     li :not(:last-child) {
@@ -69,7 +71,6 @@ class CvPage extends React.Component {
             <DownloadButton baseUrl={baseUrl} />
           </ContentContainer>
           <div
-            className="sec padY20"
             style={{
               backgroundColor: 'rgb(10, 112, 103)',
               color: '#333',
@@ -117,7 +118,6 @@ class CvPage extends React.Component {
             </Section>
           </div>
           <div
-            className="sec padY20"
             style={{
               backgroundColor: 'rgb(10, 112, 103)',
               color: '#333',

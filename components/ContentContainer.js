@@ -5,11 +5,16 @@ const OuterDiv = styled.div`
   color: rgb(33, 33, 33);
 `;
 
+const InnerDiv = styled.div`
+  padding-bottom: 40px;
+  padding-top: 40px;
+`;
+
 const ContentContainer = ({innerStyle, outerStyle, children}) => (
-  <OuterDiv className="container-fluid sec" style={outerStyle}>
-    <div className="container" style={innerStyle}>
+  <OuterDiv className="container-fluid" style={outerStyle}>
+    <InnerDiv className="container" style={innerStyle}>
       {children}
-    </div>
+    </InnerDiv>
   </OuterDiv>
 );
 

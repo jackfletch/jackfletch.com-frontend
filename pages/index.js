@@ -6,13 +6,10 @@ import styled from 'styled-components';
 import {ContentContainer, Hero, Meta, Page} from '../components';
 import {getBaseUrl} from '../lib';
 
-const SubTitle = styled.h3`
-  letter-spacing: 10px;
-  padding-bottom: 60px;
-`;
-
 const SubText = styled.p`
-  font-size: 1.125em;
+  font-size: 1.125rem;
+  padding-bottom: 60px;
+  padding-top: 20px;
   margin: 0px;
 `;
 
@@ -24,7 +21,7 @@ const RowDiv = styled.div`
     > ul {
       padding: 0 0 0 20px;
       > li {
-        font-size: 0.8em;
+        font-size: 0.8rem;
       }
     }
   }
@@ -83,8 +80,8 @@ class IndexPage extends React.Component {
             outerStyle={outerContentContainerStyle}
             innerStyle={innerContentContainerStyle}
           >
-            <SubTitle>MY WORK</SubTitle>
-            <SubText className="extPad">
+            <h1>My Work</h1>
+            <SubText>
               I excelled in school but craved opportunities to apply that
               learning. I want to solve real-world problems. While serving as a
               portfolio and blog, this website also triples as an educational
