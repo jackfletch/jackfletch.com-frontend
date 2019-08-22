@@ -7,3 +7,7 @@ h1.welcome > a,
 h1.welcome > a:hover {
   color: rgba(3, 102, 214, 1) !important;
 }
+
+div.content.post {
+  margin-bottom: 60px;
+}

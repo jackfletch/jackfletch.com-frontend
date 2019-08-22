@@ -258,7 +258,6 @@ nav ul li a[href].active {
 div.content {
   background: inherit;
   margin-top: 0;
-  /* margin-bottom: 60px; */
 }
 body.noheader div.content {
   margin-top: 3em;
