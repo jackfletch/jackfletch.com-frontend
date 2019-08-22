@@ -94,7 +94,9 @@ const Footer = () => (
     </Div>
 
     <DivBottomLinks>
-      <P>&copy; Jack Fletcher {new Date().getFullYear()}</P>
+      <P>
+        <small>&copy; {new Date().getFullYear()} Jack Fletcher</small>
+      </P>
     </DivBottomLinks>
   </SFooter>
 );
