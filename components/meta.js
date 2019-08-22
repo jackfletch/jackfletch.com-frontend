@@ -45,6 +45,7 @@ const Meta = ({staticPage, baseUrl}) => (
     <link rel="stylesheet" href={`${baseUrl}/static/css/bootstrap-grid.css`} /> */}
     <link rel="stylesheet" href={`${baseUrl}/static/css/bootstrap.css`} />
     <link rel="stylesheet" href={`${baseUrl}/static/css/main.css`} />
+    <link rel="stylesheet" href={`${baseUrl}/static/css/screen.css`} />
     <link rel="stylesheet" href={`${baseUrl}/static/css/highlight.css`} />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat"

@@ -15,6 +15,7 @@ const Article = styled.article`
 const H3 = styled.h3`
   font-size: 1.125rem;
   font-weight: 600;
+  margin: 0;
 `;
 
 const P = styled.p`

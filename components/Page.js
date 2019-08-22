@@ -5,7 +5,6 @@ import Header from './Header';
 import Footer from './Footer';
 
 const PageLayout = styled.div`
-  font-size: 1.25rem;
   scroll-behavior: smooth;
 `;
 
