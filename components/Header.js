@@ -85,13 +85,6 @@ const Header = ({baseUrl}) => (
       >
         <ul className="navbar-nav mr-auto">
           <Li>
-            <Link href="/about">
-              <a className="nav-link" style={linkStyle}>
-                About
-              </a>
-            </Link>
-          </Li>
-          <Li>
             <Link href="/blog">
               <a className="nav-link" style={linkStyle}>
                 Blog
