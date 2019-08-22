@@ -99,7 +99,7 @@ const Header = ({baseUrl}) => (
             </Link>
           </Li>
           <Li>
-            <Link href="/cv">
+            <Link href="https://storage.cloud.google.com/jackfletch/static/documents/JacksonFletcherResume.pdf">
               <a className="nav-link" style={linkStyle}>
                 CV
               </a>

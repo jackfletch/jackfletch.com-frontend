@@ -27,7 +27,7 @@ class AboutPage extends React.Component {
             <h2>
               This is where I talk about me. If you'd prefer a CV or CV-like
               webpage, try&nbsp;
-              <Link href="/cv">
+              <Link href="https://storage.cloud.google.com/jackfletch/static/documents/JacksonFletcherResume.pdf">
                 <a>here</a>
               </Link>
               .
