@@ -92,11 +92,13 @@ const Header = ({baseUrl}) => (
             </Link>
           </Li>
           <Li>
-            <Link href="https://storage.cloud.google.com/jackfletch/static/documents/JacksonFletcherResume.pdf">
-              <a className="nav-link" style={linkStyle}>
-                CV
-              </a>
-            </Link>
+            <a
+              className="nav-link"
+              href="https://storage.cloud.google.com/jackfletch/static/documents/JacksonFletcherResume.pdf"
+              style={linkStyle}
+            >
+              CV
+            </a>
           </Li>
           <Li>
             <Link href="/projects">

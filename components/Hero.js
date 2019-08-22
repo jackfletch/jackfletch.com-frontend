@@ -36,9 +36,9 @@ const Hero = () => (
             <a>projects</a>
           </Link>
           , and{' '}
-          <Link href="https://storage.cloud.google.com/jackfletch/static/documents/JacksonFletcherResume.pdf">
-            <a>résumé</a>
-          </Link>
+          <a href="https://storage.cloud.google.com/jackfletch/static/documents/JacksonFletcherResume.pdf">
+            résumé
+          </a>
           .
         </H1>
       </MessageDiv>
