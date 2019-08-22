@@ -22,7 +22,7 @@ const Nav = styled.nav`
   background-color: #ffffff;
   border-bottom: solid 1px #dadce0;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.12);
-  font-family: 'Montserrat', 'Roboto';
+  font-family: 'Inter', 'Roboto';
   transition: height 0.5s, line-height 0.5s;
   a.navbar-brand {
     font-size: 1.25rem;

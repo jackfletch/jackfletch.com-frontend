@@ -48,10 +48,6 @@ const Meta = ({staticPage, baseUrl}) => (
     <link rel="stylesheet" href={`${baseUrl}/static/css/screen.css`} />
     <link rel="stylesheet" href={`${baseUrl}/static/css/highlight.css`} />
     <link
-      href="https://fonts.googleapis.com/css?family=Montserrat"
-      rel="stylesheet"
-    />
-    <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
