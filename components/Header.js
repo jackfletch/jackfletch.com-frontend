@@ -50,7 +50,7 @@ const Li = styled.li`
   }
 `;
 
-const Header = ({baseUrl}) => (
+const Header = () => (
   <Nav className="navbar navbar-expand-lg">
     <div className="container">
       <Link href="/">
@@ -73,9 +73,7 @@ const Header = ({baseUrl}) => (
         aria-label="Toggle navigation"
       >
         <span
-          style={{
-            backgroundImage: `url(${baseUrl}/static/img/toggle.svg)`,
-          }}
+          style={{backgroundImage: 'url(/static/img/toggle.svg)'}}
           className="navbar-toggler-icon"
         />
       </Button>

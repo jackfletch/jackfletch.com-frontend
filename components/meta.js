@@ -13,7 +13,7 @@ function setGoogleTags() {
   };
 }
 
-const Meta = ({staticPage, baseUrl}) => (
+const Meta = ({staticPage}) => (
   <Head>
     <meta charSet="utf-8" />
     <html lang="en" />
@@ -32,21 +32,21 @@ const Meta = ({staticPage, baseUrl}) => (
         />
         <meta
           property="og:url"
-          content={`${baseUrl}/show/${show.displayNumber}/${slug(
+          content={`/show/${show.displayNumber}/${slug(
             show.title
           )}`}
         />
       </>
     )} */}
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${baseUrl}/static/img/jf.png`} />
-    <link rel="shortcut icon" href={`${baseUrl}/static/favicon.ico`} />
-    {/* <link rel="stylesheet" href={`${baseUrl}/static/css/bootstrap-reboot.css`} />
-    <link rel="stylesheet" href={`${baseUrl}/static/css/bootstrap-grid.css`} /> */}
-    <link rel="stylesheet" href={`${baseUrl}/static/css/bootstrap.css`} />
-    <link rel="stylesheet" href={`${baseUrl}/static/css/main.css`} />
-    <link rel="stylesheet" href={`${baseUrl}/static/css/screen.css`} />
-    <link rel="stylesheet" href={`${baseUrl}/static/css/highlight.css`} />
+    <meta property="og:image" content="/static/img/jf.png" />
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+    {/* <link rel="stylesheet" href="/static/css/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="/static/css/bootstrap-grid.css" /> */}
+    <link rel="stylesheet" href="/static/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="stylesheet" href="/static/css/screen.css" />
+    <link rel="stylesheet" href="/static/css/highlight.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
@@ -68,7 +68,6 @@ Meta.propTypes = {
   staticPage: PropTypes.shape({
     title: PropTypes.string.isRequired,
   }),
-  baseUrl: PropTypes.string.isRequired,
 };
 
 export default Meta;

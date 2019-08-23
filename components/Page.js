@@ -8,22 +8,18 @@ const PageLayout = styled.div`
   scroll-behavior: smooth;
 `;
 
-const Page = ({baseUrl, children, noHeader}) => (
+const Page = ({children, noHeader}) => (
   <PageLayout className="page">
-    {noHeader ? null : <Header baseUrl={baseUrl} />}
+    {noHeader ? null : <Header />}
     {children}
     <Footer />
-    <script
-      src={`${baseUrl}/static/js/jquery-3.3.1.js`}
-      type="text/javascript"
-    />
-    <script src={`${baseUrl}/static/js/bootstrap.js`} type="text/javascript" />
-    <script async src={`${baseUrl}/static/js/highlight.js`} />
+    <script src="/static/js/jquery-3.3.1.js" type="text/javascript" />
+    <script src="/static/js/bootstrap.js" type="text/javascript" />
+    <script async src="/static/js/highlight.js" />
   </PageLayout>
 );
 
 Page.propTypes = {
-  baseUrl: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

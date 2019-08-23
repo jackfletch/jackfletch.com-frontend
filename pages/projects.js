@@ -1,8 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {Card, ContentContainer, Meta, Page} from '../components';
-import {getBaseUrl} from '../lib';
 
 const projects = {
   splash: {
@@ -61,33 +59,21 @@ const innerContentContainerStyle = {
   maxWidth: '960px',
 };
 
-class ProjectsPage extends React.Component {
-  static propTypes = {
-    baseUrl: PropTypes.string.isRequired,
-  };
+const ProjectsPage = () => {
+  const title = 'Fletcher Labs';
 
-  static async getInitialProps({req}) {
-    const baseUrl = getBaseUrl(req);
-    return {baseUrl};
-  }
-
-  render() {
-    const title = 'Fletcher Labs';
-    const {baseUrl} = this.props;
-
-    return (
-      <>
-        <Meta baseUrl={baseUrl} staticPage={{title}} />
-        <Page baseUrl={baseUrl}>
-          <ContentContainer innerStyle={innerContentContainerStyle}>
-            {Object.keys(projects).map(project => (
-              <Card key={project} value={projects[project]} />
-            ))}
-          </ContentContainer>
-        </Page>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <Meta staticPage={{title}} />
+      <Page>
+        <ContentContainer innerStyle={innerContentContainerStyle}>
+          {Object.keys(projects).map(project => (
+            <Card key={project} value={projects[project]} />
+          ))}
+        </ContentContainer>
+      </Page>
+    </>
+  );
+};
 
 export default ProjectsPage;

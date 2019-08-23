@@ -17,7 +17,6 @@ const innerContentContainerStyle = {
 
 class BlogPage extends React.Component {
   static propTypes = {
-    baseUrl: PropTypes.string.isRequired,
     posts: PropTypes.arrayOf(
       PropTypes.shape({
         author: PropTypes.string.isRequired,
@@ -33,17 +32,17 @@ class BlogPage extends React.Component {
     const baseUrl = getBaseUrl(req);
     const posts = await fetch(`${baseUrl}/api/posts`).then(r => r.json());
 
-    return {baseUrl, posts};
+    return {posts};
   }
 
   render() {
-    const {baseUrl, posts} = this.props;
+    const {posts} = this.props;
     const title = 'Fletcher Labs';
 
     return (
       <>
-        <Meta baseUrl={baseUrl} staticPage={{title}} />
-        <Page baseUrl={baseUrl}>
+        <Meta staticPage={{title}} />
+        <Page>
           <ContentContainer innerStyle={innerContentContainerStyle}>
             {posts.map(post => (
               <BlogCard key={post.slug} post={post} />
