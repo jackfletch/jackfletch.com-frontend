@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import {ConditionalLink, Datetime} from '../components';
 
@@ -27,7 +28,7 @@ const P = styled.p`
 const BlogCard = ({post}) => {
   const {date, summary, title} = post;
   return (
-    <ConditionalLink key={post.slug} href={`/blog/${post.slug}`}>
+    <ConditionalLink href="/blog/[slug]" as={`/blog/${post.slug}`}>
       <Article>
         <H3>{title}</H3>
         <P>
