@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Copyright from './Copyright';
 import FooterIconLink from './FooterIconLink';
 import websiteConfig from '../config/website';
 
@@ -10,11 +11,6 @@ const Div = styled.div`
     padding-top: 60px;
     padding-bottom: 60px;
   }
-`;
-
-const DivBottomLinks = styled.div`
-  padding: 30px;
-  background-color: #222222;
 `;
 
 const SFooter = styled.footer`
@@ -29,12 +25,9 @@ const Ul = styled.ul`
   text-align: center;
 `;
 
-const P = styled.p`
-  margin: 0 auto;
-`;
-
 const Footer = () => {
   const networks = Object.keys(websiteConfig.author.contacts);
+  const owner = websiteConfig.author.name;
 
   return (
     <SFooter className="bottom">
@@ -46,12 +39,7 @@ const Footer = () => {
           ))}
         </Ul>
       </Div>
-
-      <DivBottomLinks>
-        <P>
-          <small>&copy; {new Date().getFullYear()} Jack Fletcher</small>
-        </P>
-      </DivBottomLinks>
+      <Copyright date={new Date().getFullYear()} owner={owner} />
     </SFooter>
   );
 };

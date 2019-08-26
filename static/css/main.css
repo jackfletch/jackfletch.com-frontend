@@ -44,3 +44,9 @@ a[href].card-link h3 {
 a[href].card-link:hover {
   text-decoration: none;
 }
+
+footer small#copyright {
+  display: block;
+  padding: 1rem;
+  background-color: #222222;
+}
