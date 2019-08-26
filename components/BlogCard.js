@@ -3,17 +3,18 @@ import styled from 'styled-components';
 import {ConditionalLink, Datetime} from '../components';
 
 const Article = styled.article`
-  margin: 0.5rem 0;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   transition: 0.2s ease;
 
-  &:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.5);
+  @media screen and (min-width: 992px) {
+    &:hover {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.5);
+    }
   }
 `;
 
-const H3 = styled.h3`
+const H2 = styled.h2`
   font-size: 1.125rem;
   font-weight: 600;
   margin: 0;
@@ -28,9 +29,13 @@ const P = styled.p`
 const BlogCard = ({post}) => {
   const {date, summary, title} = post;
   return (
-    <ConditionalLink href="/blog/[slug]" as={`/blog/${post.slug}`}>
+    <ConditionalLink
+      href="/blog/[slug]"
+      as={`/blog/${post.slug}`}
+      className="card-link"
+    >
       <Article>
-        <H3>{title}</H3>
+        <H2>{title}</H2>
         <P>
           {summary} <Datetime date={date} />
         </P>

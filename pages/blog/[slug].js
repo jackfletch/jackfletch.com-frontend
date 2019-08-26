@@ -9,6 +9,10 @@ const innerContentContainerStyle = {
   maxWidth: '720px',
 };
 
+const outerContentContainerStyle = {
+  padding: '0 1rem',
+};
+
 var i = 0;
 function getSnippetIndex() {
   return i++;
@@ -103,6 +107,7 @@ class PostPage extends React.Component {
           <ContentContainer
             className="post"
             innerStyle={innerContentContainerStyle}
+            outerStyle={outerContentContainerStyle}
           >
             <h1>{post.title}</h1>
             <Datetime date={post.date} />

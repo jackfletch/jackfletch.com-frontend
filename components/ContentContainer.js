@@ -6,8 +6,8 @@ const OuterDiv = styled.div`
 `;
 
 const InnerDiv = styled.div`
-  padding-bottom: 40px;
-  padding-top: 40px;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 `;
 
 const ContentContainer = ({className, innerStyle, outerStyle, children}) => {

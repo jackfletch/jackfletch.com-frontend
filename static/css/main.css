@@ -3,6 +3,10 @@ html {
   font-family: "Inter", sans-serif;
 }
 
+div.container-fluid {
+  padding: 0 2rem;
+}
+
 h1.welcome > a,
 h1.welcome > a:hover {
   color: rgba(3, 102, 214, 1) !important;
@@ -10,4 +14,33 @@ h1.welcome > a:hover {
 
 div.content.post {
   margin-bottom: 60px;
+}
+
+div.content > a[href].card-link:last-of-type {
+  margin-bottom: 0;
+}
+
+a[href].card-link {
+  display: block;
+  color: inherit;
+  background: none;
+  text-shadow: none;
+  padding-bottom: 1px;
+  margin-bottom: 1rem;
+}
+
+a[href].card-link,
+a[href].card-link a[href] {
+  background: none;
+  text-shadow: none;
+  text-decoration: none;
+}
+
+a[href].card-link h3 {
+  margin: 0;
+  display: inline-block;
+}
+
+a[href].card-link:hover {
+  text-decoration: none;
 }

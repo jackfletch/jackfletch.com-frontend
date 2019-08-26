@@ -58,6 +58,9 @@ const innerContentContainerStyle = {
   flexWrap: 'wrap',
   maxWidth: '960px',
 };
+const outerContentContainerStyle = {
+  padding: '0 1.5rem',
+};
 
 const ProjectsPage = () => {
   const title = 'Fletcher Labs';
@@ -66,7 +69,10 @@ const ProjectsPage = () => {
     <>
       <Meta staticPage={{title}} />
       <Page>
-        <ContentContainer innerStyle={innerContentContainerStyle}>
+        <ContentContainer
+          innerStyle={innerContentContainerStyle}
+          outerStyle={outerContentContainerStyle}
+        >
           {Object.keys(projects).map(project => (
             <Card key={project} value={projects[project]} />
           ))}
