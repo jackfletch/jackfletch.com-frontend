@@ -2,7 +2,7 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 // import slug from 'speakingurl';
 import {description} from '../package.json';
-import {GA_TRACKING_ID} from '../constants/env';
+import {GA_TRACKING_ID} from '../config/env';
 
 function setGoogleTags() {
   return {
