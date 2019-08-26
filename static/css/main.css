@@ -45,6 +45,23 @@ a[href].card-link:hover {
   text-decoration: none;
 }
 
+footer div.footer__links {
+  background-color: #665500;
+  color: #eee;
+  padding: 120px 0;
+}
+
+footer div.footer__links p {
+  text-transform: uppercase;
+  letter-spacing: 0.05rem
+}
+
+@media screen and (max-width: 991px) {
+  footer div.footer__links {
+    padding: 60px 0;
+  }
+}
+
 footer small#copyright {
   display: block;
   padding: 1rem;

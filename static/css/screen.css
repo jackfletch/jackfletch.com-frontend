@@ -560,7 +560,7 @@ footer {
   color: #ccc;
   display: block;
   /* padding:0 0 1em 0; */
-  /*text-align: center;*/
+  text-align: center;
 }
 footer img.cc {
   display: inline-block;
