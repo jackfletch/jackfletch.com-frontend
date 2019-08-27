@@ -13,9 +13,6 @@ const Page = ({children, noHeader}) => (
     {noHeader ? null : <Header />}
     {children}
     <Footer />
-    <script src="/static/js/jquery-3.3.1.js" type="text/javascript" />
-    <script src="/static/js/bootstrap.js" type="text/javascript" />
-    <script async src="/static/js/highlight.js" />
   </PageLayout>
 );
 
