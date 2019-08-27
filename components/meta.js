@@ -51,7 +51,6 @@ const Meta = ({staticPage}) => (
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
-    <script async src="/static/js/nav.js" />
     <script defer src="/static/js/highlight.js" />
     <title>{staticPage && staticPage.title && `${staticPage.title}`}</title>
     {/* <style

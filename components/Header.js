@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import {handleCollapseElementClick} from '../lib';
 
 const linkStyle = {
   color: '#212121',
@@ -71,6 +72,7 @@ const Header = () => (
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
+        onClick={e => handleCollapseElementClick(e)}
       >
         <span
           style={{backgroundImage: 'url(/static/img/toggle.svg)'}}
