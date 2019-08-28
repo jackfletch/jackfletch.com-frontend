@@ -16,7 +16,6 @@ function setGoogleTags() {
 const Meta = ({staticPage}) => (
   <Head>
     <meta charSet="utf-8" />
-    <html lang="en" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#665500" />
