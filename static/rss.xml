@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Jack Fletcher's Ramblings]]></title>
+        <description><![CDATA[A junior dev's blog about web development, machine learning, visualization, and more.]]></description>
+        <link>https://jackfletch.com/blog</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Thu, 29 Aug 2019 04:36:13 GMT</lastBuildDate>
+        <atom:link href="https://jackfletch.com/static/rss.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Wed, 28 Aug 2019 18:00:00 GMT</pubDate>
+        <language><![CDATA[en]]></language>
+        <managingEditor><![CDATA[jdfletch97@gmail.com (Jack Fletcher)]]></managingEditor>
+        <item>
+            <title><![CDATA[Hello, World]]></title>
+            <description><![CDATA[Words and stuff. See https://jackfletch.com/blog/hello-world.]]></description>
+            <link>https://jackfletch.com/blog/hello-world</link>
+            <guid isPermaLink="false">https://jackfletch.com/blog/hello-world</guid>
+            <pubDate>Thu, 01 Aug 2019 03:32:22 GMT</pubDate>
+            <content:encoded>&lt;p&gt;Words and stuff.&lt;/p&gt;&lt;p&gt;See the &lt;a href=&quot;https://jackfletch.com/blog/hello-world&quot;&gt;complete post&lt;/a&gt; on my website.&lt;/p&gt;</content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Colophon]]></title>
+            <description><![CDATA[A technical description of this site. See https://jackfletch.com/blog/colophon.]]></description>
+            <link>https://jackfletch.com/blog/colophon</link>
+            <guid isPermaLink="false">https://jackfletch.com/blog/colophon</guid>
+            <pubDate>Fri, 02 Aug 2019 03:32:22 GMT</pubDate>
+            <content:encoded>&lt;p&gt;A technical description of this site.&lt;/p&gt;&lt;p&gt;See the &lt;a href=&quot;https://jackfletch.com/blog/colophon&quot;&gt;complete post&lt;/a&gt; on my website.&lt;/p&gt;</content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Committime]]></title>
+            <description><![CDATA[Ever wanted to quickly change the commit or author date of an unsigned git commit? Worried recruiters will discover your o̶d̶d̶ ̶s̶l̶e̶e̶p̶ ̶s̶c̶h̶e̶d̶u̶l̶e̶ code obsession or your significant other will find why you missed their call by tracking git commit times? Look no further. See https://jackfletch.com/blog/committime.]]></description>
+            <link>https://jackfletch.com/blog/committime</link>
+            <guid isPermaLink="false">https://jackfletch.com/blog/committime</guid>
+            <pubDate>Wed, 07 Aug 2019 03:33:41 GMT</pubDate>
+            <content:encoded>&lt;p&gt;Ever wanted to quickly change the commit or author date of an unsigned git commit? Worried recruiters will discover your o̶d̶d̶ ̶s̶l̶e̶e̶p̶ ̶s̶c̶h̶e̶d̶u̶l̶e̶ code obsession or your significant other will find why you missed their call by tracking git commit times? Look no further.&lt;/p&gt;&lt;p&gt;See the &lt;a href=&quot;https://jackfletch.com/blog/committime&quot;&gt;complete post&lt;/a&gt; on my website.&lt;/p&gt;</content:encoded>
+        </item>
+    </channel>
+</rss>

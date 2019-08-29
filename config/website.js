@@ -9,6 +9,7 @@ const websiteConfig = {
       twitter: 'no_fletch_zone',
     },
   },
+  url: 'https://jackfletch.com',
   title: 'Fletcher Labs',
   description:
     "CPE '19 @ Mississippi State. I blog about web development, machine learning, visualization, and more.",
@@ -28,4 +29,4 @@ const websiteConfig = {
   ],
 };
 
-export default websiteConfig;
+module.exports = websiteConfig;
