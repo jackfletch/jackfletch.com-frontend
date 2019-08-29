@@ -23,6 +23,7 @@ const Meta = ({staticPage}) => (
     <link rel="shortcut icon" href="/static/favicon.ico" />
     <script defer src="/static/js/highlight.js" />
     <title>{staticPage && staticPage.title && `${staticPage.title}`}</title>
+    <link rel="alternate" type="application/rss+xml" href="/static/rss.xml" />
     {/* Global Site Tag (gtag.js) - Google Analytics */}
     <script
       async
