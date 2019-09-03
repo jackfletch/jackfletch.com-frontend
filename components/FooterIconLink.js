@@ -26,6 +26,9 @@ const FooterIconLink = ({network}) => {
     linkedin: {
       linkUrl: `https://linkedin.com/in/${username}`,
     },
+    rss: {
+      linkUrl: `${websiteConfig.url}/static/rss.xml`,
+    },
     twitter: {
       linkUrl: `https://twitter.com/${username}`,
     },

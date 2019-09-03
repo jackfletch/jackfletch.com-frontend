@@ -4,6 +4,7 @@ import websiteConfig from '../config/website';
 
 const Footer = () => {
   const networks = Object.keys(websiteConfig.author.contacts);
+  networks.push('rss');
   const owner = websiteConfig.author.name;
 
   return (
