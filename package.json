@@ -20,15 +20,15 @@
     "eslint-plugin-prettier": "^3.0.1",
     "express": "^4.17.1",
     "isomorphic-unfetch": "^3.0.0",
-    "next": "^9.0.2",
+    "next": "^9.0.5",
     "postcss-easy-import": "^3.0.0",
     "postcss-loader": "^3.0.0",
     "prettier-eslint": "^8.8.2",
     "prop-types": "^15.7.2",
     "raw-loader": "^1.0.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-markdown": "^4.1.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-markdown": "^4.2.2",
     "rss": "^1.2.2",
     "styled-components": "^4.1.3"
   },
@@ -39,6 +39,6 @@
     "eslint-plugin-flowtype": "^2.50.3",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4"
+    "eslint-plugin-react": "^7.14.3"
   }
 }
