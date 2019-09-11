@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import {Card, ContentContainer, Meta, Page} from '../components';
 
-const projects = {
-  splash: {
+const projects = [
+  {
+    id: 'splash',
     color: '#FEC006',
     title: 'Splash',
     thumbnail: '',
@@ -12,7 +12,28 @@ const projects = {
     excerpt: 'NBA Shooting Visualization',
     date: new Date(2017, 4, 29),
   },
-  thesis: {
+  {
+    id: 'jackfletch.com',
+    color: '#F4B400',
+    title: 'jackfletch.com Frontend',
+    thumbnail: '',
+    category: 'Web',
+    link: 'https://github.com/jackfletch/jackfletch.com-frontend',
+    excerpt: 'Frontend for jackfletch.com built on Next.js',
+    date: new Date(2019, 8, 12),
+  },
+  {
+    id: 'committime',
+    color: '#0F9D58',
+    title: 'committime',
+    thumbnail: '',
+    category: 'CLI',
+    link: 'https://github.com/jackfletch/committime',
+    excerpt: 'CLI tool for changing git commit times',
+    date: new Date(2019, 7, 9),
+  },
+  {
+    id: 'thesis',
     color: '#2196F3',
     title: 'Undergraduate Thesis',
     thumbnail: '',
@@ -22,7 +43,18 @@ const projects = {
     excerpt: 'Analysis of an Embedded Device using Machine Learning',
     date: new Date(2019, 5, 26),
   },
-  skipLists: {
+  {
+    id: 'embedded',
+    color: '#FE5621',
+    title: 'Embedded Systems Lab',
+    thumbnail: '',
+    category: 'Class Project',
+    link: 'https://github.com/Tuxprogrammer/msu_ece4723',
+    excerpt: 'Labwork for ECE4723 Embedded Systems',
+    date: new Date(2019, 0, 30),
+  },
+  {
+    id: 'skipLists',
     color: '#FE5621',
     title: 'Skip Lists',
     thumbnail: '',
@@ -32,7 +64,8 @@ const projects = {
       'Honors Project for CSE 2383 Data Stuctures and Analysis of Algorithms',
     date: new Date(2016, 11, 12),
   },
-  dotfiles: {
+  {
+    id: 'dotfiles',
     color: '#673AB7',
     title: 'Dotfiles',
     thumbnail: '',
@@ -41,7 +74,8 @@ const projects = {
     excerpt: 'My dotfiles',
     date: new Date(),
   },
-  yahtzee: {
+  {
+    id: 'yahtzee',
     color: '#FE5621',
     title: 'Yahtzee GUI',
     thumbnail: '',
@@ -50,7 +84,7 @@ const projects = {
     excerpt: 'Yahtzee game implementation with a GUI',
     date: new Date(),
   },
-};
+];
 
 const innerContentContainerStyle = {
   display: 'flex',
@@ -73,8 +107,8 @@ const ProjectsPage = () => {
           innerStyle={innerContentContainerStyle}
           outerStyle={outerContentContainerStyle}
         >
-          {Object.keys(projects).map(project => (
-            <Card key={project} value={projects[project]} />
+          {projects.map(project => (
+            <Card key={project.id} value={project} />
           ))}
         </ContentContainer>
       </Page>

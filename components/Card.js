@@ -2,9 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import {ConditionalLink, Datetime} from '../components';
 
+const categoryColors = {
+  'Class Project': '#FE5621',
+  Research: '#4285F4',
+  Config: '#673AB7',
+  CLI: '#0F9D58',
+  Web: '#F4B400',
+  Data: '#F4B400',
+};
+
 const ColumnDiv = styled.div`
-  flex-basis: calc((100% / 3) - 1rem);
-  width: calc((100% / 3) - 1rem);
+  flex-basis: ${props =>
+    props.featured ? 'calc(2 * (100% / 3) - 1rem)' : 'calc((100% / 3) - 1rem)'};
+  width: ${props =>
+    props.featured ? 'calc(2 * (100% / 3) - 1rem)' : 'calc((100% / 3) - 1rem)'};
   margin: 0 0.5rem;
   box-sizing: border-box;
   @media (max-width: 900px) {
@@ -56,15 +67,15 @@ const ExcerptP = styled.p`
 `;
 
 const Card = ({value}) => {
-  const {category, title, excerpt, date, link, color} = value;
+  const {category, title, excerpt, featured, date, link} = value;
   return (
-    <ColumnDiv>
+    <ColumnDiv featured={featured}>
       <ConditionalLink href={link} className="card-link">
         <CardArticle>
           <TitleH2 className="article__title">{title}</TitleH2>
           <CategoryH3
             className="article__category"
-            style={{backgroundColor: color}}
+            style={{backgroundColor: categoryColors[category]}}
           >
             {category}
           </CategoryH3>
