@@ -14,19 +14,6 @@
     }
   },
   "rules": {
-    "no-debugger": 0,
-    "no-alert": 0,
-    "no-await-in-loop": 0,
-    "no-return-assign": [
-      "error",
-      "except-parens"
-    ],
-    "no-restricted-syntax": [
-      2,
-      "ForInStatement",
-      "LabeledStatement",
-      "WithStatement"
-    ],
     "no-unused-vars": [
       1,
       {
@@ -44,26 +31,28 @@
       2,
       "as-needed"
     ],
-    "no-unused-expressions": [
-      2,
-      {
-        "allowTaggedTemplates": true
-      }
+    "no-console": 1,
+    "semi": [
+      "error",
+      "always"
     ],
-    "no-param-reassign": [
-      2,
-      {
-        "props": false
-      }
+    "object-curly-spacing": [
+      "error",
+      "never"
     ],
-    "no-console": 0,
-    "semi": ["error", "always"],
-    "object-curly-spacing": ["error", "never"],
     "import/prefer-default-export": 0,
-    "import": 0,
-    "func-names": 0,
-    "space-before-function-paren": 0,
-    "comma-dangle": 0,
+    "space-before-function-paren": [
+      2,
+      {
+        "asyncArrow": "always",
+        "anonymous": "never",
+        "named": "never"
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
     "max-len": 0,
     "import/extensions": 0,
     "no-underscore-dangle": 0,
