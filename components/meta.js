@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import {description} from '../package.json';
+import {withRouter} from 'next/router';
+import config from '../config/website';
 import {GA_TRACKING_ID} from '../config/env';
 
 function setGoogleTags() {
@@ -12,23 +13,59 @@ function setGoogleTags() {
   };
 }
 
-const Meta = ({staticPage}) => (
+const Meta = ({
+  description = config.description,
+  image,
+  router,
+  schema,
+  title = config.title,
+  type = 'website',
+}) => (
   <Head>
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#665500" />
+
+    {/* open graph */}
+    <meta property="og:title" content={title} />
+    <meta property="og:site_name" content={config.title} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={`${config.url}${router.asPath}`} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/static/img/jf.png" />
+    {image && <meta property="og:image" content={`${config.url}${image}`} />}
+
+    {/* twitter */}
+    <meta name="twitter:site" content={`@${config.author.contacts.twitter}`} />
+    <meta
+      name="twitter:creator"
+      content={`@${config.author.contacts.twitter}`}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {/* favicons */}
     <link rel="shortcut icon" href="/static/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="256x256"
       href="/static/img/icon-256x256.png"
     />
-    <script defer src="/static/js/highlight.js" />
-    <title>{staticPage && staticPage.title && `${staticPage.title}`}</title>
+
+    {/* schema.org schema */}
+    {schema && (
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify(schema)}}
+      />
+    )}
+
+    {/* RSS feed */}
     <link rel="alternate" type="application/rss+xml" href="/static/rss.xml" />
+
+    {/* scripts */}
+    <script defer src="/static/js/highlight.js" />
+
     {/* Global Site Tag (gtag.js) - Google Analytics */}
     <script
       async
@@ -39,9 +76,11 @@ const Meta = ({staticPage}) => (
 );
 
 Meta.propTypes = {
-  staticPage: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-  }),
+  description: PropTypes.string,
+  image: PropTypes.string,
+  schema: PropTypes.object,
+  title: PropTypes.string,
+  type: PropTypes.string,
 };
 
-export default Meta;
+export default withRouter(Meta);
