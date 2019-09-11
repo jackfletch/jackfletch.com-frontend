@@ -21,6 +21,11 @@ const Meta = ({staticPage}) => (
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/static/img/jf.png" />
     <link rel="shortcut icon" href="/static/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="256x256"
+      href="/static/img/icon-256x256.png"
+    />
     <script defer src="/static/js/highlight.js" />
     <title>{staticPage && staticPage.title && `${staticPage.title}`}</title>
     <link rel="alternate" type="application/rss+xml" href="/static/rss.xml" />
