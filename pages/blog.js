@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
 import styled from 'styled-components';
 import {BlogCard, ContentContainer, Meta, Page} from '../components';
+import config from '../config/website';
 import {getBaseUrl} from '../lib';
 
 const P = styled.p`
@@ -37,11 +38,30 @@ class BlogPage extends React.Component {
 
   render() {
     const {posts} = this.props;
-    const title = 'Fletcher Labs';
+    const title = `Blog | ${config.title}`;
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      name: 'Ramblings from Jack',
+      description:
+        "Random posts about things I'm involved with or trying to understand",
+      url: `${config.url}/blog`,
+      author: {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: config.author.name,
+        url: config.url,
+        sameAs: [
+          `https://twitter.com/${config.author.contacts.twitter}`,
+          `https://instagram.com/${config.author.contacts.instagram}`,
+          `https://linkedin.com/in/${config.author.contacts.linkedin}`,
+        ],
+      },
+    };
 
     return (
       <>
-        <Meta staticPage={{title}} />
+        <Meta schema={schema} title={title} />
         <Page>
           <ContentContainer innerStyle={innerContentContainerStyle}>
             {posts.map(post => (

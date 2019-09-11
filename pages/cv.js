@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {ContentContainer, DownloadButton, Meta, Page} from '../components';
+import config from '../config/website';
 
 const H1 = styled.h1`
   text-align: center;
@@ -47,7 +48,7 @@ const Section = styled.section`
 `;
 
 const CvPage = () => {
-  const title = 'Fletcher Labs';
+  const title = `CV | ${config.title}`;
 
   return (
     <>

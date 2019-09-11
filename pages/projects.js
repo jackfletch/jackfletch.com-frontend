@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, ContentContainer, Meta, Page} from '../components';
+import config from '../config/website';
 import projects from '../data/projects.json';
 
 const innerContentContainerStyle = {
@@ -13,7 +14,7 @@ const outerContentContainerStyle = {
 };
 
 const ProjectsPage = () => {
-  const title = 'Fletcher Labs';
+  const title = `Blog | ${config.title}`;
 
   // cast date string to date and sort
   projects.forEach(project => {

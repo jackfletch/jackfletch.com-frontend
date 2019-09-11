@@ -10,7 +10,7 @@ const websiteConfig = {
     },
   },
   url: 'https://jackfletch.com',
-  title: 'Fletcher Labs',
+  title: 'Jack Fletcher',
   description:
     "CPE '19 @ Mississippi State. I blog about web development, machine learning, visualization, and more.",
   menu: [

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
 import ReactMarkdown from 'react-markdown';
 import {ContentContainer, Meta, Page, Datetime} from '../../components';
+import config from '../../config/website';
 import {getBaseUrl} from '../../lib';
 
 const innerContentContainerStyle = {
@@ -96,8 +97,10 @@ class PostPage extends React.Component {
   }
 
   render() {
-    const title = 'Fletcher Labs';
     const {baseUrl, post} = this.props;
+    const title = `${post.title} | ${config.title}`;
+    // TODO: add schema
+
     i = 0;
 
     return (
