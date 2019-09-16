@@ -1,6 +1,8 @@
 # Committime
 
-> Note: Sign your git commits!
+_Note: This tool will not work with cryptographically signed commits, an industry best practice._
+_It is intended to be used with local commits only._
+_See [this stackoverflow answer](https://softwareengineering.stackexchange.com/a/212216) for a brief overview of why signing commits is important._
 
 ## What
 
@@ -17,7 +19,7 @@ git log --pretty=fuller
 ```
 
 Git allows these dates to be changed by rewriting history.
-_Do not use this on a public commits you've already pushed to a repository_ (unless you're working solo and have the `--force`).
+**Do not use this on public commits (i.e., ones that have already been pushed to a repository) unless you're working solo and have the `--force`**.
 
 ## Why
 
@@ -67,11 +69,13 @@ Once a commit is selected, `committime` shows the possible formats of date entry
 Additionally, the user can conveniently specify that the author date and committer date should match.
 After entering the date(s) for the commit, `committime` does the heavy lifting.
 
-Behind the scenes, `committime` is running a `git filter-branch` operation to change the environment variables `GIT_AUTHOR_DATE` and `GIT_COMMITTER_DATE` for the chosen commit. `git filter-branch` information can be found in the [git docs](https://git-scm.com/docs/git-filter-branch) or [book](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#_the_nuclear_option_filter_branch).
+Behind the scenes, `committime` is running a `git filter-branch` operation to change the environment variables `GIT_AUTHOR_DATE` and `GIT_COMMITTER_DATE` for the chosen commit.
+`git filter-branch` information can be found in the [git docs](https://git-scm.com/docs/git-filter-branch) or [book](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#_the_nuclear_option_filter_branch).
 
 ## Open source code
 
-`committime` is a hobby project and free to use, modify, and even sell within the bounds of the liberal MIT license. You'll find the most recent version at https://github.com/jackfletch/committime.
+`committime` is a hobby project and free to use, modify, and even sell within the bounds of the liberal MIT license.
+You'll find the most recent version at https://github.com/jackfletch/committime.
 
 [`committime`]: https://github.com/jackfletch/committime
 [usage]: /static/media/committime/example.png

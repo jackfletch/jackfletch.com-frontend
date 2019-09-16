@@ -1,6 +1,6 @@
 # Colophon
 
-What's a colophon, you may ask?
+What's a colophon, you ask?
 
 No, not using your colon for music making—I'd expect that to be _colon-phony_.
 With respect to printed books, a colophon is a brief description of the printing and publication of the book.
@@ -40,49 +40,36 @@ With the aforementioned motives in mind, I held myself to **three vague requirem
    I don't want to tie the entire site to a certain technology.
    For instance, a basic static site generator doesn't allow me to showoff a visualization project that needs a database on the backend.
 
-**Tl;dr**: avoid trends, consider potential (r)evolutions.
-Trends are just that: trends.
-They change.
-However, black text on a white background never goes out of style.
-Without sounding like a schizophrenic, I'm confident my future self will agree and opt to not change it.
+**tl;dr**: avoid trends, try potential (r)evolutions.
 
-Sometimes trends are truly revolutionary (git, kubernetes, etc.).
+Trends are just that: trends.
+They are supposed to change.
+However, black text on a white background is timeless.
+I'm confident my future self will agree and opt to not change it.
+Sometimes trends are truly revolutionary (git, kubernetes, etc.) though so never become complacent.
 
 ## Design Decisions
 
-### Layout
-
-#### Navigation
-
-TODO
-
-#### Responsiveness
-
-TODO
-
 ### Typography
 
-With the site's simple style, typography has to do a lot of the aesthetic heavy lifting.
-The main font is [Inter](https://rsms.me/inter/).
-
-### Images and Icons
-
-TODO
-
-### Navigation
-
-TODO
+To achieve the site's clean style, typography must do a lot of the aesthetic heavy lifting.
+I chose [Inter](https://rsms.me/inter/), a beautiful typeface "designed for computer screens" by [Rasmus Andersson](https://twitter.com/rsms).
 
 ### Color Palette
 
-Given the requirements, my color palatte options are quite _black and white_. And gray. I chose a few saturated colors for some pop.
+Given the requirements, my color palatte options are quite _black and white_.
+And gray.
+I chose a few saturated colors for some pop.
 
 ### CMS
 
-Currently, I simply write blog posts in markdown and commit it to the same repository as the website frontend. The frontend generates routes and loads a specific markdown file based on the unique URL slug. I plan to eventually investigate other methods of managing my blog content.
+Currently, I simply write blog posts in Markdown and commit it to the same repository as the website frontend.
+The frontend generates routes and loads a specific Markdown file based on the unique URL slug.
+I plan to eventually investigate other methods of managing my blog content.
 
 ## Open source code
 
-This website frontend is a personal project and free to use, modify, and even sell within the bounds of the liberal MIT license. You'll find the most recent version of the frontend at https://github.com/jackfletch/docker-nextjs.
+This website frontend is a personal project and free to use, modify, and even sell within the bounds of the liberal MIT license.
+You'll find the most recent version of the frontend at https://github.com/jackfletch/jackfletch.com-frontend.
 
 The kubernetes cluster configuration is not published at this time.
