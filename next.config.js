@@ -1,3 +1,4 @@
+const path = require('path');
 const withCSS = require('@zeit/next-css');
 
 module.exports = withCSS({
@@ -10,6 +11,7 @@ module.exports = withCSS({
         {
           loader: '@mdx-js/loader',
         },
+        path.join(__dirname, './lib/mdx-frontmatter-loader'),
       ],
     });
     return config;

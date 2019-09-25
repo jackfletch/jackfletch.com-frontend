@@ -24,6 +24,7 @@
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-prettier": "^3.0.1",
     "express": "^4.17.1",
+    "gray-matter": "^4.0.2",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.5",
     "postcss-easy-import": "^3.0.0",
@@ -32,8 +33,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-markdown": "^4.2.2",
     "rss": "^1.2.2",
+    "stringify-object": "^3.3.0",
     "styled-components": "^4.1.3"
   },
   "devDependencies": {
