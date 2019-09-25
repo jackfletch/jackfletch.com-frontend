@@ -1,10 +1,16 @@
 const withCSS = require('@zeit/next-css');
 
 module.exports = withCSS({
-  webpack: (config, {dev}) => {
+  pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+  webpack: (config, {defaultLoaders}) => {
     config.module.rules.push({
-      test: /\.md$/,
-      use: ['raw-loader'],
+      test: /pages\/blog\/.*\.mdx?$/,
+      use: [
+        defaultLoaders.babel,
+        {
+          loader: '@mdx-js/loader',
+        },
+      ],
     });
     return config;
   },
