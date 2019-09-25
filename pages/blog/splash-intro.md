@@ -1,4 +1,9 @@
-# Splash Intro
+---
+title: "Splash"
+slug: "splash-intro"
+date: "2019-08-22T16:15:00.000Z"
+description: "An NBA data visualization for shotcharts and other statistics."
+---
 
 [Splash](https://splash.jackfletch.com) is a basketball shooting visualization SPA.
 

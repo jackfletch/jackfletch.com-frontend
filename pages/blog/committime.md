@@ -1,4 +1,9 @@
-# Committime
+---
+title: "Committime"
+slug: "committime"
+date: "2019-08-07T03:33:41.571Z"
+description: "Ever wanted to quickly change the commit or author date of an unsigned git commit? Worried recruiters will discover your late-night code obsession or your significant other will find why you missed their call by tracking git commit times? Look no further."
+---
 
 _Note: This tool will not work with cryptographically signed commits, an industry best practice._
 _It is intended to be used with local commits only._

@@ -1,4 +1,9 @@
-# Colophon
+---
+title: "Colophon"
+slug: "colophon"
+date: "2019-08-02T03:32:22.887Z"
+description: "A technical description of this site."
+---
 
 What's a colophon, you ask?
 

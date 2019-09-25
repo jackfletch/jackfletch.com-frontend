@@ -1,4 +1,9 @@
-# Hello, World
+---
+title: "Hello, World"
+slug: "hello-world"
+date: "2019-08-01T03:32:22.887Z"
+description: "Words and stuff."
+---
 
 Sup, world.
 This is a test post for this showcasing this blog's capabilities and styling.
