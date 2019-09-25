@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {withRouter} from 'next/router';
 import config from '../config/website';
 import {GA_TRACKING_ID} from '../config/env';
+import {stripUrlParams} from '../lib';
 
 function setGoogleTags() {
   return {
@@ -32,7 +33,10 @@ const Meta = ({
     <meta property="og:title" content={title} />
     <meta property="og:site_name" content={config.title} />
     <meta property="og:type" content={type} />
-    <meta property="og:url" content={`${config.url}${router.asPath}`} />
+    <meta
+      property="og:url"
+      content={`${config.url}${stripUrlParams(router.asPath)}`}
+    />
     <meta property="og:description" content={description} />
     {image && <meta property="og:image" content={`${config.url}${image}`} />}
 
