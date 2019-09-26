@@ -68,8 +68,6 @@ const Meta = ({
     <link rel="alternate" type="application/rss+xml" href="/static/rss.xml" />
 
     {/* scripts */}
-    <script defer src="/static/js/highlight.js" />
-
     {/* Global Site Tag (gtag.js) - Google Analytics */}
     <script
       async
