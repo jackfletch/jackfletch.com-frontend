@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",
-    "pre-build": "node data/generateFeeds.js",
+    "pre-build": "node data/generatePostMetadata.js && node data/generateFeeds.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js"
   },
@@ -25,6 +25,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "express": "^4.17.1",
     "gray-matter": "^4.0.2",
+    "hast-util-to-html": "^6.0.2",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.5",
     "postcss-easy-import": "^3.0.0",
@@ -33,9 +34,14 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "reading-time": "^1.2.0",
+    "remark": "^11.0.1",
+    "remark-frontmatter": "^1.3.2",
     "rss": "^1.2.2",
     "stringify-object": "^3.3.0",
-    "styled-components": "^4.1.3"
+    "styled-components": "^4.1.3",
+    "underscore.string": "^3.3.5",
+    "unist-util-filter": "^1.0.2"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",

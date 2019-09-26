@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const RSS = require('rss');
 const {author, url} = require('../config/website');
-const posts = require('./posts.json');
+const postMetadata = require('./postMetadata.json');
 
 const OUT_DIR = path.join(process.cwd(), 'static');
 
@@ -17,16 +17,16 @@ const rssFeed = new RSS({
   pubDate: 'Aug 28, 2019 12:00:00 CST',
 });
 
-posts.forEach(post => {
+postMetadata.forEach(post => {
   rssFeed.item({
     title: post.title,
     url: `${url}/blog/${post.slug}`,
     guid: `${url}/blog/${post.slug}`,
     date: post.date,
-    description: `${post.summary} See ${url}/blog/${post.slug}.`,
+    description: post.description,
     custom_elements: [
       {
-        'content:encoded': `<p>${post.summary}</p><p>See the <a href="${url}/blog/${post.slug}">complete post</a> on my website.</p>`,
+        'content:encoded': post.htmlContent,
       },
     ],
   });
