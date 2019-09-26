@@ -2,6 +2,7 @@ const path = require('path');
 const withCSS = require('@zeit/next-css');
 
 const remarkNumberedFootnoteLabels = require('remark-numbered-footnote-labels');
+const rehypeCodeSnippetIds = require('./lib/rehypeCodeSnippetIds');
 const rehypeSlug = require('rehype-slug');
 
 module.exports = withCSS({
@@ -15,7 +16,7 @@ module.exports = withCSS({
           loader: '@mdx-js/loader',
           options: {
             remarkPlugins: [remarkNumberedFootnoteLabels],
-            rehypePlugins: [rehypeSlug],
+            rehypePlugins: [rehypeCodeSnippetIds, rehypeSlug],
           },
         },
         path.join(__dirname, './lib/mdx-frontmatter-loader'),
