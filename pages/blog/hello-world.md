@@ -59,3 +59,12 @@ Quote break.
 ## Links
 
 [I'm an inline-style link](https://www.google.com).
+
+## Footnotes
+
+Here's a test footnote.[^test]
+
+This footnote[^inline] is inline.
+
+[^test]: Test footnote.
+[^inline]: Inline footnote.

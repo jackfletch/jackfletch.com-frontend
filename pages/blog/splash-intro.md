@@ -22,7 +22,7 @@ To get d3 to integrate nicely with React, Splash does not use d3 functions that 
 
 ## Backend
 
-Since I can't watch every NBA game, Splash's data comes from [stats.nba.com](https://stats.nba.com).
+Since I can't watch every NBA game[^nba-time], Splash's data comes from [stats.nba.com](https://stats.nba.com).
 The backend uses a local database as a copy of the few endpoints Splash needs in order to cut down on API requests.
 
 ## Inspiration
@@ -40,3 +40,8 @@ Splash takes notes from [Kirk Goldsberry](https://twitter.com/kirkgoldsberry)'s 
 
 Splash is a hobby project and free to use, modify, and even sell within the bounds of the liberal MIT license.
 You'll find the most recent version of the frontend at https://github.com/jackfletch/splash.
+
+[^nba-time]:
+
+  The NBA has 1230 regular season games which, at a low-ball 2 hours per game, is equivalent to 307.5 8-hour days.
+  That's a vacationless six-day workweek year-round without including the playoffs.
