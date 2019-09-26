@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const remark = require('remark');
+const remarkNumberedFootnoteLabels = require('remark-numbered-footnote-labels');
 const remarkFrontmatter = require('remark-frontmatter');
 const grayMatter = require('gray-matter');
 const unistFilter = require('unist-util-filter');
@@ -20,7 +21,8 @@ const removeFrontmatter = () => tree =>
 const processor = remark()
   .data('settings', {footnotes: true})
   .use(remarkFrontmatter, ['yaml'])
-  .use(removeFrontmatter);
+  .use(removeFrontmatter)
+  .use(remarkNumberedFootnoteLabels);
 
 const postMetadata = [];
 
