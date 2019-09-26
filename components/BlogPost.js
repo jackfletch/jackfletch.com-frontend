@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ErrorPage from 'next/error';
 import {ContentContainer, Meta, Page, Datetime} from './';
 import config from '../config/website';
 
@@ -24,6 +25,10 @@ const BlogPost = ({children, frontMatter}) => {
     title: postTitle,
     words: wordCount,
   } = frontMatter;
+
+  if (draft) {
+    return <ErrorPage statusCode={404} />;
+  }
 
   const pageTitle = `${postTitle} | ${config.title}`;
 
