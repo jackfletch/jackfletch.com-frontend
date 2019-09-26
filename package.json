@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",
-    "pre-build": "node data/generatePostMetadata.js && node data/generateFeeds.js",
+    "prebuild": "node data/generatePostMetadata.js && node data/generateFeeds.js",
     "build": "next build",
     "analyze": "ANALYZE=true next build",
     "start": "NODE_ENV=production node server.js"
