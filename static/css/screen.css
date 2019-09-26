@@ -403,7 +403,7 @@ div.content a.footnote {
 }
 div.content sup {
   vertical-align: super;
-  font-size: 65%;
+  font-size: 75%;
   padding: 0;
   margin: 0;
 }
@@ -411,9 +411,6 @@ div.content sup:target {
   background: none;
   animation: none;
   outline: none;
-}
-div.content sup:target a.footnote {
-  background-color: #fe0;
 }
 div.content a.footnote:hover {
   color: black;
@@ -430,16 +427,14 @@ div.content a.footnote::after {
 }
 div.content div.footnotes {
   margin-top: 3em;
-  border-top: 1px solid #eee;
 }
-div.content div.footnotes li {
+div.content div.footnotes li::marker {
   color: #999;
 }
 div.content div.footnotes li > p {
   margin: 0;
 }
 div.content div.footnotes li:target {
-  background: #ffc;
   color: inherit;
 }
 

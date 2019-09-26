@@ -20,10 +20,9 @@ class BlogPage extends React.Component {
   static propTypes = {
     posts: PropTypes.arrayOf(
       PropTypes.shape({
-        author: PropTypes.string.isRequired,
         date: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
         slug: PropTypes.string.isRequired,
-        summary: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
       })
     ).isRequired,

@@ -1,4 +1,9 @@
-# Hello, World
+---
+title: "Hello, World"
+slug: "hello-world"
+date: "2019-08-01T03:32:22.887Z"
+description: "Words and stuff."
+---
 
 Sup, world.
 This is a test post for this showcasing this blog's capabilities and styling.
@@ -54,3 +59,12 @@ Quote break.
 ## Links
 
 [I'm an inline-style link](https://www.google.com).
+
+## Footnotes
+
+Here's a test footnote.[^test]
+
+This footnote[^inline] is inline.
+
+[^test]: Test footnote.
+[^inline]: Inline footnote.

@@ -1,10 +1,13 @@
-import posts from '../../data/posts.json';
+import posts from '../../data/postMetadata.json';
 
 export default function handle(req, res) {
   if (posts) {
     // format dates
     const mappedPosts = posts.map(post => {
       post.date = new Date(post.date);
+      post.htmlContent = undefined;
+      post.plainContents = undefined;
+      post.words = undefined;
       return post;
     });
 
