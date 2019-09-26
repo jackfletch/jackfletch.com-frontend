@@ -6,7 +6,7 @@ const rehypeCodeSnippetIds = require('./lib/rehypeCodeSnippetIds');
 const rehypeHighlight = require('rehype-highlight');
 const rehypeSlug = require('rehype-slug');
 
-module.exports = withCSS({
+const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   webpack: (config, {defaultLoaders}) => {
     config.module.rules.push({
@@ -25,4 +25,6 @@ module.exports = withCSS({
     });
     return config;
   },
-});
+};
+
+module.exports = withCSS(nextConfig);
