@@ -10,6 +10,7 @@ const websiteConfig = {
     },
   },
   url: 'https://jackfletch.com',
+  logoPath: '/static/img/jf.png',
   title: 'Jack Fletcher',
   description:
     "CPE '19 @ Mississippi State. I blog about web development, machine learning, visualization, and more.",
