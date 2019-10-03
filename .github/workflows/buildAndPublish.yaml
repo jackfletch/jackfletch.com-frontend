@@ -1,27 +1,13 @@
-on: create
-name: build and publish
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+*
+name: build and publish image
 jobs:
   build-and-publish:
     name: build and publish
     runs-on: ubuntu-latest
     steps:
-      - name: tag-filter
-        run: |
-          pattern="refs/tags/v${1:-*}"
-          case "$GITHUB_REF" in
-            "")
-              echo "\$GITHUB_REF is not set"
-              exit 1
-              ;;
-            $pattern)
-              echo "$GITHUB_REF matches $pattern"
-              echo "version:" "${GITHUB_REF#refs/tags/v}"
-              exit 0
-              ;;
-            *)
-              echo "This workflow only executes on version tags. $GITHUB_REF does not match $pattern"
-              exit 78
-          esac
       - uses: actions/checkout@master
       - name: docker build
         uses: actions/docker/cli@master
