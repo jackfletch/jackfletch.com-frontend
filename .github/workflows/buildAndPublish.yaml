@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: tag-filter
         run: |
-          pattern="refs/tags/${1:-*}"
+          pattern="refs/tags/v${1:-*}"
           case "$GITHUB_REF" in
             "")
               echo "\$GITHUB_REF is not set"
@@ -15,18 +15,18 @@ jobs:
               ;;
             $pattern)
               echo "$GITHUB_REF matches $pattern"
-              echo "version:" "${GITHUB_REF#refs/tags/}"
+              echo "version:" "${GITHUB_REF#refs/tags/v}"
               exit 0
               ;;
             *)
-              echo "This workflow only executes on tags. $GITHUB_REF does not match $pattern"
+              echo "This workflow only executes on version tags. $GITHUB_REF does not match $pattern"
               exit 78
           esac
       - uses: actions/checkout@master
       - name: docker build
         uses: actions/docker/cli@master
         with:
-          args: build -t gcr.io/jackfletch/jackfletch.com-frontend:${GITHUB_REF#refs/tags/} .
+          args: build -t gcr.io/jackfletch/website-frontend:${GITHUB_REF#refs/tags/v} .
       - name: gcloud auth
         uses: actions/gcloud/auth@master
         env:
@@ -38,4 +38,4 @@ jobs:
       - name: gcloud docker push
         uses: actions/gcloud/cli@master
         with:
-          args: docker push gcr.io/jackfletch/jackfletch.com-frontend:${GITHUB_REF#refs/tags/}
+          args: docker -- push gcr.io/jackfletch/website-frontend:${GITHUB_REF#refs/tags/v}
