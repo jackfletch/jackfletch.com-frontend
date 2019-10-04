@@ -4,11 +4,11 @@
   "description": "jack fletcher's personal website",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next",
     "prebuild": "node data/generatePostMetadata.js && node data/generateFeeds.js",
     "build": "next build",
     "analyze": "ANALYZE=true npm run build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "next start"
   },
   "author": "Jack Fletcher",
   "repository": {
