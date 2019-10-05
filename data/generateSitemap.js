@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {getPages} = require('../next.config');
+const getPages = require('./getPages');
 const {url: websiteUrl} = require('../config/website');
 const posts = require('./postMetadata');
 
@@ -9,8 +9,10 @@ const OUT_DIR = path.join(process.cwd(), 'static');
 const formatDate = date => `${date.toISOString().split('.')[0]}+0:00`;
 
 // determine priority by path depth
-const getPriority = urlSlug =>
-  ((100 - (urlSlug.split('/').length - 2) * 10) / 100).toFixed(2);
+const getPriority = urlSlug => {
+  const pathDepth = urlSlug.match(/\//g).length - 1;
+  return (1 - pathDepth / 10).toFixed(2);
+};
 
 const defaultDate = new Date();
 
@@ -44,9 +46,13 @@ const xmlUrlNode = (domain, pagePath) => {
 </url>`;
 };
 
-const generateSitemap = async (domain, outPath) => {
+const generateSitemap = async (
+  pageExtenstions,
+  domain = websiteUrl,
+  outPath = OUT_DIR
+) => {
   const filePath = path.join(outPath, 'sitemap.xml');
-  const pages = await getPages();
+  const pages = await getPages(pageExtenstions);
   const sitemap = xmlUrlWrapper(
     pages.map(page => xmlUrlNode(domain, page)).join('\n')
   );
@@ -58,4 +64,4 @@ const generateSitemap = async (domain, outPath) => {
   );
 };
 
-generateSitemap(websiteUrl, OUT_DIR);
+module.exports = generateSitemap;
