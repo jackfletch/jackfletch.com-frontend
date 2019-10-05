@@ -7,9 +7,9 @@ const rehypeCodeSnippetIds = require('./lib/rehypeCodeSnippetIds');
 const rehypeHighlight = require('rehype-highlight');
 const rehypeSlug = require('rehype-slug');
 
-const generatePostMetadata = require('./data/generatePostMetadata');
-const generateFeeds = require('./data/generateFeeds');
-const generateSitemap = require('./data/generateSitemap');
+const generatePostMetadata = require('./lib/build/generatePostMetadata');
+const generateFeeds = require('./lib/build/generateFeeds');
+const generateSitemap = require('./lib/build/generateSitemap');
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
