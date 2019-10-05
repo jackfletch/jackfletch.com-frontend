@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, ContentContainer, Meta, Page} from '../components';
 import config from '../config/website';
-import projects from '../data/projects.json';
+import {mapping, sortOrder} from '../data/projects';
 
 const innerContentContainerStyle = {
   display: 'flex',
@@ -13,14 +13,14 @@ const outerContentContainerStyle = {
   padding: '0 1.5rem',
 };
 
+function getProjectIds() {
+  return sortOrder;
+}
+
 const ProjectsPage = () => {
   const title = `Blog | ${config.title}`;
 
-  // cast date string to date and sort
-  projects.forEach(project => {
-    project.date = new Date(project.date);
-  });
-  projects.sort((a, b) => b.date - a.date);
+  const projectIds = getProjectIds();
 
   return (
     <>
@@ -30,8 +30,8 @@ const ProjectsPage = () => {
           innerStyle={innerContentContainerStyle}
           outerStyle={outerContentContainerStyle}
         >
-          {projects.map(project => (
-            <Card key={project.id} value={project} />
+          {projectIds.map(projectId => (
+            <Card key={projectId} value={mapping[projectId]} />
           ))}
         </ContentContainer>
       </Page>

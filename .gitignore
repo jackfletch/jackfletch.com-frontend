@@ -1,2 +1,5 @@
 node_modules
 .next
+/data/postMetadata.json
+/static/rss.xml
+/static/sitemap.xml
