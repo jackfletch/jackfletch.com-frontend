@@ -17,9 +17,9 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const pageExtensions = ['js', 'jsx', 'md', 'mdx'];
 
-generatePostMetadata();
-generateFeeds();
-generateSitemap(pageExtensions);
+const postMetadata = generatePostMetadata();
+generateFeeds(postMetadata);
+generateSitemap(pageExtensions, postMetadata);
 
 const nextConfig = {
   pageExtensions: pageExtensions,
