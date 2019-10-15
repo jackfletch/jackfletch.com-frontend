@@ -40,6 +40,8 @@ const Hero = () => (
           , and{' '}
           <a
             href={`${storageBucketUrl}/static/documents/JacksonFletcherResume.pdf`}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             résumé
           </a>

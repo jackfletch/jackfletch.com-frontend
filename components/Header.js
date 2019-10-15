@@ -96,6 +96,8 @@ const Header = () => (
           <Li>
             <a
               className="nav-link"
+              target="_blank"
+              rel="noopener noreferrer"
               href={`${storageBucketUrl}/static/documents/JacksonFletcherResume.pdf`}
               style={linkStyle}
             >
