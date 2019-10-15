@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import {storageBucketUrl} from '../config/website';
+
 const DivDownload = styled.div`
   display: flex;
   justify-content: center;
@@ -41,9 +43,7 @@ const DownloadButton = () => (
   <DivDownload>
     <Form
       method="get"
-      action={
-        'https://storage.cloud.google.com/jackfletch/static/documents/JacksonFletcherResume.pdf'
-      }
+      action={`${storageBucketUrl}/static/documents/JacksonFletcherResume.pdf`}
     >
       <Button type="submit">
         <svg

@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
+import {storageBucketUrl} from '../config/website';
+
 const HeroDiv = styled.div`
   align-items: center;
   display: flex;
@@ -36,7 +38,9 @@ const Hero = () => (
             <a>projects</a>
           </Link>
           , and{' '}
-          <a href="https://storage.cloud.google.com/jackfletch/static/documents/JacksonFletcherResume.pdf">
+          <a
+            href={`${storageBucketUrl}/static/documents/JacksonFletcherResume.pdf`}
+          >
             résumé
           </a>
           .
