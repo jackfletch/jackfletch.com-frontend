@@ -14,6 +14,7 @@ const websiteConfig = {
   title: 'Jack Fletcher',
   description:
     "CPE '19 @ Mississippi State. I blog about web development, machine learning, visualization, and more.",
+  storageBucketUrl: 'https://storage.cloud.google.com/jackfletch',
   menu: [
     {
       label: 'Welcome',

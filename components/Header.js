@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+
+import {storageBucketUrl} from '../config/website';
 import {handleCollapseElementClick} from '../lib';
 
 const linkStyle = {
@@ -94,7 +96,7 @@ const Header = () => (
           <Li>
             <a
               className="nav-link"
-              href="https://storage.cloud.google.com/jackfletch/static/documents/JacksonFletcherResume.pdf"
+              href={`${storageBucketUrl}/static/documents/JacksonFletcherResume.pdf`}
               style={linkStyle}
             >
               CV

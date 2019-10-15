@@ -1,3 +1,5 @@
+import {storageBucketUrl} from '../config/website';
+
 const mapping = {
   splash: {
     title: 'Splash',
@@ -25,8 +27,7 @@ const mapping = {
     title: 'Undergraduate Thesis',
     category: 'Research',
     featured: true,
-    link:
-      'https://storage.cloud.google.com/jackfletch/static/documents/thesis.pdf',
+    link: `${storageBucketUrl}/static/documents/thesis.pdf`,
     excerpt:
       'Analysis of a real-time data-collecting embedded device using machine learning',
     date: new Date('2019-06-26T05:00:00.000Z'),
