@@ -1,36 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#BBBDBF;}
-	.st1{fill:#24292E;}
-	.st2{fill:#BBBDBF;stroke:#BBBDBF;stroke-miterlimit:10;}
-	.st3{fill:none;stroke:#93180C;stroke-width:50;stroke-miterlimit:10;}
-	.st4{fill:none;stroke:#095C8C;stroke-width:50;stroke-miterlimit:10;}
-	.st5{fill:none;stroke:#095C8C;stroke-width:6;stroke-miterlimit:10;}
-	.st6{fill:none;stroke:#93180C;stroke-width:6;stroke-miterlimit:10;}
-	.st7{fill:none;}
-	.st8{fill:none;stroke:#93180C;stroke-width:80;stroke-miterlimit:10;}
-	.st9{fill:none;stroke:#095C8C;stroke-width:80;stroke-miterlimit:10;}
-	.st10{fill:none;stroke:#93180C;stroke-width:60;stroke-miterlimit:10;}
-	.st11{fill:none;stroke:#095C8C;stroke-width:60;stroke-miterlimit:10;}
-	.st12{display:none;fill:none;stroke:#69820C;stroke-width:8;stroke-miterlimit:10;}
-	.st13{fill:none;stroke:#063F5F;stroke-width:50;stroke-miterlimit:10;}
-	.st14{fill:#6E0E10;}
-	.st15{fill:#063F5F;}
-	.st16{fill:url(#SVGID_1_);}
-	.st17{fill:none;stroke:#6E0E10;stroke-width:50;stroke-miterlimit:10;}
-	.st18{display:none;fill:#2E3191;}
-	.st19{display:none;fill:#EC1C24;}
-	.st20{fill:url(#path4508_1_);}
-	.st21{fill:url(#path4604_1_);}
+	.stroke{fill:none;stroke-width:8;stroke-miterlimit:10;}
+	.stroke-blue{stroke:#095C8C;}
+	.stroke-maroon{stroke:#93180C;}
 </style>
-<g id="Vector">
-	<rect class="st7" width="500" height="500"/>
-	<line class="st8" x1="461" y1="330" x2="253" y2="330"/>
-	<line class="st8" x1="253" y1="170" x2="461" y2="170"/>
-	<line class="st9" x1="45" y1="90" x2="461" y2="90"/>
-	<line class="st9" x1="253" y1="410" x2="45" y2="410"/>
+<g>
+	<line class="stroke stroke-blue" x1="3" y1="8" x2="45" y2="8"/>
+	<line class="stroke stroke-maroon" x1="23" y1="32" x2="45" y2="32"/>
+	<line class="stroke stroke-maroon" x1="23" y1="16" x2="45" y2="16"/>
+	<line class="stroke stroke-blue" x1="3" y1="40" x2="23" y2="40"/>
 </g>
 </svg>
