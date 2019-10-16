@@ -2,6 +2,9 @@ import Copyright from './Copyright';
 import FooterIconLink from './FooterIconLink';
 import websiteConfig from '../config/website';
 
+export const FOOTER_HEIGHT_DESKTOP = 410;
+export const FOOTER_HEIGHT_MOBILE = 290;
+
 const Footer = () => {
   const networks = Object.keys(websiteConfig.author.contacts);
   networks.push('rss');

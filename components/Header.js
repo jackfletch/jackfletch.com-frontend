@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import {storageBucketUrl} from '../config/website';
 import {handleCollapseElementClick} from '../lib';
 
+export const HEADER_HEIGHT = 64;
+
 const linkStyle = {
   color: '#212121',
 };
