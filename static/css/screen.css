@@ -103,13 +103,6 @@ h6 {
 }
 
 /* anchors */
-a[href] {
-  text-decoration: none;
-  color: rgba(3, 102, 214, 1);
-}
-a[href]:hover {
-  text-decoration: underline rgba(3, 102, 214, 0.6);
-}
 a[href^="#"]:hover {
   text-decoration-style: dashed;
 }
@@ -146,107 +139,6 @@ div.content {
 }
 
 /* header */
-header {
-  /*background: salmon;*/
-  display: flex;
-  justify-content: space-between;
-  height: 100px;
-  cursor: default;
-}
-header * {
-  cursor: default;
-  font-size: 12px;
-}
-header h1 {
-  flex: 0 0 auto;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-header a[href] {
-  color: inherit;
-  background: none;
-  text-shadow: none;
-}
-header a[href]:hover {
-  color: black;
-  background: none;
-}
-header h1 a[href] {
-  display: block;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  transition: 160ms transform ease-out;
-  -webkit-transition: 160ms -webkit-transform ease-out;
-}
-header h1 a[href]:hover {
-  transform: translate3d(0, 2px, 0);
-  -webkit-transform: translate3d(0, 2px, 0);
-  cursor: pointer;
-}
-header h1 img {
-  display: block;
-}
-
-header ul {
-  flex: 0 0 auto;
-  margin: 0;
-  text-align: left;
-  display: flex;
-  opacity: 0.1;
-}
-header.main ul,
-header:hover ul {
-  opacity: 1;
-}
-header ul li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-header ul li:first-child {
-  margin-left: 0;
-}
-header ul li a[href] {
-  cursor: pointer;
-  padding: 0 0.8em;
-  color: #aaa;
-  text-decoration: none;
-}
-header ul li:last-child a[href] {
-  padding-right: 0;
-}
-header ul li a[href]:hover {
-  color: black;
-  text-decoration: none;
-}
-header ul li a[href].active {
-  color: black;
-}
-
-nav ul {
-  margin: 0;
-  font-size: 1.25rem;
-}
-nav ul li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-nav ul li a[href]:hover {
-  color: black;
-  text-decoration: none;
-}
-nav ul li a[href].active {
-  color: black;
-}
 
 /* main */
 #main {
