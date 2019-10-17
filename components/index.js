@@ -2,6 +2,7 @@ export {default as BlogCard} from './BlogCard';
 export {default as Card} from './Card';
 export {default as ConditionalLink} from './ConditionalLink';
 export {default as ContentContainer} from './ContentContainer';
+export {default as Container} from './Container';
 export {default as Datetime} from './Datetime';
 export {default as DownloadButton} from './DownloadButton';
 export {default as Hero} from './Hero';
