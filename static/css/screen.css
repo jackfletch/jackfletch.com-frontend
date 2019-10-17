@@ -33,13 +33,6 @@ object {
   margin: 1em 0;
 }
 
-pre,
-code,
-tt {
-  font-family: "IBM Plex Mono", monospace;
-  font-feature-settings: "ss02" 1, "zero" 1;
-  /* ss01=a.1, ss02=g.1, ss03=zero.1, ss04=zero.2 */
-}
 img {
   border: none;
   vertical-align: bottom;
@@ -180,20 +173,6 @@ div.content *[align="right"] {
 }
 div.content *[align="left"] {
   margin: 0 1.5em 1em 0;
-}
-
-div.content li {
-  margin-left: 2em;
-  margin-bottom: 0.2em;
-}
-div.content ul > li {
-  margin-left: 1.4em;
-}
-div.content ul.minimal {
-  list-style: none;
-}
-div.content ul.minimal > li {
-  margin-left: 0;
 }
 
 div.content blockquote {
