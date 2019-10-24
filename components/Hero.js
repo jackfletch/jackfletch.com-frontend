@@ -17,9 +17,6 @@ const MessageDiv = styled.div`
 
 const H1 = styled.h1`
   margin: 0;
-  @media screen and (max-width: 991px) {
-    font-size: 3rem;
-  }
 `;
 
 const Hero = () => (
