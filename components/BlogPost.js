@@ -1,16 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import ErrorPage from 'next/error';
-import {ContentContainer, Meta, Page, Datetime} from './';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+import {Container, Meta, Page, Datetime} from './';
 import config from '../config/website';
 
-const innerContentContainerStyle = {
-  maxWidth: '720px',
-};
+const PostContent = styled(Container)`
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+`;
 
-const outerContentContainerStyle = {
-  padding: '0 1rem',
-};
+const H1 = styled.h1`
+  text-align: center;
+  margin: 0; // necessary to override normalize
+`;
+
+const DateDiv = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+
+  @media screen and (min-width: ${props => props.theme.breakpoints[0]}) {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+`;
 
 const BlogPost = ({children, frontMatter}) => {
   const {
@@ -74,15 +91,15 @@ const BlogPost = ({children, frontMatter}) => {
     <>
       <Meta image={postImg} schema={schema} title={pageTitle} />
       <Page>
-        <ContentContainer
-          className="post"
-          innerStyle={innerContentContainerStyle}
-          outerStyle={outerContentContainerStyle}
-        >
-          <h1>{postTitle}</h1>
-          <Datetime date={date} />
-          <div className="body">{children}</div>
-        </ContentContainer>
+        <Container className="post" padding>
+          <H1>{postTitle}</H1>
+          <DateDiv>
+            <Datetime date={date} />
+          </DateDiv>
+          <PostContent narrow allowOverflow fullWidth>
+            {children}
+          </PostContent>
+        </Container>
       </Page>
     </>
   );

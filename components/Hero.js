@@ -2,9 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
+import {Container} from '.';
 import {storageBucketUrl} from '../config/website';
 
-const HeroDiv = styled.div`
+const HeroDiv = styled(Container)`
   align-items: center;
   display: flex;
   height: 100vh;
