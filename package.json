@@ -43,6 +43,7 @@
     "rss": "^1.2.2",
     "stringify-object": "^3.3.0",
     "styled-components": "^4.4.0",
+    "styled-normalize": "^8.0.6",
     "underscore.string": "^3.3.5",
     "unist-util-filter": "^1.0.2"
   },

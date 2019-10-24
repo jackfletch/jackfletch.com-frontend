@@ -70,7 +70,7 @@ const Card = ({value}) => {
   const {category, title, excerpt, featured, date, link} = value;
   return (
     <ColumnDiv featured={featured}>
-      <ConditionalLink href={link} className="card-link">
+      <ConditionalLink href={link}>
         <CardArticle>
           <TitleH2 className="article__title">{title}</TitleH2>
           <CategoryH3

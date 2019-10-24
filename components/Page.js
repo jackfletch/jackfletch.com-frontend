@@ -1,20 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Header from './Header';
-import Footer from './Footer';
 
-const PageLayout = styled.div`
-  scroll-behavior: smooth;
-`;
+import Footer, {FOOTER_HEIGHT_DESKTOP, FOOTER_HEIGHT_MOBILE} from './Footer';
+import Header, {HEADER_HEIGHT} from './Header';
+import Main from './Main';
 
-const Page = ({children, noHeader}) => (
-  <PageLayout className="page">
-    {noHeader ? null : <Header />}
-    {children}
-    <Footer />
-  </PageLayout>
-);
+const Page = ({children, noHeader}) => {
+  const headerHeight = noHeader ? 0 : HEADER_HEIGHT;
+
+  return (
+    <>
+      {noHeader ? null : <Header />}
+      <Main
+        desktopHeightOffset={headerHeight + FOOTER_HEIGHT_DESKTOP}
+        mobileHeightOffset={headerHeight + FOOTER_HEIGHT_MOBILE}
+      >
+        {children}
+      </Main>
+      <Footer />
+    </>
+  );
+};
 
 Page.propTypes = {
   children: PropTypes.oneOfType([

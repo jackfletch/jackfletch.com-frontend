@@ -8,7 +8,7 @@ const Li = styled.li`
   border-radius: 50%;
   background-color: rgb(238, 238, 238);
   padding: 2px;
-  margin: 0.2rem;
+  margin: 3px;
 `;
 
 const FooterIconLink = ({network}) => {
