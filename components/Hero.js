@@ -18,13 +18,17 @@ const MessageDiv = styled.div`
 
 const H1 = styled.h1`
   margin: 0;
+  & > a,
+  & > a:hover {
+    color: rgba(3, 102, 214, 1);
+  }
 `;
 
 const Hero = () => (
   <>
-    <HeroDiv className="container">
+    <HeroDiv>
       <MessageDiv>
-        <H1 className="welcome">
+        <H1>
           Hi, I'm Jack.
           <br />
           Check out my{' '}
