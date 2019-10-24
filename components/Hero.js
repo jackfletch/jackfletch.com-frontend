@@ -2,9 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
+import {Container} from '.';
 import {storageBucketUrl} from '../config/website';
 
-const HeroDiv = styled.div`
+const HeroDiv = styled(Container)`
   align-items: center;
   display: flex;
   height: 100vh;
@@ -17,16 +18,17 @@ const MessageDiv = styled.div`
 
 const H1 = styled.h1`
   margin: 0;
-  @media screen and (max-width: 991px) {
-    font-size: 3rem;
+  & > a,
+  & > a:hover {
+    color: rgba(3, 102, 214, 1);
   }
 `;
 
 const Hero = () => (
   <>
-    <HeroDiv className="container">
+    <HeroDiv>
       <MessageDiv>
-        <H1 className="welcome">
+        <H1>
           Hi, I'm Jack.
           <br />
           Check out my{' '}

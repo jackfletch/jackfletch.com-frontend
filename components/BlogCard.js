@@ -29,11 +29,7 @@ const P = styled.p`
 const BlogCard = ({post}) => {
   const {date, description, slug, title} = post;
   return (
-    <ConditionalLink
-      href="/blog/[slug]"
-      as={`/blog/${slug}`}
-      className="card-link"
-    >
+    <ConditionalLink href="/blog/[slug]" as={`/blog/${slug}`}>
       <Article>
         <H2>{title}</H2>
         <P>
