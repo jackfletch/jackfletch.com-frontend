@@ -1,4 +1,4 @@
-import {BlogCard, Container, Meta, Page} from '../components';
+import {BlogCard, Container, Meta, Page, SectionHeader} from '../components';
 import config from '../config/website';
 
 function importAll(r) {
@@ -43,6 +43,7 @@ const BlogPage = () => {
       <Meta schema={schema} title={title} />
       <Page>
         <Container padding fullWidth>
+          <SectionHeader title="Blog" />
           {posts}
         </Container>
       </Page>

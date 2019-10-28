@@ -1,4 +1,4 @@
-import {Card, Container, Meta, Page} from '../components';
+import {Card, Container, Meta, Page, SectionHeader} from '../components';
 import config from '../config/website';
 import {mapping, sortOrder} from '../data/projects';
 
@@ -16,6 +16,7 @@ const ProjectsPage = () => {
       <Meta staticPage={title} />
       <Page>
         <Container fullWidth padding>
+          <SectionHeader title="Projects" />
           <Container fullWidth gray center>
             {projectIds.map(projectId => (
               <Card key={projectId} value={mapping[projectId]} />
