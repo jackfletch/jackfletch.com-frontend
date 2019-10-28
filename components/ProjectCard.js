@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import {ConditionalLink, Datetime} from '.';
+import {GAP_X, GAP_Y} from './projects/List';
 
 const categoryColors = {
   'Class Project': '#FE5621',
@@ -12,52 +13,52 @@ const categoryColors = {
 };
 
 const ColumnDiv = styled.div`
-  flex-basis: ${props =>
-    props.featured ? 'calc(2 * (100% / 3) - 1rem)' : 'calc((100% / 3) - 1rem)'};
-  width: ${props =>
-    props.featured ? 'calc(2 * (100% / 3) - 1rem)' : 'calc((100% / 3) - 1rem)'};
-  margin: 0 0.5rem;
-  box-sizing: border-box;
-  @media (max-width: 900px) {
-    flex-basis: calc(50% - 1rem);
-    width: calc(50% - 1rem);
-  }
-  @media (max-width: 600px) {
-    flex-basis: calc(100% - 1rem);
-    width: calc(100% - 1rem);
-  }
+  position: relative;
+  flex: ${props => (props.featured ? 2 : 1)};
+  height: unset;
 `;
 
-const CardArticle = styled.article`
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  transition: 0.2s ease;
+const AbsoluteDiv = styled.div`
+  background-color: ${props => props.theme.colors.white};
+  border-radius: 7px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.02);
+  height: calc(100% - ${GAP_Y}px);
+  margin: ${GAP_Y / 2}px ${GAP_X / 2}px;
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: ${props => props.theme.breakpoints[1]}) {
+    transition: 0.2s ease;
     &:hover {
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: rgba(0, 0, 0, 0.12) 0 10px 20px 0;
     }
   }
 `;
 
-const CategoryH3 = styled.h3`
+const CardArticle = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+`;
+
+const CategoryH4 = styled.h4`
   display: inline-block;
-  // background: #212121;
+  background-color: ${props => categoryColors[props.category]};
   padding: 4px 6px;
-  margin: 0 0 10px;
-  color: #fff;
+  margin: 0;
+  margin-top: 0.75rem;
+  color: ${props => props.theme.colors.white};
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.075rem;
   text-transform: uppercase;
 `;
 
-const TitleH2 = styled.h2`
-  margin: 0 0 10px;
-  color: #444;
-  font-size: 1.25rem;
+const TitleH3 = styled.h3`
+  color: ${props => props.theme.colors.text.header};
+  margin: 0 0 0.5rem;
   font-weight: 600;
-  line-height: 1.75rem;
+  letter-spacing: 0;
 `;
 
 const Image = styled.img`
@@ -74,29 +75,35 @@ const Image = styled.img`
 `;
 
 const ExcerptP = styled.p`
-  color: #666;
-  font-size: 1rem;
   line-height: 1.5rem;
+  margin-bottom: 0;
 `;
 
-const ProjectCard = ({value}) => {
-  const {category, title, excerpt, featured, date, link, image} = value;
+const ExcerptDiv = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+`;
+
+const ProjectCard = ({data}) => {
+  const {category, title, excerpt, featured, date, link, image} = data;
   return (
     <ColumnDiv featured={featured}>
-      <ConditionalLink href={link}>
-        <CardArticle>
-          <TitleH2 className="article__title">{title}</TitleH2>
-          <CategoryH3
-            className="article__category"
-            style={{backgroundColor: categoryColors[category]}}
-          >
-            {category}
-          </CategoryH3>
-          <ExcerptP className="article__excerpt">{excerpt}</ExcerptP>
-          <Datetime date={date} />
-          {image && featured && <Image src={image}></Image>}
-        </CardArticle>
-      </ConditionalLink>
+      <AbsoluteDiv>
+        <ConditionalLink href={link}>
+          <CardArticle>
+            <TitleH3>{title}</TitleH3>
+            <Datetime date={date} />
+            <CategoryH4 category={category} key={category}>
+              {category}
+            </CategoryH4>
+            <ExcerptDiv>
+              <ExcerptP>{excerpt}</ExcerptP>
+            </ExcerptDiv>
+            {image && featured && <Image src={image}></Image>}
+          </CardArticle>
+        </ConditionalLink>
+      </AbsoluteDiv>
     </ColumnDiv>
   );
 };
