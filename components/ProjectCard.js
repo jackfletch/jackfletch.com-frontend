@@ -1,6 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
-import {ConditionalLink, Datetime} from '../components';
+
+import {ConditionalLink, Datetime} from '.';
 
 const categoryColors = {
   'Class Project': '#FE5621',
@@ -60,6 +60,19 @@ const TitleH2 = styled.h2`
   line-height: 1.75rem;
 `;
 
+const Image = styled.img`
+  display: block;
+  height: auto;
+  margin-top: 1rem;
+  max-width: 100%;
+  max-height: 320px;
+  border-radius: 4px;
+
+  @media screen and (min-width: ${props => props.theme.breakpoints[0]}) {
+    padding: 0.5rem;
+  }
+`;
+
 const ExcerptP = styled.p`
   color: #666;
   font-size: 1rem;
@@ -67,7 +80,7 @@ const ExcerptP = styled.p`
 `;
 
 const ProjectCard = ({value}) => {
-  const {category, title, excerpt, featured, date, link} = value;
+  const {category, title, excerpt, featured, date, link, image} = value;
   return (
     <ColumnDiv featured={featured}>
       <ConditionalLink href={link}>
@@ -81,6 +94,7 @@ const ProjectCard = ({value}) => {
           </CategoryH3>
           <ExcerptP className="article__excerpt">{excerpt}</ExcerptP>
           <Datetime date={date} />
+          {image && featured && <Image src={image}></Image>}
         </CardArticle>
       </ConditionalLink>
     </ColumnDiv>
