@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: ${props => props.theme.colors.blacks[0]};
+    color: ${props => props.theme.colors.text.header};
     font-weight: 500;
     margin: 1.618em 0 0.7em 0;
   }

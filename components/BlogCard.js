@@ -1,42 +1,73 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
+
 import {ConditionalLink, Datetime} from '../components';
+import Container from './Container';
 
-const Article = styled.article`
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  transition: 0.2s ease;
+const OuterDiv = styled(Container)`
+  padding: 1.5rem 0;
+  ${props =>
+    props.divider &&
+    css`
+      margin-bottom: -1px;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    `}
+  ${props =>
+    props.highlight &&
+    css`
+      @media screen and (min-width: ${props.theme.breakpoints[1]}) {
+        transition: all 0.2s ease;
+        &:hover {
+          box-shadow: 0 5px 40px rgba(0, 0, 0, 0.05);
+        }
+      }
+    `}
 
-  @media screen and (min-width: 992px) {
-    &:hover {
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.5);
-    }
+  @media screen and (min-width: ${props => props.theme.breakpoints[0]}) {
+    padding: 2.5rem 0;
   }
 `;
 
-const H2 = styled.h2`
-  font-size: 1.125rem;
+const InnerDiv = styled(Container)`
+  padding-right: 1rem;
+  padding-left: 1rem;
+`;
+
+const Article = styled.article`
+  transition: 0.2s ease;
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const H3 = styled.h3`
   font-weight: 600;
   margin: 0;
+  display: inline-block;
 `;
 
 const P = styled.p`
   margin-top: 0.5rem;
-  margin-bottom: 0;
-  font-size: 0.875rem;
 `;
 
 const BlogCard = ({post}) => {
   const {date, description, slug, title} = post;
   return (
-    <ConditionalLink href="/blog/[slug]" as={`/blog/${slug}`}>
-      <Article>
-        <H2>{title}</H2>
-        <P>
-          {description} <Datetime date={date} />
-        </P>
-      </Article>
-    </ConditionalLink>
+    <OuterDiv divider fullWidth highlight>
+      <InnerDiv narrow>
+        <Article>
+          <ConditionalLink href="/blog/[slug]" as={`/blog/${slug}`}>
+            <H3>{title}</H3>
+          </ConditionalLink>
+          <P>
+            <Datetime date={date} />
+          </P>
+          <P>{description}</P>
+        </Article>
+      </InnerDiv>
+    </OuterDiv>
   );
 };
 

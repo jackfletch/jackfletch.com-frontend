@@ -1,6 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {BlogCard, ContentContainer, Meta, Page} from '../components';
+import {BlogCard, Container, Meta, Page} from '../components';
 import config from '../config/website';
 
 function importAll(r) {
@@ -17,10 +15,6 @@ const posts = importAll(require.context('./blog', false, /\.mdx?$/))
   .map(post => post.frontMatter)
   .sort(dateSortDesc)
   .map(post => <BlogCard key={post.slug} post={post} />);
-
-const innerContentContainerStyle = {
-  maxWidth: '720px',
-};
 
 const BlogPage = () => {
   const title = `Blog | ${config.title}`;
@@ -48,9 +42,9 @@ const BlogPage = () => {
     <>
       <Meta schema={schema} title={title} />
       <Page>
-        <ContentContainer innerStyle={innerContentContainerStyle}>
+        <Container padding fullWidth>
           {posts}
-        </ContentContainer>
+        </Container>
       </Page>
     </>
   );
