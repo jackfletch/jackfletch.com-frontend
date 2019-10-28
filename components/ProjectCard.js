@@ -66,7 +66,7 @@ const ExcerptP = styled.p`
   line-height: 1.5rem;
 `;
 
-const Card = ({value}) => {
+const ProjectCard = ({value}) => {
   const {category, title, excerpt, featured, date, link} = value;
   return (
     <ColumnDiv featured={featured}>
@@ -87,4 +87,4 @@ const Card = ({value}) => {
   );
 };
 
-export default Card;
+export default ProjectCard;

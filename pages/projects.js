@@ -1,4 +1,4 @@
-import {Card, Container, Meta, Page, SectionHeader} from '../components';
+import {Container, Meta, Page, ProjectCard, SectionHeader} from '../components';
 import config from '../config/website';
 import {mapping, sortOrder} from '../data/projects';
 
@@ -19,7 +19,7 @@ const ProjectsPage = () => {
           <SectionHeader title="Projects" />
           <Container fullWidth gray center>
             {projectIds.map(projectId => (
-              <Card key={projectId} value={mapping[projectId]} />
+              <ProjectCard key={projectId} value={mapping[projectId]} />
             ))}
           </Container>
         </Container>

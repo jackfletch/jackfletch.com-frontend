@@ -1,5 +1,4 @@
 export {default as BlogCard} from './BlogCard';
-export {default as Card} from './Card';
 export {default as ConditionalLink} from './ConditionalLink';
 export {default as ContentContainer} from './ContentContainer';
 export {default as Container} from './Container';
@@ -9,4 +8,5 @@ export {default as Hero} from './Hero';
 export {default as Icon} from './Icon';
 export {default as Meta} from './meta';
 export {default as Page} from './Page';
+export {default as ProjectCard} from './ProjectCard';
 export {default as SectionHeader} from './SectionHeader';
