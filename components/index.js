@@ -9,3 +9,4 @@ export {default as Hero} from './Hero';
 export {default as Icon} from './Icon';
 export {default as Meta} from './meta';
 export {default as Page} from './Page';
+export {default as SectionHeader} from './SectionHeader';
