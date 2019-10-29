@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import websiteConfig from '../config/website';
-import {Icon} from '../components';
+import {FooterIcon} from './icons';
 
 const Li = styled.li`
   display: inline-block;
@@ -40,7 +40,7 @@ const FooterIconLink = ({network}) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon glyph={network} />
+        <FooterIcon glyph={network} />
       </a>
     </Li>
   );

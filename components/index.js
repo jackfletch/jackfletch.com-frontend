@@ -5,7 +5,6 @@ export {default as Container} from './Container';
 export {default as Datetime} from './Datetime';
 export {default as DownloadButton} from './DownloadButton';
 export {default as Hero} from './Hero';
-export {default as Icon} from './Icon';
 export {default as Meta} from './meta';
 export {default as Page} from './Page';
 export {default as ProjectCard} from './ProjectCard';
