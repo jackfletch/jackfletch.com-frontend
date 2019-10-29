@@ -58,7 +58,7 @@ const BlogCard = ({post}) => {
     <OuterDiv divider fullWidth highlight>
       <InnerDiv narrow>
         <Article>
-          <ConditionalLink href="/blog/[slug]" as={`/blog/${slug}`}>
+          <ConditionalLink href={`/blog/${slug}`}>
             <H3>{title}</H3>
           </ConditionalLink>
           <P>
