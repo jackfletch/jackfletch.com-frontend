@@ -8,13 +8,13 @@ function getProjectIds() {
 }
 
 const ProjectsPage = () => {
-  const title = `Blog | ${config.title}`;
+  const title = `Projects | ${config.title}`;
 
   const projectIds = getProjectIds();
 
   return (
     <>
-      <Meta staticPage={title} />
+      <Meta title={title} />
       <Page>
         <Container fullWidth padding>
           <SectionHeader title="Projects" />
