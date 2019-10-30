@@ -2,7 +2,8 @@ import ErrorPage from 'next/error';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import {Container, Meta, Page, Datetime} from './';
+import {Button, Container, Meta, Page, Datetime} from './';
+import {ArrowLeftLong} from './icons';
 import config from '../config/website';
 
 const PostContent = styled(Container)`
@@ -27,6 +28,19 @@ const DateDiv = styled.div`
     margin-top: 2rem;
     margin-bottom: 4rem;
   }
+`;
+
+const BackButtonDiv = styled.div`
+  margin-top: 4rem;
+
+  @media screen and (min-width: ${props => props.theme.breakpoints[0]}) {
+    margin-top: 6.25rem;
+  }
+`;
+
+const Icon = styled.span`
+  vertical-align: middle;
+  line-height: 0;
 `;
 
 const BlogPost = ({children, frontMatter}) => {
@@ -98,6 +112,14 @@ const BlogPost = ({children, frontMatter}) => {
           </DateDiv>
           <PostContent narrow allowOverflow fullWidth>
             {children}
+            <BackButtonDiv>
+              <Button href="/blog" invert>
+                <Icon>
+                  <ArrowLeftLong color="white" />
+                </Icon>{' '}
+                Back to Blog
+              </Button>
+            </BackButtonDiv>
           </PostContent>
         </Container>
       </Page>
