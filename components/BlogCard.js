@@ -1,8 +1,9 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 
-import {ConditionalLink, Datetime} from '../components';
+import {Button, ConditionalLink, Datetime} from '../components';
 import Container from './Container';
+import {ArrowRightLong} from './icons';
 
 const OuterDiv = styled(Container)`
   padding: 1.5rem 0;
@@ -52,6 +53,15 @@ const P = styled.p`
   margin-top: 0.5rem;
 `;
 
+const Icon = styled.span`
+  vertical-align: middle;
+  line-height: 0;
+`;
+
+const ButtonDiv = styled.div`
+  margin-top: 2rem;
+`;
+
 const BlogCard = ({post}) => {
   const {date, description, slug, title} = post;
   return (
@@ -66,6 +76,14 @@ const BlogCard = ({post}) => {
           </P>
           <P>{description}</P>
         </Article>
+        <ButtonDiv>
+          <Button href={`/blog/${slug}`}>
+            Read More{' '}
+            <Icon>
+              <ArrowRightLong color="currentColor" />
+            </Icon>
+          </Button>
+        </ButtonDiv>
       </InnerDiv>
     </OuterDiv>
   );
