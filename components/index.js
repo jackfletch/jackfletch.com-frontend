@@ -1,4 +1,5 @@
 export {default as BlogCard} from './BlogCard';
+export {default as Button} from './Button';
 export {default as ConditionalLink} from './ConditionalLink';
 export {default as ContentContainer} from './ContentContainer';
 export {default as Container} from './Container';
