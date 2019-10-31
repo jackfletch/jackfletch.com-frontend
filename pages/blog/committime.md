@@ -2,18 +2,20 @@
 title: "Committime"
 slug: "committime"
 date: "2019-08-07T03:33:41.571Z"
-description: "Ever wanted to quickly change the commit or author date of an unsigned git commit? Worried recruiters will discover your late-night code obsession or your significant other will find why you missed their call by tracking git commit times? Look no further."
+description: "Ever wanted to quickly change the commit or author date of an unsigned git commit? Worried recruiters will discover your late-night code obsession? Look no further."
 ---
 
-_Note: This tool will not work with cryptographically signed commits, an industry best practice._
-_It is intended to be used with local commits only._
+**Altering git commit times is generally a poor idea and is certainly not a best practice.**
+**The ideas herein help understand the internals of git; please do not use them for any serious matter.**
+
+_Note: This tool will not work with cryptographically signed commits._
 _See [this stackoverflow answer](https://softwareengineering.stackexchange.com/a/212216) for a brief overview of why signing commits is important._
 
 ## What
 
 Git's best and worst features involve changing history.
 Anyone can change _commit_ history.
-It's good to be aware of how to do so.
+It's good to be aware of git's internals.
 
 Each commit has an associated author date and committer date.
 A regular `git log` only shows the author date.
@@ -23,20 +25,27 @@ To see both a commit's author date and committer date:
 git log --pretty=fuller
 ```
 
+resulting in something like
+
+```sh
+commit 293a1b884253f9efbc77b2d19d312b28874f523c
+Author:     Jack Fletcher <jdfletch97@gmail.com>
+AuthorDate: Thu Aug 22 14:45:46 2019 -0500
+Commit:     Jack Fletcher <jdfletch97@gmail.com>
+CommitDate: Thu Aug 22 14:45:46 2019 -0500
+
+    Add real blog posts
+
+```
+
 Git allows these dates to be changed by rewriting history.
 **Do not use this on public commits (i.e., ones that have already been pushed to a repository) unless you're working solo and have the `--force`**.
 
 ## Why
 
 Changing an unsigned git commit's author date or committer date may be seen as a bit questionable.
-However, there are scenarios where it may be desirable, and doing so may represent a more accurate git history.
-
-Suppose you worked all day on a feature but didn't get a chance to clean-up and commit until the next day.
-Or you go on vacation and don't get around to it until the next week.
-One might argue that you should indicate your committer date as the correct day of work.
-Realistically it doesn't matter; but if it is somewhat trivial to change, a git log could serve as a clear history of when the project was worked on.
-
-As I try to keep a clean git history, I find it particularly useful on personal projects.
+That's because it is.
+As stated earlier, I would not recommend using these techniques for any serious matter.
 
 ## How
 
@@ -65,7 +74,7 @@ Checkout the [git book](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-Histo
 
 ## CLI
 
-To ease this operation, I created [`committime`]:
+I created [`committime`] just to see what is possible for a low-effort program:
 
 ![usage]
 
