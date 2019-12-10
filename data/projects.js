@@ -41,6 +41,14 @@ const mapping = {
     excerpt: 'Labwork for ECE4723 Embedded Systems',
     date: new Date('2019-01-30T06:00:00.000Z'),
   },
+  carRender: {
+    title: 'Phong Lighting + Mini Cooper',
+    category: 'Class Project',
+    link: 'https://jackfletch.com/projects/cse4413-car-render/',
+    excerpt:
+      'Rendering a car with WebGL using the Phong lighting model to learn vertex and fragment shaders',
+    date: new Date('2018-11-26T06:00:00.000Z'),
+  },
   skipLists: {
     title: 'Skip Lists',
     category: 'Class Project',
