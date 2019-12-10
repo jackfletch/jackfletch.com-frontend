@@ -22,6 +22,9 @@ generateFeeds(postMetadata);
 generateSitemap(pageExtensions, postMetadata);
 
 const nextConfig = {
+  experimental: {
+    granularChunks: true
+  },
   pageExtensions: pageExtensions,
   webpack: (config, {defaultLoaders}) => {
     config.module.rules.push({
