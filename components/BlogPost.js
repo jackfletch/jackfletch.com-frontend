@@ -51,7 +51,7 @@ const BlogPost = ({children, frontMatter}) => {
     description,
     draft,
     plainContent,
-    img: postImg = '/static/img/ogimage.png',
+    img: postImg = '/img/ogimage.png',
     slug,
     title: postTitle,
     words: wordCount,

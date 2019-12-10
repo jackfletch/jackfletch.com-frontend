@@ -13,7 +13,7 @@ WORKDIR /usr/src/app
 COPY --from=builder /usr/src/app/.next /usr/src/app/.next
 COPY --from=builder /usr/src/app/package.json /usr/src/app/package.json
 COPY --from=builder /usr/src/app/node_modules /usr/src/app/node_modules
-COPY --from=builder /usr/src/app/static /usr/src/app/static
+COPY --from=builder /usr/src/app/public /usr/src/app/public
 
 EXPOSE 3000
 CMD ["npm", "start"]

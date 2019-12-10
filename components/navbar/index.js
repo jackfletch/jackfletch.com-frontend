@@ -22,7 +22,7 @@ const Navbar = ({router}) => (
     <NavbarContainer>
       <Link href="/">
         <a>
-          <LogoImg src="/static/img/jf.svg" alt="Jack Fletcher" />
+          <LogoImg src="/img/jf.svg" alt="Jack Fletcher" />
         </a>
       </Link>
       <Toggler

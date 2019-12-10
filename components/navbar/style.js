@@ -145,5 +145,5 @@ export const TogglerIcon = styled.span`
   content: '';
   background: no-repeat center center;
   background-size: 100% 100%;
-  background-image: url('/static/img/toggle.svg');
+  background-image: url('/img/toggle.svg');
 `;

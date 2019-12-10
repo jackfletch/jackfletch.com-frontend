@@ -49,12 +49,8 @@ const Meta = ({
     <meta name="twitter:card" content="summary_large_image" />
 
     {/* favicons */}
-    <link rel="shortcut icon" href="/static/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="256x256"
-      href="/static/img/icon-256x256.png"
-    />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="256x256" href="/img/icon-256x256.png" />
 
     {/* schema.org schema */}
     {schema && (
@@ -65,7 +61,7 @@ const Meta = ({
     )}
 
     {/* RSS feed */}
-    <link rel="alternate" type="application/rss+xml" href="/static/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
 
     {/* scripts */}
     {/* Global Site Tag (gtag.js) - Google Analytics */}

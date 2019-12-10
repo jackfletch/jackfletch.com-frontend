@@ -92,4 +92,4 @@ Behind the scenes, `committime` is running a `git filter-branch` operation to ch
 You'll find the most recent version at https://github.com/jackfletch/committime.
 
 [`committime`]: https://github.com/jackfletch/committime
-[usage]: /static/media/committime/example.png
+[usage]: /media/committime/example.png
