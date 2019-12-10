@@ -8,8 +8,8 @@ import {normalize} from 'styled-normalize';
 
 import theme from '../data/theme';
 import {gtag} from '../lib';
-import '../static/css/main.css';
-import '../static/css/highlight.css';
+import '../public/css/main.css';
+import '../public/css/highlight.css';
 
 Router.events.on('routeChangeComplete', url => gtag.trackPageview(url));
 

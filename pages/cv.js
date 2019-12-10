@@ -68,10 +68,7 @@ const CvPage = () => {
             <H1>education</H1>
             <ul>
               <li className="school-sba">
-                <img
-                  src="/static/img/cv/school-sba-eagle.jpg"
-                  alt="sba eagle logo"
-                />
+                <img src="/img/cv/school-sba-eagle.jpg" alt="sba eagle logo" />
                 <h2>High School</h2>
                 <strong>
                   <a href="http://www.sbaeagles.org">
@@ -85,7 +82,7 @@ const CvPage = () => {
               </li>
               <li className="school-msu">
                 <img
-                  src="/static/img/cv/school-msu.jpg"
+                  src="/img/cv/school-msu.jpg"
                   alt="mississippi state univerity logo"
                 />
                 <h2>University, undergraduate</h2>
@@ -114,7 +111,7 @@ const CvPage = () => {
             <ul>
               <li className="job-cavs">
                 <img
-                  src="/static/img/cv/job-cavs.jpg"
+                  src="/img/cv/job-cavs.jpg"
                   alt="logo of MSU's Center for Advanced Vehicular Systems"
                 />
                 <h2>Student Researcher</h2>
@@ -135,7 +132,7 @@ const CvPage = () => {
               </li>
               <li className="job-clemson">
                 <img
-                  src="/static/img/cv/logo-clemson.svg"
+                  src="/img/cv/logo-clemson.svg"
                   alt="logo of Clemson University"
                 />
                 <h2>REU Researcher</h2>

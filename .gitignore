@@ -1,4 +1,4 @@
 node_modules
 .next
-/static/rss.xml
-/static/sitemap.xml
+/public/rss.xml
+/public/sitemap.xml

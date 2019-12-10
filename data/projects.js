@@ -7,7 +7,7 @@ const mapping = {
     featured: true,
     link: 'https://splash.jackfletch.com',
     excerpt: 'NBA data visualization SPA for shotcharts and other statistics',
-    image: '/static/media/splash-intro/interface.png',
+    image: '/media/splash-intro/interface.png',
     date: new Date('2017-05-29T05:00:00.000Z'),
   },
   'jackfletch.com': {
@@ -31,7 +31,7 @@ const mapping = {
     link: `${storageBucketUrl}/static/documents/thesis.pdf`,
     excerpt:
       'Analysis of a real-time data-collecting embedded device using machine learning',
-    image: '/static/media/thesis/topology.svg',
+    image: '/media/thesis/topology.svg',
     date: new Date('2019-06-26T05:00:00.000Z'),
   },
   embedded: {

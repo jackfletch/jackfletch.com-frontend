@@ -7,7 +7,7 @@ description: "An NBA data visualization for shotcharts and other statistics."
 
 [Splash](https://splash.jackfletch.com) is a basketball shooting visualization SPA.
 
-![interface](/static/media/splash-intro/interface.png)
+![interface](/media/splash-intro/interface.png)
 
 A product of interests in data data analysis, visualization, and basketball, Splash development began in my fourth semester of college (Spring 2017).
 
