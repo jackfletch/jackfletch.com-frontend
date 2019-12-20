@@ -1,1 +1,0 @@
-https://www.colorbox.io/#steps=4#hue_start=359#hue_end=50#hue_curve=easeInQuad#sat_start=90#sat_end=90#sat_curve=linear#sat_rate=130#lum_start=80#lum_end=40#lum_curve=easeOutCirc#minor_steps_map=0,10,10,15,20,20,20,25
