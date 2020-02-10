@@ -34,7 +34,8 @@ const NotFeaturedDiv = styled.div`
   flex-direction: column;
 `;
 
-let rowFlexDirection = 'row';
+let featuredRowFlexDirectionState = 'row';
+const normalRowFlexDirectionState = 'row';
 const getRowRender = (dataSource, index, projectIds) => {
   const content = [];
   let featured = null;
@@ -54,7 +55,8 @@ const getRowRender = (dataSource, index, projectIds) => {
           key={`project-${projectIds[startIndex + i]}`}
         />
       );
-      rowFlexDirection = rowFlexDirection === 'row' ? 'row-reverse' : 'row';
+      featuredRowFlexDirectionState =
+        featuredRowFlexDirectionState === 'row' ? 'row-reverse' : 'row';
     } else {
       content.push(
         <ProjectCard
@@ -66,7 +68,12 @@ const getRowRender = (dataSource, index, projectIds) => {
   }
 
   return (
-    <RowDiv key={`row-${index}`} rowFlexDirection={rowFlexDirection}>
+    <RowDiv
+      key={`row-${index}`}
+      rowFlexDirection={
+        featured ? featuredRowFlexDirectionState : normalRowFlexDirectionState
+      }
+    >
       {featured
         ? [
             featured,
