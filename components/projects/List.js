@@ -43,27 +43,16 @@ const getRowRender = (dataSource, index, projectIds) => {
   const startIndex = index * 3;
   for (let i = 0; i < 3; ++i) {
     const projectData = dataSource[projectIds[startIndex + i]];
+    const projectId = projectIds[startIndex + i] ?? `placeholder-${i}`;
+    const projectKey = `project-${projectId}`;
     if (!projectData) {
-      content.push(
-        <SitePreviewPlaceholder key={`project-${projectIds[startIndex + i]}`} />
-      );
+      content.push(<SitePreviewPlaceholder key={projectKey} />);
     } else if (!featured && projectData.featured) {
-      featured = (
-        <ProjectCard
-          featured
-          data={projectData}
-          key={`project-${projectIds[startIndex + i]}`}
-        />
-      );
+      featured = <ProjectCard featured data={projectData} key={projectKey} />;
       featuredRowFlexDirectionState =
         featuredRowFlexDirectionState === 'row' ? 'row-reverse' : 'row';
     } else {
-      content.push(
-        <ProjectCard
-          data={projectData}
-          key={`project-${projectIds[startIndex + i]}`}
-        />
-      );
+      content.push(<ProjectCard data={projectData} key={projectKey} />);
     }
   }
 
