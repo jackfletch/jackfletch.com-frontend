@@ -2,23 +2,23 @@ on:
   push:
     tags:
       - v[0-9]+.[0-9]+.[0-9]+*
-name: build and publish image
+name: CI
 jobs:
-  build-and-publish:
-    name: build and publish
+  default:
+    name: Build and Publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: declare image name
+      - name: Declare image name
         run: echo "::set-env name=IMAGE_NAME::gcr.io/jackfletch/website-frontend:${GITHUB_REF#refs/tags/v}"
-      - name: docker build
+      - name: Build container image
         run: docker build -t $IMAGE_NAME .
-      - name: gcloud auth
+      - name: Authorize gcloud
         env:
           GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
         run: |
           echo "$GCLOUD_AUTH" | base64 --decode > ${HOME}/gcloud.json
           gcloud auth activate-service-account --key-file=${HOME}/gcloud.json
           gcloud auth configure-docker
-      - name: docker push
+      - name: Publish container image
         run: docker push $IMAGE_NAME
