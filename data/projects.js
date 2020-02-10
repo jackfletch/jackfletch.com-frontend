@@ -34,6 +34,14 @@ const mapping = {
     image: '/media/thesis/topology.svg',
     date: new Date('2019-06-26T05:00:00.000Z'),
   },
+  seniorDesign: {
+    title: 'Senior Design: Golf Glove',
+    category: 'Class Project',
+    link: `https://github.com/cbb330/golf-glove`,
+    excerpt:
+      'Senior project to design and prototype an embedded device that detects golf swings and records the associated motion data with a custom app',
+    date: new Date('2019-04-26T05:00:00.000Z'),
+  },
   embedded: {
     title: 'Embedded Systems Lab',
     category: 'Class Project',
