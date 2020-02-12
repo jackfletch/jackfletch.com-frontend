@@ -7,16 +7,18 @@ import {storageBucketUrl} from '../config/website';
 
 const HeroDiv = styled(Container)`
   align-items: center;
+  justify-content: center;
   display: flex;
-  height: 100vh;
+  height: 80vh;
 `;
 
 const MessageDiv = styled.div`
   padding: 2.5em 15px;
-  width: 100%;
+  width: 350px;
 `;
 
 const H1 = styled.h1`
+  font-size: 2rem;
   margin: 0;
   & > a,
   & > a:hover {
@@ -24,14 +26,19 @@ const H1 = styled.h1`
   }
 `;
 
+const P = styled.p`
+  font-size: 1.25rem;
+  line-height: 1.75;
+`;
+
 const Hero = () => (
   <>
     <HeroDiv>
       <MessageDiv>
-        <H1>
-          Hi, I'm Jack.
-          <br />
-          Check out my{' '}
+        <H1>Jack Fletcher</H1>
+        <P>I'm a Software Engineer from Memphis, TN.</P>
+        <P>I make usable tools and visualizations with code.</P>
+        <P>
           <Link href="/blog">
             <a>blog</a>
           </Link>
@@ -48,7 +55,7 @@ const Hero = () => (
             résumé
           </a>
           .
-        </H1>
+        </P>
       </MessageDiv>
     </HeroDiv>
   </>
