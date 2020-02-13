@@ -1,5 +1,4 @@
 const path = require('path');
-const withCSS = require('@zeit/next-css');
 const bundleAnalyzer = require('@next/bundle-analyzer');
 
 const remarkNumberedFootnoteLabels = require('remark-numbered-footnote-labels');
@@ -42,4 +41,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withBundleAnalyzer(withCSS(nextConfig));
+module.exports = withBundleAnalyzer(nextConfig);
