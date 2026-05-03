@@ -14,12 +14,12 @@ const categoryColors: Record<string, string> = {
 };
 
 interface ColumnDivProps {
-  featured?: boolean;
+  $featured?: boolean;
 }
 
 const ColumnDiv = styled.div<ColumnDivProps>`
   position: relative;
-  flex: ${props => (props.featured ? 2 : 1)};
+  flex: ${props => (props.$featured ? 2 : 1)};
   height: unset;
 `;
 
@@ -47,12 +47,12 @@ const CardArticle = styled.article`
 `;
 
 interface CategoryH4Props {
-  category: string;
+  $category: string;
 }
 
 const CategoryH4 = styled.h4<CategoryH4Props>`
   display: inline-block;
-  background-color: ${props => categoryColors[props.category]};
+  background-color: ${props => categoryColors[props.$category]};
   padding: 4px 6px;
   margin: 0;
   margin-top: 0.75rem;
@@ -110,13 +110,13 @@ interface ProjectCardProps {
 const ProjectCard = ({data}: ProjectCardProps) => {
   const {category, title, excerpt, featured, date, link, image} = data;
   return (
-    <ColumnDiv featured={featured}>
+    <ColumnDiv $featured={featured}>
       <AbsoluteDiv>
         <ConditionalLink href={link}>
           <CardArticle>
             <TitleH3>{title}</TitleH3>
             <Datetime date={date} />
-            <CategoryH4 category={category} key={category}>
+            <CategoryH4 $category={category} key={category}>
               {category}
             </CategoryH4>
             <ExcerptDiv>

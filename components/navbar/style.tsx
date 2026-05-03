@@ -3,7 +3,7 @@ import styled, {css} from 'styled-components';
 import Container from '../Container';
 
 interface AProps {
-  selected?: boolean;
+  $selected?: boolean;
 }
 
 export const A = styled.a<AProps>`
@@ -12,19 +12,19 @@ export const A = styled.a<AProps>`
 
   &:hover {
     color: ${props =>
-      props.selected
+      props.$selected
         ? props.theme.colors.primary
         : props.theme.colors.blacks[0]};
   }
 
   & {
     color: ${props =>
-      props.selected
+      props.$selected
         ? props.theme.colors.primary
         : props.theme.colors.grays[3]};
   }
   ${props =>
-    props.selected &&
+    props.$selected &&
     css`
       font-weight: 600;
     `};

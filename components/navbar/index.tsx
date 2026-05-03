@@ -41,7 +41,7 @@ const Navbar = () => {
           <Nav>
             <Li>
               <Link href="/blog" legacyBehavior passHref>
-                <A selected={router.route.startsWith('/blog')}>Blog</A>
+                <A $selected={router.route.startsWith('/blog')}>Blog</A>
               </Link>
             </Li>
             <Li>
@@ -55,7 +55,7 @@ const Navbar = () => {
             </Li>
             <Li>
               <Link href="/projects" legacyBehavior passHref>
-                <A selected={router.route.startsWith('/projects')}>Projects</A>
+                <A $selected={router.route.startsWith('/projects')}>Projects</A>
               </Link>
             </Li>
           </Nav>

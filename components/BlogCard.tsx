@@ -6,21 +6,21 @@ import Container from './Container';
 import {ArrowRightLong} from './icons';
 
 interface OuterDivProps {
-  divider?: boolean;
-  highlight?: boolean;
+  $divider?: boolean;
+  $highlight?: boolean;
 }
 
 const OuterDiv = styled(Container)<OuterDivProps>`
   padding: 1.5rem 0;
   ${props =>
-    props.divider &&
+    props.$divider &&
     css`
       margin-bottom: -1px;
       border-top: 1px solid #eee;
       border-bottom: 1px solid #eee;
     `}
   ${props =>
-    props.highlight &&
+    props.$highlight &&
     css`
       @media screen and (min-width: ${props.theme.breakpoints[1]}) {
         transition: all 0.2s ease;
@@ -79,8 +79,8 @@ interface BlogCardProps {
 const BlogCard = ({post}: BlogCardProps) => {
   const {date, description, slug, title} = post;
   return (
-    <OuterDiv divider fullWidth highlight>
-      <InnerDiv narrow>
+    <OuterDiv $divider $fullWidth $highlight>
+      <InnerDiv $narrow>
         <Article>
           <ConditionalLink href={`/blog/${slug}`}>
             <H3>{title}</H3>

@@ -4,23 +4,23 @@ import styled, {css} from 'styled-components';
 import Container from './Container';
 
 interface OuterDivProps {
-  divider?: boolean;
-  highlight?: boolean;
-  transition?: boolean;
+  $divider?: boolean;
+  $highlight?: boolean;
+  $transition?: boolean;
 }
 
 const OuterDiv = styled(Container)<OuterDivProps>`
   color: ${props => props.theme.colors.text.prose};
   padding: 1.5rem 0;
   ${props =>
-    props.divider &&
+    props.$divider &&
     css`
       margin-bottom: -1px;
       border-top: 1px solid #eee;
       border-bottom: 1px solid #eee;
     `}
   ${props =>
-    props.highlight &&
+    props.$highlight &&
     css`
       @media screen and (min-width: ${props.theme.breakpoints[1]}) {
         &:hover {
@@ -29,7 +29,7 @@ const OuterDiv = styled(Container)<OuterDivProps>`
       }
     `}
   ${props =>
-    props.transition &&
+    props.$transition &&
     css`
       transition: all 0.2s ease;
     `}
@@ -50,8 +50,8 @@ interface ContentContainerProps {
 }
 
 const ContentContainer = ({children, ...props}: ContentContainerProps) => (
-  <OuterDiv {...props} fullWidth>
-    <InnerDiv narrow>{children}</InnerDiv>
+  <OuterDiv {...props} $fullWidth>
+    <InnerDiv $narrow>{children}</InnerDiv>
   </OuterDiv>
 );
 

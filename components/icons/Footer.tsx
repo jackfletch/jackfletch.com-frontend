@@ -8,16 +8,16 @@ const InlineSvg = styled.svg`
 `;
 
 interface SvgWrapperProps {
-  size?: number;
+  $size?: number;
 }
 
 const SvgWrapper = styled.div<SvgWrapperProps>`
   display: inline-block;
-  flex: 0 0 ${props => (props.size ? `${props.size}px` : '32px')};
-  width: ${props => (props.size ? `${props.size}px` : '32px')};
-  height: ${props => (props.size ? `${props.size}px` : '32px')};
-  min-width: ${props => (props.size ? `${props.size}px` : '32px')};
-  min-height: ${props => (props.size ? `${props.size}px` : '32px')};
+  flex: 0 0 ${props => (props.$size ? `${props.$size}px` : '32px')};
+  width: ${props => (props.$size ? `${props.$size}px` : '32px')};
+  height: ${props => (props.$size ? `${props.$size}px` : '32px')};
+  min-width: ${props => (props.$size ? `${props.$size}px` : '32px')};
+  min-height: ${props => (props.$size ? `${props.$size}px` : '32px')};
   position: relative;
   color: rgb(31, 31, 31);
   vertical-align: middle;
@@ -70,7 +70,7 @@ const Icon = (props: {size?: number; glyph: string}) => {
   const {size = 32, glyph} = props;
 
   return (
-    <SvgWrapper size={size} className={'icon'}>
+    <SvgWrapper $size={size} className={'icon'}>
       <InlineSvg
         fillRule="evenodd"
         clipRule="evenodd"

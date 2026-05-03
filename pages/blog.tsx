@@ -30,7 +30,7 @@ const BlogPage = ({posts}) => {
     <>
       <Meta schema={schema} title={title} />
       <Page>
-        <Container padding fullWidth>
+        <Container $padding $fullWidth>
           <SectionHeader title="Blog" />
           {posts.map(post => (
             <BlogCard key={post.slug} post={post} />

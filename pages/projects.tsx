@@ -16,7 +16,7 @@ const ProjectsPage = () => {
     <>
       <Meta title={title} />
       <Page>
-        <Container fullWidth padding>
+        <Container $fullWidth $padding>
           <SectionHeader title="Projects" />
           <List mapping={mapping} projectIds={projectIds} />
         </Container>

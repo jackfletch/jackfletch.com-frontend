@@ -16,8 +16,8 @@ const Page = ({children, noHeader}: PageProps) => {
     <>
       {noHeader ? null : <Header />}
       <Main
-        desktopHeightOffset={headerHeight + FOOTER_HEIGHT_DESKTOP}
-        mobileHeightOffset={headerHeight + FOOTER_HEIGHT_MOBILE}
+        $desktopHeightOffset={headerHeight + FOOTER_HEIGHT_DESKTOP}
+        $mobileHeightOffset={headerHeight + FOOTER_HEIGHT_MOBILE}
       >
         {children}
       </Main>

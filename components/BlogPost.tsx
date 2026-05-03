@@ -123,12 +123,12 @@ const BlogPost = ({children, frontMatter}: BlogPostProps) => {
     <>
       <Meta image={postImg} schema={schema} title={pageTitle} />
       <Page>
-        <Container className="post" padding>
+        <Container className="post" $padding>
           <H1>{postTitle}</H1>
           <DateDiv>
             <Datetime date={date} />
           </DateDiv>
-          <PostContent narrow allowOverflow fullWidth>
+          <PostContent $narrow $allowOverflow $fullWidth>
             {children}
             <BackButtonDiv>
               <Button href="/blog" invert>

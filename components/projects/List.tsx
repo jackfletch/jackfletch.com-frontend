@@ -19,7 +19,7 @@ const SitePreviewPlaceholder = styled.div`
 `;
 
 interface RowDivProps {
-  rowFlexDirection: string;
+  $rowFlexDirection: string;
 }
 
 const RowDiv = styled.div<RowDivProps>`
@@ -29,7 +29,7 @@ const RowDiv = styled.div<RowDivProps>`
   flex-direction: column;
 
   @media screen and (min-width: ${props => props.theme.breakpoints[0]}) {
-    flex-direction: ${props => props.rowFlexDirection};
+    flex-direction: ${props => props.$rowFlexDirection};
     padding: 0px ${GAP_X / 2}px;
   }
 `;
@@ -65,7 +65,7 @@ const getRowRender = (dataSource: Record<string, Project>, index: number, projec
   return (
     <RowDiv
       key={`row-${index}`}
-      rowFlexDirection={
+      $rowFlexDirection={
         featured ? featuredRowFlexDirectionState : normalRowFlexDirectionState
       }
     >
@@ -92,7 +92,7 @@ const List = ({mapping, projectIds}: ListProps) => {
   }
 
   return (
-    <Container fullWidth gray center>
+    <Container $fullWidth $gray $center>
       <WidthDiv>{content}</WidthDiv>
     </Container>
   );
