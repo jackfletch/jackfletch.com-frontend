@@ -8,9 +8,9 @@ jobs:
     name: Build and Publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
       - name: Declare image name
-        run: echo "::set-env name=IMAGE_NAME::gcr.io/jackfletch/website-frontend:${GITHUB_REF#refs/tags/v}"
+        run: echo "IMAGE_NAME=gcr.io/jackfletch/website-frontend:${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
       - name: Build container image
         run: docker build -t $IMAGE_NAME .
       - name: Authorize gcloud

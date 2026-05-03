@@ -8,6 +8,7 @@ import remarkNumberedFootnoteLabels from 'remark-numbered-footnote-labels';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  output: 'standalone',
   compiler: {
     styledComponents: true,
   },
