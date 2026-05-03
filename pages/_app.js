@@ -1,10 +1,6 @@
-// see https://github.com/zeit/next.js/#custom-app
-// using the App's one-time load to apply Router event listener.
-// for some reason this can't go in _document.js.
-import App from 'next/app';
-import Router from 'next/router';
-import {createGlobalStyle, ThemeProvider} from 'styled-components';
+import {ThemeProvider, createGlobalStyle} from 'styled-components';
 import {normalize} from 'styled-normalize';
+import Router from 'next/router';
 
 import theme from '../data/theme';
 import {gtag} from '../lib';
@@ -159,16 +155,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-class CustomApp extends App {
-  render() {
-    const {Component, pageProps} = this.props;
-    return (
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    );
-  }
+export default function CustomApp({Component, pageProps}) {
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
-
-export default CustomApp;

@@ -43,7 +43,7 @@
     "rss": "^1.2.2",
     "shiki": "^4.0.2",
     "stringify-object": "^3.3.0",
-    "styled-components": "^5.0.1",
+    "styled-components": "^6.4.1",
     "styled-normalize": "^8.0.7",
     "underscore.string": "^3.3.5",
     "unist-util-filter": "^2.0.0"
