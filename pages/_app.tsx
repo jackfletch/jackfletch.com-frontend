@@ -5,7 +5,6 @@ import Router from 'next/router';
 import theme from '../data/theme';
 import {gtag} from '../lib';
 import '../public/css/main.css';
-import '../public/css/highlight.css';
 
 Router.events.on('routeChangeComplete', () => gtag.trackPageview());
 
