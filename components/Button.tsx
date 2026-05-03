@@ -14,11 +14,11 @@ const hexa = (hex: string, alpha: number) => {
   }
 };
 
-interface AProps {
+interface StyledProps {
   $invert?: boolean;
 }
 
-const A = styled.a<AProps>`
+const buttonStyles = css<StyledProps>`
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
@@ -54,26 +54,9 @@ const A = styled.a<AProps>`
     `}
 `;
 
-const StyledButton = styled.button<AProps>`
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: none;
-  padding: 0.25rem 0.5rem;
-  margin: -0.25rem -0.5rem;
-  border-radius: 7px;
-  color: ${props => props.theme.colors.primary};
-  background-color: transparent;
-  border: none;
-  font-size: inherit;
-  line-height: inherit;
-  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-
-  &:hover {
-    color: ${props => props.theme.colors.primary};
-    background: ${props => hexa(props.theme.colors.primary, 0.1)};
-    text-decoration: none;
-  }
-`;
+const A = styled.a<StyledProps>`${buttonStyles}`;
+const StyledLink = styled(Link)<StyledProps>`${buttonStyles}`;
+const StyledButton = styled.button<StyledProps>`${buttonStyles}`;
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -86,24 +69,21 @@ interface ButtonProps {
 
 const Button = ({children, href, as: asPath, amp, invert, ...props}: ButtonProps) => {
   const isExternal = href && href.startsWith('http');
-  const a = (
-    <A href={href} $invert={invert} {...props}>
-      {children}
-    </A>
-  );
 
   if (href) {
     return amp || isExternal ? (
-      a
+      <A href={href} $invert={invert} {...props}>
+        {children}
+      </A>
     ) : (
-      <Link href={href} as={asPath} legacyBehavior>
-        {a}
-      </Link>
+      <StyledLink href={href} as={asPath} $invert={invert} {...props}>
+        {children}
+      </StyledLink>
     );
   }
 
   return (
-    <StyledButton type="button" {...props}>
+    <StyledButton type="button" $invert={invert} {...props}>
       {children}
     </StyledButton>
   );

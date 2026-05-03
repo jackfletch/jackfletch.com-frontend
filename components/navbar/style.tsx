@@ -1,4 +1,5 @@
 import styled, {css} from 'styled-components';
+import Link from 'next/link';
 
 import Container from '../Container';
 
@@ -9,12 +10,45 @@ interface AProps {
 export const A = styled.a<AProps>`
   display: block;
   padding: 0.5rem 0;
+  text-decoration: none;
 
   &:hover {
     color: ${props =>
       props.$selected
         ? props.theme.colors.primary
         : props.theme.colors.blacks[0]};
+    text-decoration: none;
+  }
+
+  & {
+    color: ${props =>
+      props.$selected
+        ? props.theme.colors.primary
+        : props.theme.colors.grays[3]};
+  }
+  ${props =>
+    props.$selected &&
+    css`
+      font-weight: 600;
+    `};
+
+  @media screen and (min-width: ${props => props.theme.breakpoints[0]}) {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+`;
+
+export const NavLink = styled(Link)<AProps>`
+  display: block;
+  padding: 0.5rem 0;
+  text-decoration: none;
+
+  &:hover {
+    color: ${props =>
+      props.$selected
+        ? props.theme.colors.primary
+        : props.theme.colors.blacks[0]};
+    text-decoration: none;
   }
 
   & {

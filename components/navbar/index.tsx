@@ -7,6 +7,7 @@ import {
   Li,
   LogoImg,
   Nav,
+  NavLink,
   Navbar as StyledNavbar,
   NavbarContainer,
   Toggler,
@@ -40,9 +41,9 @@ const Navbar = () => {
         <CollapseWrapper className="collapse" id={navbarCollapsingWrapperId}>
           <Nav>
             <Li>
-              <Link href="/blog" legacyBehavior passHref>
-                <A $selected={router.route.startsWith('/blog')}>Blog</A>
-              </Link>
+              <NavLink href="/blog" $selected={router.route.startsWith('/blog')}>
+                Blog
+              </NavLink>
             </Li>
             <Li>
               <A
@@ -54,9 +55,9 @@ const Navbar = () => {
               </A>
             </Li>
             <Li>
-              <Link href="/projects" legacyBehavior passHref>
-                <A $selected={router.route.startsWith('/projects')}>Projects</A>
-              </Link>
+              <NavLink href="/projects" $selected={router.route.startsWith('/projects')}>
+                Projects
+              </NavLink>
             </Li>
           </Nav>
         </CollapseWrapper>

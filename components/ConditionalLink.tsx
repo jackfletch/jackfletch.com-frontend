@@ -1,23 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 
-interface AnchorProps {
-  children: React.ReactNode;
-  className?: string;
-  href?: string;
-  style?: React.CSSProperties;
-}
-
-const Anchor = ({children, className, href, style}: AnchorProps) => (
-  <a
-    href={href}
-    style={{...style, color: 'inherit', textDecoration: 'none'}}
-    className={className}
-  >
-    {children}
-  </a>
-);
-
 interface ConditionalLinkProps {
   as?: string;
   children: React.ReactNode;
@@ -26,23 +9,25 @@ interface ConditionalLinkProps {
   style?: React.CSSProperties;
 }
 
+const linkStyle: React.CSSProperties = {color: 'inherit', textDecoration: 'none'};
+
 const ConditionalLink = ({as, children, className, href, style}: ConditionalLinkProps) => {
+  const mergedStyle = {...linkStyle, ...style};
   const externalUrl = href.indexOf('http') === 0;
+
   if (externalUrl) {
     return (
-      <Anchor className={className} style={style} href={href}>
+      <a href={href} className={className} style={mergedStyle}>
         {children}
-      </Anchor>
-    );
-  } else {
-    return (
-      <Link href={href} as={as} legacyBehavior passHref>
-        <Anchor className={className} style={style}>
-          {children}
-        </Anchor>
-      </Link>
+      </a>
     );
   }
+
+  return (
+    <Link href={href} as={as} className={className} style={mergedStyle}>
+      {children}
+    </Link>
+  );
 };
 
 export default ConditionalLink;
