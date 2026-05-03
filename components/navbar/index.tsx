@@ -27,6 +27,10 @@ const Navbar = () => {
           <LogoImg src="/img/jf.svg" alt="Jack Fletcher" />
         </Link>
         <Toggler
+          type="button"
+          data-toggle="collapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
           data-target={`#${navbarCollapsingWrapperId}`}
           aria-controls={navbarCollapsingWrapperId}
           onClick={e => handleCollapseElementClick(e)}

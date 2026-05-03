@@ -52,7 +52,7 @@ const CvPage = () => {
 
   return (
     <>
-      <Meta staticPage={{title}} />
+      <Meta title={title} />
       <Page>
         <ContentContainer>
           <h2>This is the CV page</h2>

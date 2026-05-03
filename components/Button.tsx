@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styled, {css} from 'styled-components';
 
-const hexa = (hex, alpha) => {
+const hexa = (hex: string, alpha: number) => {
   var r = parseInt(hex.slice(1, 3), 16),
     g = parseInt(hex.slice(3, 5), 16),
     b = parseInt(hex.slice(5, 7), 16);
@@ -14,7 +14,11 @@ const hexa = (hex, alpha) => {
   }
 };
 
-const A = styled.a`
+interface AProps {
+  invert?: boolean;
+}
+
+const A = styled.a<AProps>`
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
@@ -50,9 +54,37 @@ const A = styled.a`
     `}
 `;
 
-const StyledButton = styled(A).attrs({as: 'button'});
+const StyledButton = styled.button<AProps>`
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  margin: -0.25rem -0.5rem;
+  border-radius: 7px;
+  color: ${props => props.theme.colors.primary};
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+  line-height: inherit;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 
-const Button = ({children, href, as, amp, ...props}) => {
+  &:hover {
+    color: ${props => props.theme.colors.primary};
+    background: ${props => hexa(props.theme.colors.primary, 0.1)};
+    text-decoration: none;
+  }
+`;
+
+interface ButtonProps {
+  children: React.ReactNode;
+  href?: string;
+  as?: string;
+  amp?: boolean;
+  invert?: boolean;
+  [key: string]: unknown;
+}
+
+const Button = ({children, href, as: asPath, amp, ...props}: ButtonProps) => {
   const isExternal = href && href.startsWith('http');
   const a = (
     <A href={href} {...props}>
@@ -64,7 +96,7 @@ const Button = ({children, href, as, amp, ...props}) => {
     return amp || isExternal ? (
       a
     ) : (
-      <Link href={href} as={as} legacyBehavior>
+      <Link href={href} as={asPath} legacyBehavior>
         {a}
       </Link>
     );

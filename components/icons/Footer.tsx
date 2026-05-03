@@ -7,7 +7,11 @@ const InlineSvg = styled.svg`
   fill: currentColor;
 `;
 
-const SvgWrapper = styled.div`
+interface SvgWrapperProps {
+  size?: number;
+}
+
+const SvgWrapper = styled.div<SvgWrapperProps>`
   display: inline-block;
   flex: 0 0 ${props => (props.size ? `${props.size}px` : '32px')};
   width: ${props => (props.size ? `${props.size}px` : '32px')};
@@ -20,7 +24,7 @@ const SvgWrapper = styled.div`
   padding: 5px;
 `;
 
-const Glyph = ({glyph}) => {
+const Glyph = ({glyph}: {glyph: string}) => {
   switch (glyph) {
     case 'email':
       return (
@@ -62,7 +66,7 @@ const Glyph = ({glyph}) => {
   }
 };
 
-const Icon = props => {
+const Icon = (props: {size?: number; glyph: string}) => {
   const {size = 32, glyph} = props;
 
   return (
@@ -76,7 +80,6 @@ const Icon = props => {
         aria-labelledby="title"
         viewBox="0 0 24 24"
         preserveAspectRatio="xMidYMid meet"
-        fit
         id={glyph}
       >
         <title id="title">{glyph}</title>

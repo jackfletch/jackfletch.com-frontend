@@ -1,9 +1,15 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 import styled, {css} from 'styled-components';
 
 import Container from './Container';
 
-const OuterDiv = styled(Container)`
+interface OuterDivProps {
+  divider?: boolean;
+  highlight?: boolean;
+  transition?: boolean;
+}
+
+const OuterDiv = styled(Container)<OuterDivProps>`
   color: ${props => props.theme.colors.text.prose};
   padding: 1.5rem 0;
   ${props =>
@@ -38,14 +44,15 @@ const InnerDiv = styled(Container)`
   padding-left: 1rem;
 `;
 
-const ContentContainer = ({children, ...props}) => (
+interface ContentContainerProps {
+  children: React.ReactNode;
+  [key: string]: unknown;
+}
+
+const ContentContainer = ({children, ...props}: ContentContainerProps) => (
   <OuterDiv {...props} fullWidth>
     <InnerDiv narrow>{children}</InnerDiv>
   </OuterDiv>
 );
-
-ContentContainer.propTypes = {
-  children: PropTypes.node,
-};
 
 export default ContentContainer;

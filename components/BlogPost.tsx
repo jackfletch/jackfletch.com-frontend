@@ -1,5 +1,5 @@
+import React from 'react';
 import ErrorPage from 'next/error';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import {Button, Container, Meta, Page, Datetime} from './';
@@ -16,7 +16,7 @@ const PostContent = styled(Container)`
 
 const H1 = styled.h1`
   text-align: center;
-  margin: 0; // necessary to override normalize
+  margin: 0;
 `;
 
 const DateDiv = styled.div`
@@ -43,7 +43,25 @@ const Icon = styled.span`
   line-height: 0;
 `;
 
-const BlogPost = ({children, frontMatter}) => {
+interface FrontMatter {
+  category?: string;
+  date: string;
+  dateModified?: string;
+  description: string;
+  draft?: boolean;
+  plainContent?: string;
+  img?: string;
+  slug: string;
+  title: string;
+  words?: number;
+}
+
+interface BlogPostProps {
+  children: React.ReactNode;
+  frontMatter: FrontMatter;
+}
+
+const BlogPost = ({children, frontMatter}: BlogPostProps) => {
   const {
     category,
     date,
@@ -125,24 +143,6 @@ const BlogPost = ({children, frontMatter}) => {
       </Page>
     </>
   );
-};
-
-BlogPost.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.object),
-    PropTypes.object,
-  ]).isRequired,
-  frontMatter: PropTypes.shape({
-    category: PropTypes.string,
-    date: PropTypes.string.isRequired,
-    dateModified: PropTypes.string,
-    description: PropTypes.string.isRequired,
-    draft: PropTypes.bool,
-    plainContent: PropTypes.string,
-    slug: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    words: PropTypes.number,
-  }),
 };
 
 export default BlogPost;

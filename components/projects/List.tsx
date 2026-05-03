@@ -1,6 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
 
 import {Container, ProjectCard} from '..';
+import {Project} from '../../data/projects';
 
 export const GAP_X = 16;
 export const GAP_Y = 16;
@@ -16,7 +18,11 @@ const SitePreviewPlaceholder = styled.div`
   height: 100%;
 `;
 
-const RowDiv = styled.div`
+interface RowDivProps {
+  rowFlexDirection: string;
+}
+
+const RowDiv = styled.div<RowDivProps>`
   display: flex;
   padding: 0px ${GAP_X / 2}px;
   width: 100%;
@@ -36,9 +42,9 @@ const NotFeaturedDiv = styled.div`
 
 let featuredRowFlexDirectionState = 'row';
 const normalRowFlexDirectionState = 'row';
-const getRowRender = (dataSource, index, projectIds) => {
-  const content = [];
-  let featured = null;
+const getRowRender = (dataSource: Record<string, Project>, index: number, projectIds: string[]) => {
+  const content: React.ReactNode[] = [];
+  let featured: React.ReactNode = null;
 
   const startIndex = index * 3;
   for (let i = 0; i < 3; ++i) {
@@ -73,8 +79,13 @@ const getRowRender = (dataSource, index, projectIds) => {
   );
 };
 
-const List = ({mapping, projectIds}) => {
-  const content = [];
+interface ListProps {
+  mapping: Record<string, Project>;
+  projectIds: string[];
+}
+
+const List = ({mapping, projectIds}: ListProps) => {
+  const content: React.ReactNode[] = [];
   for (let i = 0; i < projectIds.length / 3; i++) {
     const Row = getRowRender(mapping, i, projectIds);
     content.push(Row);

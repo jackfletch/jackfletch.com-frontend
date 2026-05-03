@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
@@ -14,7 +15,7 @@ const Div = styled.div`
 `;
 
 const H2 = styled.h2`
-  color: ${props => props.theme.colors.text.header};
+  color: ${props => props.theme.colors.text.heading};
   margin: 0;
   font-size: 3rem;
   letter-spacing: -1px;
@@ -22,7 +23,13 @@ const H2 = styled.h2`
   line-height: 1.3;
 `;
 
-const SectionHeader = ({id, title, description}) => (
+interface SectionHeaderProps {
+  id?: string;
+  title: string;
+  description?: string;
+}
+
+const SectionHeader = ({id, title, description}: SectionHeaderProps) => (
   <Div>
     <H2 id={id}>{title}</H2>
     {description && <h3>{description}</h3>}

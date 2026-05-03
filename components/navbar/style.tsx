@@ -2,7 +2,11 @@ import styled, {css} from 'styled-components';
 
 import Container from '../Container';
 
-export const A = styled.a`
+interface AProps {
+  selected?: boolean;
+}
+
+export const A = styled.a<AProps>`
   display: block;
   padding: 0.5rem 0;
 
@@ -114,12 +118,7 @@ export const CollapseWrapper = styled.div`
   }
 `;
 
-export const Toggler = styled.button.attrs({
-  type: 'button',
-  'data-toggle': 'collapse',
-  'aria-expanded': 'false',
-  'aria-label': 'Toggle navigation',
-})`
+export const Toggler = styled.button`
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;

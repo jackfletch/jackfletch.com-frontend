@@ -8,7 +8,7 @@ const AboutPage = () => {
 
   return (
     <>
-      <Meta staticPage={{title}} />
+      <Meta title={title} />
       <Page noHeader>
         <ContentContainer>
           <h1>This is TODO.</h1>

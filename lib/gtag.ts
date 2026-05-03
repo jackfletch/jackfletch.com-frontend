@@ -1,6 +1,11 @@
 import {getCurrentFullUrl, getFullPath} from '../lib';
-
 import {GA_TRACKING_ID} from '../config/env';
+
+declare global {
+  interface Window {
+    gtag: (...args: unknown[]) => void;
+  }
+}
 
 export const trackPageview = () => {
   const fullPath = getFullPath();
@@ -12,8 +17,7 @@ export const trackPageview = () => {
   });
 };
 
-// https://developers.google.com/analytics/devguides/collection/gtagjs/pages
-const pageview = ({url, path, title}) => {
+const pageview = ({url, path, title}: {url: string; path: string; title: string}) => {
   try {
     window.gtag('config', GA_TRACKING_ID, {
       page_location: url,
@@ -23,8 +27,17 @@ const pageview = ({url, path, title}) => {
   } catch (error) {}
 };
 
-// https://developers.google.com/analytics/devguides/collection/gtagjs/events
-export const event = ({action, category, label, value}) => {
+export const event = ({
+  action,
+  category,
+  label,
+  value,
+}: {
+  action: string;
+  category: string;
+  label: string;
+  value: number;
+}) => {
   window.gtag('event', action, {
     event_category: category,
     event_label: label,

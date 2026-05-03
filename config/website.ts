@@ -1,4 +1,32 @@
-const websiteConfig = {
+interface AuthorContacts {
+  email: string;
+  github: string;
+  instagram: string;
+  linkedin: string;
+  twitter: string;
+}
+
+interface Author {
+  name: string;
+  contacts: AuthorContacts;
+}
+
+interface MenuItem {
+  label: string;
+  path: string;
+}
+
+export interface WebsiteConfig {
+  author: Author;
+  url: string;
+  logoPath: string;
+  title: string;
+  description: string;
+  storageBucketUrl: string;
+  menu: MenuItem[];
+}
+
+const websiteConfig: WebsiteConfig = {
   author: {
     name: 'Jack Fletcher',
     contacts: {
@@ -31,4 +59,5 @@ const websiteConfig = {
   ],
 };
 
-module.exports = websiteConfig;
+export const {storageBucketUrl} = websiteConfig;
+export default websiteConfig;

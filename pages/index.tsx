@@ -19,7 +19,7 @@ const IndexPage = () => {
     <>
       <Meta schema={schema} />
       <Page noHeader>
-        <Hero className="hero" />
+        <Hero />
       </Page>
     </>
   );

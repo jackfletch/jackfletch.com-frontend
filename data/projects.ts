@@ -1,6 +1,16 @@
 import {storageBucketUrl} from '../config/website';
 
-const mapping = {
+export interface Project {
+  title: string;
+  category: string;
+  featured?: boolean;
+  link: string;
+  excerpt: string;
+  image?: string;
+  date: Date;
+}
+
+const mapping: Record<string, Project> = {
   splash: {
     title: 'Splash',
     category: 'Data',

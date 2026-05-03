@@ -1,6 +1,19 @@
 import styled, {css} from 'styled-components';
 
-const Container = styled.div`
+interface ContainerProps {
+  padding?: boolean;
+  fullWidth?: boolean;
+  narrow?: boolean;
+  center?: boolean;
+  dark?: boolean;
+  gray?: boolean;
+  allowOverflow?: boolean;
+  minHeight?: number;
+  vCenter?: boolean;
+  dotBackground?: boolean;
+}
+
+const Container = styled.div<ContainerProps>`
   width: 100%;
   margin: 0 auto;
   padding: ${props =>
@@ -49,7 +62,6 @@ const Container = styled.div`
       background-size: 50px 50px;
     `}
 
-  // CSS only media query for tablet
   @media screen and (min-width: ${props => props.theme.breakpoints[0]}) {
     & {
       padding: ${props =>
@@ -57,7 +69,6 @@ const Container = styled.div`
     }
   }
 
-  // CSS only media query for desktop
   @media screen and (min-width: ${props => props.theme.breakpoints[1]}) {
     & {
       padding: ${props =>

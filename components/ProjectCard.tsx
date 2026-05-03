@@ -1,9 +1,10 @@
+import React from 'react';
 import styled from 'styled-components';
 
 import {ConditionalLink, Datetime} from '.';
 import {GAP_X, GAP_Y} from './projects/List';
 
-const categoryColors = {
+const categoryColors: Record<string, string> = {
   'Class Project': '#FE5621',
   Research: '#4285F4',
   Config: '#673AB7',
@@ -12,7 +13,11 @@ const categoryColors = {
   Data: '#F4B400',
 };
 
-const ColumnDiv = styled.div`
+interface ColumnDivProps {
+  featured?: boolean;
+}
+
+const ColumnDiv = styled.div<ColumnDivProps>`
   position: relative;
   flex: ${props => (props.featured ? 2 : 1)};
   height: unset;
@@ -41,7 +46,11 @@ const CardArticle = styled.article`
   padding: 1rem;
 `;
 
-const CategoryH4 = styled.h4`
+interface CategoryH4Props {
+  category: string;
+}
+
+const CategoryH4 = styled.h4<CategoryH4Props>`
   display: inline-block;
   background-color: ${props => categoryColors[props.category]};
   padding: 4px 6px;
@@ -55,7 +64,7 @@ const CategoryH4 = styled.h4`
 `;
 
 const TitleH3 = styled.h3`
-  color: ${props => props.theme.colors.text.header};
+  color: ${props => props.theme.colors.text.heading};
   margin: 0 0 0.5rem;
   font-weight: 600;
   letter-spacing: 0;
@@ -85,7 +94,20 @@ const ExcerptDiv = styled.div`
   align-items: center;
 `;
 
-const ProjectCard = ({data}) => {
+interface ProjectCardProps {
+  data: {
+    category: string;
+    title: string;
+    excerpt: string;
+    featured?: boolean;
+    date: Date;
+    link: string;
+    image?: string;
+  };
+  featured?: boolean;
+}
+
+const ProjectCard = ({data}: ProjectCardProps) => {
   const {category, title, excerpt, featured, date, link, image} = data;
   return (
     <ColumnDiv featured={featured}>

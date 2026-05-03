@@ -5,7 +5,12 @@ import {Button, ConditionalLink, Datetime} from '../components';
 import Container from './Container';
 import {ArrowRightLong} from './icons';
 
-const OuterDiv = styled(Container)`
+interface OuterDivProps {
+  divider?: boolean;
+  highlight?: boolean;
+}
+
+const OuterDiv = styled(Container)<OuterDivProps>`
   padding: 1.5rem 0;
   ${props =>
     props.divider &&
@@ -62,7 +67,16 @@ const ButtonDiv = styled.div`
   margin-top: 2rem;
 `;
 
-const BlogCard = ({post}) => {
+interface BlogCardProps {
+  post: {
+    date: string;
+    description: string;
+    slug: string;
+    title: string;
+  };
+}
+
+const BlogCard = ({post}: BlogCardProps) => {
   const {date, description, slug, title} = post;
   return (
     <OuterDiv divider fullWidth highlight>

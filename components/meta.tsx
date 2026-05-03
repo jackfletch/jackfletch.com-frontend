@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import PropTypes from 'prop-types';
 import {useRouter} from 'next/router';
 import config from '../config/website';
 import {GA_TRACKING_ID} from '../config/env';
@@ -14,13 +13,21 @@ function setGoogleTags() {
   };
 }
 
+interface MetaProps {
+  description?: string;
+  image?: string;
+  schema?: Record<string, unknown>;
+  title?: string;
+  type?: string;
+}
+
 const Meta = ({
   description = config.description,
   image,
   schema,
   title = config.title,
   type = 'website',
-}) => {
+}: MetaProps) => {
   const router = useRouter();
 
   return (
@@ -74,14 +81,6 @@ const Meta = ({
     <script dangerouslySetInnerHTML={setGoogleTags()} />
   </Head>
   );
-};
-
-Meta.propTypes = {
-  description: PropTypes.string,
-  image: PropTypes.string,
-  schema: PropTypes.object,
-  title: PropTypes.string,
-  type: PropTypes.string,
 };
 
 export default Meta;

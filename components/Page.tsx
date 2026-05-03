@@ -1,11 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Footer, {FOOTER_HEIGHT_DESKTOP, FOOTER_HEIGHT_MOBILE} from './Footer';
 import Header, {HEADER_HEIGHT} from './Header';
 import Main from './Main';
 
-const Page = ({children, noHeader}) => {
+interface PageProps {
+  children: React.ReactNode;
+  noHeader?: boolean;
+}
+
+const Page = ({children, noHeader}: PageProps) => {
   const headerHeight = noHeader ? 0 : HEADER_HEIGHT;
 
   return (
@@ -20,13 +24,6 @@ const Page = ({children, noHeader}) => {
       <Footer />
     </>
   );
-};
-
-Page.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
 };
 
 export default Page;

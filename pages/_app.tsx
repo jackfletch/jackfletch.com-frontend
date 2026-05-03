@@ -7,7 +7,7 @@ import {gtag} from '../lib';
 import '../public/css/main.css';
 import '../public/css/highlight.css';
 
-Router.events.on('routeChangeComplete', url => gtag.trackPageview(url));
+Router.events.on('routeChangeComplete', () => gtag.trackPageview());
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: ${props => props.theme.colors.text.header};
+    color: ${props => props.theme.colors.text.heading};
     font-weight: 500;
     margin: 1.618em 0 0.7em 0;
   }
