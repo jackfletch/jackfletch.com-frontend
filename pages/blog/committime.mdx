@@ -5,6 +5,10 @@ date: "2019-08-07T03:33:41.571Z"
 description: "Ever wanted to quickly change the commit or author date of an unsigned git commit? Worried recruiters will discover your late-night code obsession? Look no further."
 ---
 
+import BlogPost from '../../components/BlogPost';
+
+export default ({children}) => <BlogPost frontMatter={frontMatter}>{children}</BlogPost>
+
 **Altering git commit times is generally a poor idea and is certainly not a best practice.**
 **The ideas herein help understand the internals of git; please do not use them for any serious matter.**
 

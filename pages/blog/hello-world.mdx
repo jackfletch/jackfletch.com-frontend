@@ -5,6 +5,10 @@ date: "2019-08-01T03:32:22.887Z"
 description: "Words and stuff."
 ---
 
+import BlogPost from '../../components/BlogPost';
+
+export default ({children}) => <BlogPost frontMatter={frontMatter}>{children}</BlogPost>
+
 Sup, world.
 This is a test post for this showcasing this blog's capabilities and styling.
 

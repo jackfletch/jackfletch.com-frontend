@@ -5,6 +5,10 @@ date: "2019-08-22T16:15:00.000Z"
 description: "An NBA data visualization for shotcharts and other statistics."
 ---
 
+import BlogPost from '../../components/BlogPost';
+
+export default ({children}) => <BlogPost frontMatter={frontMatter}>{children}</BlogPost>
+
 [Splash](https://splash.jackfletch.com) is a basketball shooting visualization SPA.
 
 ![interface](/media/splash-intro/interface.png)

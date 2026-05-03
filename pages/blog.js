@@ -1,10 +1,10 @@
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 import {BlogCard, Container, Meta, Page, SectionHeader} from '../components';
 import config from '../config/website';
 
-// TODO: Phase 2 — restore blog post listing with getStaticProps
-const posts = [];
-
-const BlogPage = () => {
+const BlogPage = ({posts}) => {
   const title = `Blog | ${config.title}`;
   const schema = {
     '@context': 'https://schema.org',
@@ -32,11 +32,30 @@ const BlogPage = () => {
       <Page>
         <Container padding fullWidth>
           <SectionHeader title="Blog" />
-          {posts}
+          {posts.map(post => (
+            <BlogCard key={post.slug} post={post} />
+          ))}
         </Container>
       </Page>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const blogDir = path.join(process.cwd(), 'pages', 'blog');
+  const files = fs.readdirSync(blogDir).filter(f => /\.mdx?$/.test(f));
+
+  const posts = files
+    .map(filename => {
+      const filePath = path.join(blogDir, filename);
+      const source = fs.readFileSync(filePath, 'utf8');
+      const {data} = matter(source);
+      return data;
+    })
+    .filter(post => !post.draft)
+    .sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1));
+
+  return {props: {posts}};
+}
 
 export default BlogPage;
