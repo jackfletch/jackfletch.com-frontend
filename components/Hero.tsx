@@ -54,7 +54,7 @@ const Li = styled.li`
     color: rgb(222, 226, 230);
     margin-right: 16px;
   }
-  :first-child::before {
+  &:first-child::before {
     content: '';
     margin-right: 0px;
   }

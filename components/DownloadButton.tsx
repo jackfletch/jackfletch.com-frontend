@@ -25,7 +25,7 @@ const Button = styled.button`
   border-style: solid;
   border-color: rgb(23, 162, 184);
   background: rgb(23, 162, 184);
-  :hover {
+  &:hover {
     background-color: #138496;
     border-color: #117a8b;
   }
