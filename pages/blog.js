@@ -1,20 +1,8 @@
 import {BlogCard, Container, Meta, Page, SectionHeader} from '../components';
 import config from '../config/website';
 
-function importAll(r) {
-  return r.keys().map(r);
-}
-
-function dateSortDesc(a, b) {
-  const dateA = new Date(a.date);
-  const dateB = new Date(b.date);
-  return dateA < dateB ? 1 : -1;
-}
-
-const posts = importAll(require.context('./blog', false, /\.mdx?$/))
-  .map(post => post.frontMatter)
-  .sort(dateSortDesc)
-  .map(post => <BlogCard key={post.slug} post={post} />);
+// TODO: Phase 2 — restore blog post listing with getStaticProps
+const posts = [];
 
 const BlogPage = () => {
   const title = `Blog | ${config.title}`;
