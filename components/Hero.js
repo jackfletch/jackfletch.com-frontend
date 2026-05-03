@@ -72,14 +72,10 @@ const Hero = () => (
     <ListDiv>
       <Ul>
         <Li>
-          <Link href="/blog">
-            <a>Blog</a>
-          </Link>
+          <Link href="/blog">Blog</Link>
         </Li>
         <Li>
-          <Link href="/projects">
-            <a>Projects</a>
-          </Link>
+          <Link href="/projects">Projects</Link>
         </Li>
         <Li>
           <a

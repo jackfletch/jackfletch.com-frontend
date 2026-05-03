@@ -64,7 +64,7 @@ const Button = ({children, href, as, amp, ...props}) => {
     return amp || isExternal ? (
       a
     ) : (
-      <Link href={href} as={as}>
+      <Link href={href} as={as} legacyBehavior>
         {a}
       </Link>
     );

@@ -1,32 +1,30 @@
 import React from 'react';
-import {forwardRef} from 'react';
 import Link from 'next/link';
 
-const Anchor = forwardRef(({children, className, href, style}, ref) => (
+const Anchor = ({children, className, href, style}) => (
   <a
-    ref={ref}
     href={href}
     style={{...style, color: 'inherit', textDecoration: 'none'}}
     className={className}
   >
     {children}
   </a>
-));
-Anchor.displayName = 'Anchor';
+);
 
 const ConditionalLink = ({as, children, className, href, style}) => {
-  const anchor = (
-    <Anchor className={className} style={style}>
-      {children}
-    </Anchor>
-  );
   const externalUrl = href.indexOf('http') === 0;
   if (externalUrl) {
-    return React.cloneElement(anchor, {href});
+    return (
+      <Anchor className={className} style={style} href={href}>
+        {children}
+      </Anchor>
+    );
   } else {
     return (
-      <Link href={href} as={as} passHref>
-        {anchor}
+      <Link href={href} as={as} legacyBehavior passHref>
+        <Anchor className={className} style={style}>
+          {children}
+        </Anchor>
       </Link>
     );
   }

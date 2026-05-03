@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import {withRouter} from 'next/router';
+import {useRouter} from 'next/router';
 import config from '../config/website';
 import {GA_TRACKING_ID} from '../config/env';
 import {stripUrlParams} from '../lib';
@@ -17,11 +17,13 @@ function setGoogleTags() {
 const Meta = ({
   description = config.description,
   image,
-  router,
   schema,
   title = config.title,
   type = 'website',
-}) => (
+}) => {
+  const router = useRouter();
+
+  return (
   <Head>
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -71,7 +73,8 @@ const Meta = ({
     />
     <script dangerouslySetInnerHTML={setGoogleTags()} />
   </Head>
-);
+  );
+};
 
 Meta.propTypes = {
   description: PropTypes.string,
@@ -81,4 +84,4 @@ Meta.propTypes = {
   type: PropTypes.string,
 };
 
-export default withRouter(Meta);
+export default Meta;
