@@ -1,5 +1,5 @@
 import {ThemeProvider, createGlobalStyle} from 'styled-components';
-import {normalize} from 'styled-normalize';
+import 'modern-normalize/modern-normalize.css';
 import Router from 'next/router';
 
 import theme from '../data/theme';
@@ -9,8 +9,6 @@ import '../public/css/main.css';
 Router.events.on('routeChangeComplete', () => gtag.trackPageview());
 
 const GlobalStyle = createGlobalStyle`
-  ${normalize}
-
   html {
     box-sizing: border-box;
   }

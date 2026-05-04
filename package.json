@@ -21,6 +21,7 @@
     "@next/mdx": "^16.2.4",
     "axios": "^0.31.0",
     "gray-matter": "^4.0.2",
+    "modern-normalize": "^3.0.1",
     "next": "^15.5.15",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
@@ -33,13 +34,12 @@
     "remark-numbered-footnote-labels": "^1.1.0",
     "rss": "^1.2.2",
     "shiki": "^4.0.2",
-    "styled-components": "^6.4.1",
-    "styled-normalize": "^8.0.7"
+    "styled-components": "^6.4.1"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
-    "eslint": "^10.3.0",
+    "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
