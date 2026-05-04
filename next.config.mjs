@@ -24,7 +24,7 @@ const withMDX = createMDX({
     ],
     rehypePlugins: [
       rehypeSlug,
-      [rehypePrettyCode, {theme: 'github-light'}],
+      [rehypePrettyCode, {theme: 'github-light', keepBackground: false}],
     ],
   },
 });
