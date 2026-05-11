@@ -44,6 +44,27 @@ export interface Recipe {
   pipeline: PipelineStep[];
 }
 
-const recipes: Recipe[] = [];
+const recipes: Recipe[] = [
+  {
+    title: "Hummus",
+    slug: "hummus",
+    source: {
+      kind: "original",
+      text: "Julie McLemore",
+    },
+    pipeline: [
+      {
+        add: ["1 c chickpeas", "1 T cumin", "2 t salt", "1 t pepper", "2 t garlic"],
+        then: "blend",
+      },
+      { add: ["½ c tahini"], then: "blend" },
+      {
+        add: ["2 T lemon juice", "cold water"],
+        then: "blend, adding water until desired consistency",
+      },
+      { add: ["zatar", "sumac"], then: "add spice topping" },
+    ],
+  },
+];
 
 export default recipes;
