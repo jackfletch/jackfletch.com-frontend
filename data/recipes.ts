@@ -65,6 +65,43 @@ const recipes: Recipe[] = [
       { add: ["zatar", "sumac"], then: "add spice topping" },
     ],
   },
+  {
+    title: "Loubia",
+    slug: "loubia",
+    source: {
+      kind: "stolen",
+      text: "NYT Cooking",
+      url: "https://cooking.nytimes.com",
+    },
+    pipeline: [
+      {
+        add: ["3 T olive oil", "2 medium yellow onions, halved and sliced"],
+        then: "saute until translucent, ~7 mins",
+      },
+      {
+        add: [
+          "1 lb cannellini beans, soaked overnight and drained",
+          "½ (14 oz) can crushed San Marzano tomatoes (or 2 medium tomatoes, cored and diced)",
+          "4 cloves garlic, peeled and grated",
+          "3 T finely chopped parsley",
+          "2 t sweet paprika",
+          "1 t ground ginger",
+          "1 t ground turmeric",
+          "1½ t sea salt",
+          "2½ c vegetable stock",
+        ],
+        then: "simmer 75-85 mins, until beans are fully cooked and soft",
+      },
+      {
+        add: [],
+        then: "adjust seasoning",
+      },
+      {
+        add: ["bread"],
+        then: "serve",
+      },
+    ],
+  },
 ];
 
 export default recipes;
