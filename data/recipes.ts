@@ -102,6 +102,55 @@ const recipes: Recipe[] = [
       },
     ],
   },
+  {
+    title: "Perfect Buttermilk Pancakes",
+    slug: "perfect-buttermilk-pancakes",
+    source: {
+      kind: "stolen",
+      text: "Sam Sifton, NYT Cooking",
+      url: "https://cooking.nytimes.com/recipes/1017989-perfect-buttermilk-pancakes",
+    },
+    branches: {
+      dry: [
+        {
+          add: [
+            "2 c all-purpose flour",
+            "3 T sugar",
+            "1½ t baking powder",
+            "1½ t baking soda",
+            "1¼ t kosher salt",
+          ],
+          then: "whisk",
+        },
+      ],
+      wet: [
+        {
+          add: [
+            "2½ c buttermilk",
+            "2 large eggs",
+            "3 T unsalted butter, melted",
+          ],
+          then: "whisk",
+        },
+      ],
+    },
+    pipeline: [
+      {
+        merge: ["dry", "wet"],
+        then: "whisk together (lumps are fine)",
+      },
+      {
+        add: ["1 T vegetable, canola, or coconut oil"],
+        then: "ladle ⅓ c batter into oiled skillet over medium-low, cook 2-4 mins until bubbles rise",
+      },
+      {
+        then: "flip, cook until lightly browned",
+      },
+      {
+        then: "keep warm on wire rack in 325°F oven",
+      },
+    ],
+  },
 ];
 
 export default recipes;
