@@ -78,6 +78,9 @@ const Hero = () => (
           <Link href="/projects">Projects</Link>
         </Li>
         <Li>
+          <Link href="/recipes">Recipes</Link>
+        </Li>
+        <Li>
           <a
             href={`${storageBucketUrl}/static/documents/JacksonFletcherResume.pdf`}
             target="_blank"

@@ -59,6 +59,11 @@ const Navbar = () => {
                 Projects
               </NavLink>
             </Li>
+            <Li>
+              <NavLink href="/recipes" $selected={router.route.startsWith('/recipes')}>
+                Recipes
+              </NavLink>
+            </Li>
           </Nav>
         </CollapseWrapper>
       </NavbarContainer>

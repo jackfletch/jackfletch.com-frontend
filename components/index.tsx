@@ -9,4 +9,6 @@ export {default as Hero} from './Hero';
 export {default as Meta} from './meta';
 export {default as Page} from './Page';
 export {default as ProjectCard} from './ProjectCard';
+export {default as RecipeCard} from './RecipeCard';
+export {default as RecipeTable} from './RecipeTable';
 export {default as SectionHeader} from './SectionHeader';
