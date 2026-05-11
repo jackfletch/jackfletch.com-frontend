@@ -151,6 +151,61 @@ const recipes: Recipe[] = [
       },
     ],
   },
+  {
+    title: "Tofu and Green Beans With Chile Crisp",
+    slug: "tofu-and-green-beans-with-chile-crisp",
+    source: {
+      kind: "stolen",
+      text: "Kia Damon, NYT Cooking",
+      url: "https://cooking.nytimes.com",
+    },
+    branches: {
+      marinade: [
+        {
+          add: [
+            "3 T chile-crisp condiment",
+            "3 T soy sauce",
+            "1½ T Chinese black vinegar",
+            "1½ t sesame oil",
+            "1 t honey",
+            "2 garlic cloves, peeled and minced",
+            "1 T minced fresh ginger",
+            "2 T chopped scallions",
+            "2 T chopped cilantro",
+          ],
+          then: "whisk in baking dish",
+        },
+        {
+          add: [
+            "1 (14 oz) package extra-firm tofu, drained and sliced crosswise into 8 (½-inch-thick) slabs",
+          ],
+          then: "coat and marinate while oven heats to 450°F",
+        },
+      ],
+      beans: [
+        {
+          add: [
+            "¾ lb green beans, trimmed",
+            "1 T neutral oil (canola or grapeseed)",
+          ],
+          then: "toss on sheet pan to coat",
+        },
+      ],
+    },
+    pipeline: [
+      {
+        merge: ["marinade", "beans"],
+        then: "slide beans to sides, arrange tofu in center, pour remaining marinade over tofu",
+      },
+      {
+        then: "roast at 450°F for 20-25 mins until beans blister",
+      },
+      {
+        add: ["white rice", "chile crisp, for serving"],
+        then: "serve",
+      },
+    ],
+  },
 ];
 
 export default recipes;
