@@ -46,6 +46,73 @@ export interface Recipe {
 
 const recipes: Recipe[] = [
   {
+    title: "Green Curry Glazed Tofu",
+    slug: "green-curry-glazed-tofu",
+    source: {
+      kind: "stolen",
+      text: "Ali Slagle, NYT Cooking",
+      url: "https://cooking.nytimes.com",
+    },
+    branches: {
+      tofu: [
+        {
+          add: ["1 (14 oz) block extra-firm tofu"],
+          then: "cut into 12 squares",
+        },
+        {
+          then: "pat dry"
+        }
+      ],
+      sauce: [
+        {
+          add: [
+            "1 (14 oz) can full-fat, unsweetened coconut milk",
+            "3 T Thai green curry paste",
+          ],
+          then: "stir",
+        },
+        {
+          add: ["salt"],
+          then: "salt to taste",
+        },
+      ],
+      rice: [
+        {
+          add: ["½ c white rice"],
+          then: "cook",
+        },
+      ],
+    },
+    pipeline: [
+      {
+        merge: ["tofu", "sauce"],
+        then: "coat tofu with 2 T sauce, cook in skillet over medium-high until golden, 3-5 mins",
+      },
+      {
+        add: ["1 T neutral or coconut oil"],
+        then: "flip, cook until crisp on both sides, 3-5 mins; transfer tofu to plate",
+      },
+      {
+        add: ["2 c chopped vegetables"],
+        then: "cook without stirring until charred, 2-3 mins",
+      },
+      {
+        then: "add remaining sauce, boil to glaze, 4-5 mins",
+      },
+      {
+        add: ["2 T lime juice"],
+        then: "stir in",
+      },
+      {
+        then: "return tofu",
+      },
+      {
+        merge: ["rice"],
+        then: "serve",
+      },
+    ],
+  },
+  {
     title: "Hummus",
     slug: "hummus",
     source: {
