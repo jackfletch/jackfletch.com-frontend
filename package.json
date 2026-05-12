@@ -22,7 +22,7 @@
     "axios": "^0.31.0",
     "gray-matter": "^4.0.2",
     "modern-normalize": "^3.0.1",
-    "next": "^15.5.15",
+    "next": "^15.5.18",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "reading-time": "^1.2.0",
